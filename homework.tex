@@ -1,0 +1,102 @@
+\documentclass{ctexart}
+
+% 插入宏包
+\usepackage{graphicx} % Required for inserting images
+\usepackage{geometry} % 设置页边距
+\usepackage{lipsum} % 生成虚拟文本
+\usepackage{fancyhdr} % 自定义页眉和页脚
+\usepackage{booktabs} % 插入三线表
+\usepackage{lastpage} % 解决总页数显示问题
+\usepackage{amsmath,amsfonts,amsthm} % 常用数学公式指令、数学公式、提供证明环境
+\usepackage{bm} % 数学字体加粗
+\usepackage{mathrsfs} % 提供特殊的数学花体
+\usepackage{amssymb, ,hyperref, framed, color, enumerate}
+
+% Custom counter for problems
+\newcounter{problemname}
+
+% Environment for problems
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+
+\newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{习题}\arabic{problemname}.}{\end{shaded}\par}
+
+
+% Environment for solutions
+\newenvironment{solution}{\par\noindent\textbf{解答. }}{\par}
+
+% Environment for notes
+\newenvironment{note}{\par\noindent\textbf{习题\arabic{problemname}的注记. }}{\par}
+
+% Reset problem counter at each subsection
+\usepackage{titlesec}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{\setcounter{problemname}{0}}
+
+% 设置文章格式
+\geometry{left=2.5cm,right=2.5cm,top=3cm,bottom=3cm}
+\pagestyle{fancy} % 使用fancyhdr宏包定义页眉页脚
+\fancyhf{} % 清空默认的页眉和页脚设置
+\chead{数学物理方法作业}
+\cfoot{第 \thepage 页（共 \pageref{LastPage}页）}
+
+% 信息栏
+\title{\Huge\textbf{数学物理方法作业}}
+\author{Charles Luo}
+\date{\today}
+
+% 正文区
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{第一章习题}
+
+\begin{problem}
+计算下列表达式的值：
+\begin{enumerate}[(1)]
+    \item $\displaystyle(\frac{1+i}{2-i})^2\ $;
+    \item $\displaystyle(1+i)^n+(1-i)^n\ $,\, 其中\ $n$\ 为整数.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+    \begin{enumerate}[(1)]
+        \item 原式 $=\displaystyle(\frac{(1+i)(2+i)}{(2-i)(2+i)})^2$
+              $=\displaystyle(\frac{1+3i}{5})^2$
+              $=\displaystyle\frac{-8+6i}{25}$\,.
+        \item 由于$1+i=\sqrt{2}\text{e}^{\frac{\pi}{4}i}\ ,
+                  1-i=\sqrt{2}\text{e}^{-\frac{\pi}{4}i}$\ .
+              原式=$\displaystyle 2^{\frac{n}{2}}\text{e}^{\frac{n\pi}{4}i}
+                  +2^{\frac{n}{2}}\text{e}^{-\frac{n\pi}{4}i}$
+              =$\displaystyle 2^{\frac{n}{2}+1}\cos{\frac{n\pi}{4}}$\,.
+    \end{enumerate}
+\end{solution}
+
+\begin{problem}
+写出下列复数的实部、虚部、模和辐角：
+\begin{enumerate}
+    \item $\displaystyle 1+i\sqrt{3} $\ ;
+    \item $\displaystyle \text{e}^{i\sin{x}}$\ , \ $x$\ 为实数;
+    \item $\displaystyle \text{e}^{iz} $\ ;
+    \item $\displaystyle \text{e}^z $\ ;
+    \item $\displaystyle \text{e}^{i\phi (x)}$\ , $\phi (x)$是实变数\ $x$\ 的实函数;
+    \item $\displaystyle 1-\cos{\alpha}+i\sin{\alpha}$\ , $0\leq \alpha <2\pi$\ .
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{ccccc}
+            \toprule % 三线表划分线
+            \qquad 题号 \qquad\qquad & \qquad\qquad 实部 \qquad\qquad & \qquad\qquad 虚部 \qquad\qquad & \qquad 模 \qquad\qquad & 辐角                     \\
+            \midrule
+            (1)            & 1                            & $\sqrt{3}$                   & 2                           & $\dfrac{\pi}{3}+2k\pi$ \\
+            (2)            & $\cos{\sin{x}}$              & $\sin{\sin{x}}$              & 1                           & $\sin{x}+2k\pi$        \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+\end{solution}
+
+\end{document}
