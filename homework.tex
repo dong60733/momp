@@ -59,7 +59,6 @@
     \item $\displaystyle(1+i)^n+(1-i)^n\ $,\, 其中\ $n$\ 为整数.
 \end{enumerate}
 \end{problem}
-
 \begin{solution}
     \begin{enumerate}[(1)]
         \item 原式 $=\displaystyle(\frac{(1+i)(2+i)}{(2-i)(2+i)})^2$
@@ -75,7 +74,7 @@
 
 \begin{problem}
 写出下列复数的实部、虚部、模和辐角：
-\begin{enumerate}
+\begin{enumerate}[(1)]
     \item $\displaystyle 1+i\sqrt{3} $\ ;
     \item $\displaystyle \text{e}^{i\sin{x}}$\ , \ $x$\ 为实数;
     \item $\displaystyle \text{e}^{iz} $\ ;
@@ -84,7 +83,6 @@
     \item $\displaystyle 1-\cos{\alpha}+i\sin{\alpha}$\ , $0\leq \alpha <2\pi$\ .
 \end{enumerate}
 \end{problem}
-
 \begin{solution}
     \begin{table}[h]
         \centering
@@ -108,7 +106,114 @@
 \end{note}
 
 \begin{problem}
-
+把下列关系用几何图形表示出来：
+\begin{enumerate}[(1)]
+    \item $\left| z \right| < 2, \left| z \right| = 2,
+              \left| z \right| > 2 ;$
+    \item $ \text{Re} \, z > \dfrac{1}{2} ;$
+    \item $ 1 < \text{Im} \, z < 2 ;$
+    \item $ 0 < \text{arg}(1-z) < \dfrac{\pi}{4} ;$
+    \item $ \left| z \right| + \text{Re} \, z < 1 ;$
+    \item $ 0 < \text{arg}(\dfrac{z+1}{z-1}) < \dfrac{\pi}{4} ;$
+    \item $ \left| z - a \right| = \left| z - b \right| ,$\,$a,b$\,为常数;
+    \item $ \left| z - a \right| + \left| z - b \right| = c $,
+          其中\,$a,b,c$\,均为常数，$c>\left|a-b\right|$.
+\end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{enumerate}[(1)]
+        \item 以原点为圆心画一个半径为$2$的圆，表示区域分别是圆内、圆上和圆外。
+        \item 在实轴\ $\dfrac{1}{2}$处画一条平行于虚轴的直线，所求为直线右边区域。
+        \item 在虚轴$1$和$2$处分别画一条平行于实轴的直线，所求为两直线之间区域。
+        \item 由于\ $z=x+yi$\ ，故\ $1-z=(1-x)-yi$\ ，根据题意有\ $1-x > 0$\ ，
+              $0<\dfrac{-y}{1-x}<1$\ ，解\ $x<1$\ ，$x-1<y<0$。
+        \item 由于\ $z=x+yi$\ ，根据题意\ $x+\sqrt{x^2+y^2}<1$\ ，化简得到
+              \ $y^2<1-2x$。
+        \item 由于\ $z=x+yi$\ ，根据题意\ $\displaystyle\frac{x+1+yi}{x-1+yi}$\ 可以
+              化简为\ $\dfrac{x^2+y^2-1}{x^2-2x+y^2+1}-\dfrac{2yi}{x^2-2x+y^2+1}$\ ,
+              而辐角范围为\ $(0,\dfrac{\pi}{4})$\ ，有\ $x^2+y^2-1>0$\ ，
+              $0<\dfrac{-2y}{x^2+y^2-1}<1$\ ，画出来的图像是\ $y<0$\ 部分挖去以\ $(0,-1)$ \
+              为圆心，$\sqrt{2}$为半径的圆。
+        \item 根据题意，点到\ $a$,$b$\ 的距离相等，点在$ab$连线的中垂线上。
+        \item 根据题意，点到\ $a$,$b$\ 的距离和为定值，符合椭圆定义，故点在以\ $a$,$b$\ 为焦点的椭圆上。
+    \end{enumerate}
+\end{solution}
 
+\newpage
+\section{第二章习题}
+
+\begin{problem}
+判断下列函数在何处可导（并求出其导函数)，在何处解析：
+\begin{enumerate}[(1)]
+    \item $\left|z\right|$\ ;
+    \item $z^*$\ ;
+    \item $z\text{Re}\ z$\ ;
+    \item $(x^2+2y)+i(x^2+y^2)$\ ;
+    \item $3x^2+2iy^2$\ ;
+    \item $(x-y)^2+2i(x+y)$\ .
+\end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}[(1)]
+        \item 由于\ $z=x+iy$,$f(z)=\sqrt{x^2+y^2}$，
+              \begin{equation*}
+                  \dfrac{\partial u}{\partial x} = \dfrac{x}{\sqrt{x^2+y^2}}
+              \end{equation*}
+              \begin{equation*}
+                  \dfrac{\partial u}{\partial y} = \dfrac{y}{\sqrt{x^2+y^2}}
+              \end{equation*}
+              \begin{equation*}
+                  \dfrac{\partial v}{\partial x} = 0
+              \end{equation*}
+              \begin{equation*}
+                  \dfrac{\partial v}{\partial y} = 0
+              \end{equation*}
+              若满足C-R方程，则\ $x=y=0$，
+              而沿着\ $y=x$\ 趋近原点时，
+              \begin{equation*}
+                  \dfrac{\partial f}{\partial x} = \dfrac{\sqrt{2}}{2} \neq 0
+              \end{equation*}
+              故处处不可导，不解析。
+        \item 若可导，则有\ $\dfrac{\partial f}{\partial z^*} = 0$，故处处不可导，不解析。
+        \item 由于\ $z=x+iy$,$f(z)= x^2+ixy$，
+              \begin{equation*}
+                  \dfrac{\partial u}{\partial x} = 2x
+              \end{equation*}
+              \begin{equation*}
+                  \dfrac{\partial u}{\partial y} = 0
+              \end{equation*}
+              \begin{equation*}
+                  \dfrac{\partial v}{\partial x} = y
+              \end{equation*}
+              \begin{equation*}
+                  \dfrac{\partial v}{\partial y} = x
+              \end{equation*}
+              若满足C-R方程，则\ $x=y=0$，
+              现令\ $x=\rho\sin{\theta},y=\rho\cos{\theta}$，
+              \begin{equation*}
+                  \dfrac{\partial f}{\partial z} = \lim\limits_{\rho\to 0}
+                  \dfrac{\rho^2\cos{\theta}^2+i\rho^2\sin{\theta}\cos{\theta}}{\rho\cos{\theta}+i\rho\sin{\theta}}=\rho\cos{\theta}=0
+              \end{equation*}
+              故仅在$(0,0)$处可导，不解析。
+        \item 由题可以得到
+              \begin{equation*}
+                  \dfrac{\partial u}{\partial x} = 2x
+              \end{equation*}
+              \begin{equation*}
+                  \dfrac{\partial u}{\partial y} = 2
+              \end{equation*}
+              \begin{equation*}
+                  \dfrac{\partial v}{\partial x} = 2x
+              \end{equation*}
+              \begin{equation*}
+                  \dfrac{\partial v}{\partial y} = 2y
+              \end{equation*}
+              若满足C-R方程，则\ $y=x$,$x=-1$，
+              现令\ $x=\rho\sin{\theta},y=\rho\cos{\theta}$，
+              \begin{equation*}
+                  \dfrac{\partial f}{\partial z} = \lim\limits_{\rho\to 0}
+              \end{equation*}
+
+    \end{enumerate}
+\end{solution}
 \end{document}
