@@ -211,9 +211,97 @@
               若满足C-R方程，则\ $y=x$,$x=-1$，
               现令\ $x=\rho\sin{\theta},y=\rho\cos{\theta}$，
               \begin{equation*}
-                  \dfrac{\partial f}{\partial z} = \lim\limits_{\rho\to 0}
+                  \dfrac{\partial f}{\partial z} = \lim\limits_{\rho\to 0}\dfrac{\rho^2\cos{\theta}^2-2\rho\cos{\theta}+2\rho\sin{\theta}+i\rho^2-2i\rho\cos{\theta}-2i\rho\sin{\theta}}{\rho\cos{\theta}+i\sin{\theta}}
               \end{equation*}
-
+              \begin{equation*}
+                  = \lim\limits_{\rho\to 0}\dfrac{-2\cos{\theta}+2\sin{\theta}-2i\cos{\theta}-2i\sin{\theta}}{\cos{\theta}+i\sin{\theta}}
+                  = -2 - 2i
+              \end{equation*}
+              故仅在$(-1,1)$处可导，导数为\ $-2-2i$\ ，不解析。
+        \item 由题可以得到
+              \begin{equation*}
+                  \dfrac{\partial u}{\partial x} = 6x
+              \end{equation*}
+              \begin{equation*}
+                  \dfrac{\partial u}{\partial y} = 0
+              \end{equation*}
+              \begin{equation*}
+                  \dfrac{\partial v}{\partial x} = 0
+              \end{equation*}
+              \begin{equation*}
+                  \dfrac{\partial v}{\partial y} = 6y^2
+              \end{equation*}
+              若满足C-R方程，则\ $x=y^2$，此时\ $f(z)=3y^4+2iy^2$，
+              \begin{equation*}
+                  \dfrac{\partial f}{\partial z} = \dfrac{\partial v}{\partial y}-i\dfrac{\partial u}{\partial y} = 6y^2
+              \end{equation*}
+              故在\ $x=y^2$\ 上可导，导数为\ $6y^2$，不解析。
+        \item 由题可以得到
+              \begin{equation*}
+                  \dfrac{\partial u}{\partial x} = 2x - 2y
+              \end{equation*}
+              \begin{equation*}
+                  \dfrac{\partial u}{\partial y} = 2y - 2x
+              \end{equation*}
+              \begin{equation*}
+                  \dfrac{\partial v}{\partial x} = 2
+              \end{equation*}
+              \begin{equation*}
+                  \dfrac{\partial v}{\partial y} = 2
+              \end{equation*}
+              若满足C-R方程，则\ $2x-2y=2$\ 即\ $x=y+1$，此时\ $f(z)=1+i(4y+2)$，
+              \begin{equation*}
+                  \dfrac{\partial f}{\partial z} = \dfrac{\partial v}{\partial y}-i\dfrac{\partial u}{\partial y} = 2 + 2i
+              \end{equation*}
+              故在\ $x=y+1$\ 上可导，导数为\ $2+2i$，不解析。
     \end{enumerate}
 \end{solution}
+
+\begin{problem}
+设\ $z=x+iy$，已知解析函数\ $f(z)=u(x,y)+iv(x,y)$\ 的实部或虚部如下，试求\
+$f'(z)$\ :
+\begin{enumerate}[(1)]
+    \item $u=x+y$\ ;
+    \item $u=\sin{x}\cosh{y}$\ .
+\end{enumerate}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\begin{problem}
+若\ $f(z)=u(x,y)+iv(x,y)$\ 解析，且\ $u-v=(x-y)(x^2+4xy+y^2)$，试\ $f(z)$\ .
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\begin{problem}
+判断下列哪些是函数，哪些是多值函数：
+\begin{enumerate}[(1)]
+    \item $\sqrt{z^2-1}$\ ;
+    \item $z+\sqrt{z-1}$\ ;
+    \item $\sin{\sqrt{z}}$\ ;
+    \item $\cos{\sqrt{z}}$\ ;
+    \item $\dfrac{\sin{\sqrt{z}}}{\sqrt{z}}$\ ;
+    \item $\dfrac{\cos{\sqrt{z}}}{\sqrt{z}}$\ ;
+    \item $\ln{\sin{z}}$\ ;
+    \item $\sin{(i\ln{z})}$\ ;
+\end{enumerate}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\begin{problem}
+找出下列多值函数的分支点，并讨论$z$绕一个分支点移动一周回到原点处后多值函数值的变化。如果同时绕两个、三个乃至更多个分支点一周，多值函数的值又如何变化？
+\begin{enumerate}[(1)]
+    \item $\sqrt{(z-a)(z-b)}$\ ,\ $a\neq b$\ ;
+    \item $\sqrt[3]{(z-a)(z-b)}$\ ,\ $a\neq b$\ ;
+    \item $\sqrt{1-z^3}$\ ;
+    \item $\sqrt[3]{1-z^3}$\ ;
+    \item $\ln{(z^2+1)}$\ ;
+    \item $\ln{\cos{z}}$\ ;
+\end{enumerate}
+\end{problem}
 \end{document}
