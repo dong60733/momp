@@ -35,6 +35,7 @@
 \geometry{left=2.5cm,right=2.5cm,top=3cm,bottom=3cm}
 \pagestyle{fancy} % 使用fancyhdr宏包定义页眉页脚
 \fancyhf{} % 清空默认的页眉和页脚设置
+\linespread{1.2}
 \chead{数学物理方法作业}
 \cfoot{第 \thepage 页（共 \pageref{LastPage}页）}
 
@@ -266,14 +267,44 @@ $f'(z)$\ :
 \end{enumerate}
 \end{problem}
 \begin{solution}
-
+    \begin{enumerate}[(1)]
+        \item 由函数解析可知C-R方程成立，而$\dfrac{\partial u}{\partial x} = \dfrac{\partial u}{\partial y} = 1$，故$\dfrac{\partial v}{\partial x} = -1$，$\dfrac{\partial v}{\partial y} = 1$. \\[15pt]
+              于是可以求出 $\displaystyle v(x,y) = \int_{(0,0)}^{(x,0)}-\text{d}x + \int_{(x,0)}^{(x,t)}\text{d}y = -x + y + C$. \\[15pt]
+              即 $\displaystyle f(z) = x + y + i(y - x) + iC = z - iz + iC$, $\displaystyle f'(z) = 1 - i$。
+        \item 由函数解析可知C-R方程成立，而$\dfrac{\partial u}{\partial x} = \cos{x}\cosh{y}$\ ,\ $\dfrac{\partial u}{\partial y} = \sin{x}\sinh{y}$，\\[15pt]
+              故$\dfrac{\partial v}{\partial x} = -\sin{x}\sinh{y}$\ ,$\dfrac{\partial v}{\partial y} = \cos{x}\cosh{y}$\ 。 \\[15pt]
+              于是可以求出$\displaystyle v(x,y) = \int_{(0,0)}^{(x,0)}-\sin{x}\sinh{0}\text{d}x + \int_{(x,0)}^{(x,t)}\cos{x}\cosh{y}\text{d}y = \cos{x}\sinh{y} + C$. \\[15pt]
+              即 $\displaystyle f(z) = \sin{x}\cosh{y} + i\cos{x}\sinh{y} + iC$, $\displaystyle f'(z) = \dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial x} = \cos{x}\cosh{y} - \sin{x}\sinh{y}\textcolor{red}{=\cos{z}}$。
+    \end{enumerate}
 \end{solution}
+\begin{note}
+    \begin{itemize}
+        \item $\cos{z} = \dfrac{\text{e}^{iz}+\text{e}^{-iz}}{2}$
+        \item $\sin{z} = \dfrac{\text{e}^{iz}-\text{e}^{-iz}}{2i}$
+        \item $\sinh{z} = \dfrac{\text{e}^{z}-\text{e}^{-z}}{2}$
+        \item $\cosh{z} = \dfrac{\text{e}^{z}+\text{e}^{-z}}{2}$
+        \item $\sinh{z} = -i\sin{iz}$
+        \item $\cosh{z} = \cos{iz}$
+    \end{itemize}
+\end{note}
 
 \begin{problem}
 若\ $f(z)=u(x,y)+iv(x,y)$\ 解析，且\ $u-v=(x-y)(x^2+4xy+y^2)$，试\ $f(z)$\ .
 \end{problem}
 \begin{solution}
-
+    由题，
+    \begin{equation*}
+        \dfrac{\partial u}{\partial x} - \dfrac{\partial v}{\partial x} = x^2 + 4xy + y^2 + (x-y)(2x+4y)\ ,
+    \end{equation*}
+    \begin{equation*}
+        \dfrac{\partial u}{\partial y} - \dfrac{\partial v}{\partial y} = -(x^2 + 4xy + y^2) + (x-y)(4x + 2y)\ .
+    \end{equation*}
+    解析函数满足C-R方程，即 $\dfrac{\partial u}{\partial x} = \dfrac{\partial v}{\partial y}$\ , \ $\dfrac{\partial u}{\partial y} = \dfrac{\partial v}{\partial x}$\ . \\[15pt]
+    解出$\dfrac{\partial u}{\partial x} = \dfrac{\partial v}{\partial y} = 6xy$\ , \ $\dfrac{\partial u}{\partial y} = \dfrac{\partial v}{\partial x} = 3(x^2 - y^2)$\ . \\[15pt]
+    $\displaystyle u(x,y) = \int_{(0,0)}^{(x,0)}0\text{d}x + \int_{(x,0)}^{(x,t)}3(x^2-y^2)\text{d}y = 3x^2y - y^2 + C_1$. \\[15pt]
+    $\displaystyle v(x,y) = \int_{(0,0)}^{(x,0)}-3x^2\text{d}x + \int_{(x,0)}^{(x,t)}6xy\text{d}y = -x^3 + 3xy^2 + C_2$. \\[15pt]
+    而 $u-v$ 中不含常数，故 $C_1 = C_2 = C$\ , \\[15pt]
+    $f(z) = u + iv = 3x^2y - y^3 + i(3xy^2 - x^3) + (1+i)C\textcolor{red}{= iz^3 + (1+i)C}$
 \end{solution}
 
 \begin{problem}
@@ -290,7 +321,16 @@ $f'(z)$\ :
 \end{enumerate}
 \end{problem}
 \begin{solution}
-
+    \begin{enumerate}[(1)]
+        \item 多值函数。
+        \item 多值函数。
+        \item 已知$\sqrt{z} = \pm \omega$\ ,\ 且$\sin{\omega} \neq \sin{-\omega}$\ ,\ 故为多值函数。
+        \item 虽然$\sqrt{z} = \pm \omega$\ ,\ 但是$\cos{\omega} = \cos{-\omega}$\ ,\ 故为单值函数。
+        \item 虽然$\sqrt{z} = \pm \omega$\ ,\ 但是$\dfrac{\sin{\omega}}{\omega} = \dfrac{\sin{(-\omega)}}{-\omega}$\ ,\ 故为单值函数。
+        \item 已知$\sqrt{z} = \pm \omega$\ ,\ 且$\dfrac{\cos{\omega}}{\omega} \neq \dfrac{\cos{(-\omega)}}{-\omega}$\ ,\ 故为多值函数。
+        \item 多值函数。
+        \item 已知 $\ln{z}$ 是多值函数，对应的函数值满足关系的是值相同，幅角相差$2\pi$的整数倍，而正弦函数又以$2\pi$为周期，故为单值函数。
+    \end{enumerate}
 \end{solution}
 
 \begin{problem}
@@ -304,4 +344,59 @@ $f'(z)$\ :
     \item $\ln{\cos{z}}$\ ;
 \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{enumerate}[(1)]
+        \item 枝点可能为 $a$,\ $b$,\ $\infty$\ ,逐一验证：
+              \begin{itemize}
+                  \item 令$z = a + \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(z) = \text{e}^{\frac{1}{2}i\varphi}\sqrt{(a - b)\epsilon}$. \\
+                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $a$ 为枝点。
+                  \item 同理，$b$也为枝点。
+                  \item 现考虑 $\infty$，做变换 $t = \dfrac{1}{z}$，令 $t = \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(\infty) = \text{e}^{-i\varphi}\sqrt{\dfrac{1}{\epsilon^2}}$. \\
+                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值相等，故 $\infty$ 不是枝点。
+              \end{itemize}
+              故枝点为 $a$,\ $b$。
+        \item 枝点可能为 $a$,\ $b$,\ $\infty$\ ,逐一验证：
+              \begin{itemize}
+                  \item 令$z = a + \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(z) = \text{e}^{\frac{1}{3}i\varphi}\sqrt[3]{(a - b)\epsilon}$. \\
+                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $a$ 为枝点。
+                  \item 同理，$b$也为枝点。
+                  \item 现考虑 $\infty$，做变换 $t = \dfrac{1}{z}$，令 $t = \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(\infty) = \text{e}^{-\frac{2}{3}i\varphi}\sqrt[3]{\dfrac{1}{\epsilon^2}}$. \\
+                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $\infty$ 为枝点。
+              \end{itemize}
+              故枝点为 $a$,\ $b$,\ $\infty$。
+        \item 因式分解得 $\sqrt{(1-z)(z-\text{e}^{i\frac{2\pi}{3}})(z-\text{e}^{-i\frac{2\pi}{3}})}$，故猜测枝点为 $1$,\ $\text{e}^{i\frac{2\pi}{3}}$,\ $\text{e}^{-i\frac{2\pi}{3}}$,\ $\infty$，逐一验证：
+              \begin{itemize}
+                  \item 令$z = 1 + \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(z) = \text{e}^{\frac{1}{2}i\varphi}\sqrt{(1-\text{e}^{i\frac{2\pi}{3}})(1-\text{e}^{-i\frac{2\pi}{3}})\epsilon}$. \\
+                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $1$ 为枝点。
+                  \item 同理，$\text{e}^{i\frac{2\pi}{3}}$也为枝点。
+                  \item 同理，$\text{e}^{-i\frac{2\pi}{3}}$也为枝点。
+                  \item 现考虑 $\infty$，做变换 $t = \dfrac{1}{z}$，令 $t = \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(\infty) = \text{e}^{-\frac{3}{2}i\varphi}\sqrt{\dfrac{1}{\epsilon^3}}$. \\
+                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $\infty$ 为枝点。
+              \end{itemize}
+              故枝点为  $1$,\ $\text{e}^{i\frac{2\pi}{3}}$,\ $\text{e}^{-i\frac{2\pi}{3}}$,\ $\infty$。
+        \item 因式分解得 $\sqrt[3]{(1-z)(z-\text{e}^{i\frac{2\pi}{3}})(z-\text{e}^{-i\frac{2\pi}{3}})}$，故猜测枝点为 $1$,\ $\text{e}^{i\frac{2\pi}{3}}$,\ $\text{e}^{-i\frac{2\pi}{3}}$,\ $\infty$，逐一验证：
+              \begin{itemize}
+                  \item 令$z = 1 + \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(z) = \text{e}^{\frac{1}{3}i\varphi}\sqrt[3]{(1-\text{e}^{i\frac{2\pi}{3}})(1-\text{e}^{-i\frac{2\pi}{3}})\epsilon}$. \\
+                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $1$ 为枝点。
+                  \item 同理，$\text{e}^{i\frac{2\pi}{3}}$也为枝点。
+                  \item 同理，$\text{e}^{-i\frac{2\pi}{3}}$也为枝点。
+                  \item 现考虑 $\infty$，做变换 $t = \dfrac{1}{z}$，令 $t = \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(\infty) = \text{e}^{-i\varphi}\sqrt[3]{\dfrac{1}{\epsilon^3}}$. \\
+                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值相等，故 $\infty$ 不是枝点。
+              \end{itemize}
+              故枝点为  $1$,\ $\text{e}^{i\frac{2\pi}{3}}$,\ $\text{e}^{-i\frac{2\pi}{3}}$。
+        \item 枝点可能为 $i$,\ $-i$,\ $\infty$，逐一验证：
+              \begin{itemize}
+                  \item 令$z = i + \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(z) = \ln{2i\epsilon\text{e}^{i\varphi}} = i\varphi + \ln{2i\epsilon}$. \\
+                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $i$ 为枝点。
+                  \item 同理，$-i$也为枝点。
+                  \item 现考虑 $\infty$，做变换 $t = \dfrac{1}{z}$，令 $t = \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(\infty) = -i\varphi + \ln{\dfrac{1}{\epsilon}}$. \\
+                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $\infty$ 为枝点。
+                        故枝点为 $i$,\ $-i$,\ $\infty$ 。
+              \end{itemize}
+        \item 由 $\cos{z} = 0$可以解出 $z = \pm \dfrac{2n+1}{2}\pi, \quad n\in\mathbb{N}$，猜测这些根都是枝点。不妨以 $\dfrac{\pi}{2}$为例，令$z = \dfrac{\pi}{2} + \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $\displaystyle f(z) = \ln{\dfrac{\text{e}^{i(\frac{\pi}{2}+ \epsilon\text{e}^{i\varphi})}+\text{e}^{-i(\frac{\pi}{2}+ \epsilon\text{e}^{i\varphi})}}{2}} = \ln{\epsilon} + i\varphi$. \\
+              显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $\infty$ 为枝点。\\[15pt]
+              故枝点为 $z = \pm \dfrac{2n+1}{2}\pi, \quad n\in\mathbb{N}$ 。
+    \end{enumerate}
+\end{solution}
+
 \end{document}
