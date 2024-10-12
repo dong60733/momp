@@ -1,10 +1,11 @@
-\documentclass{ctexart}
+\documentclass[11pt]{ctexart}
 
 % 插入宏包
 \usepackage{graphicx} % Required for inserting images
 \usepackage{geometry} % 设置页边距
 \usepackage{lipsum} % 生成虚拟文本
-\usepackage{fancyhdr} % 自定义页眉和页脚
+\usepackage{fancyhdr} 
+\setlength{\headheight}{14pt}% 自定义页眉和页脚
 \usepackage{booktabs} % 插入三线表
 \usepackage{lastpage} % 解决总页数显示问题
 \usepackage{amsmath,amsfonts,amsthm} % 常用数学公式指令、数学公式、提供证明环境
@@ -35,7 +36,7 @@
 \geometry{left=2.5cm,right=2.5cm,top=3cm,bottom=3cm}
 \pagestyle{fancy} % 使用fancyhdr宏包定义页眉页脚
 \fancyhf{} % 清空默认的页眉和页脚设置
-\linespread{1.2}
+\linespread{1.5}
 \chead{数学物理方法作业}
 \cfoot{第 \thepage 页（共 \pageref{LastPage}页）}
 
@@ -212,7 +213,7 @@
               若满足C-R方程，则\ $y=x$,$x=-1$，
               现令\ $x=\rho\sin{\theta},y=\rho\cos{\theta}$，
               \begin{equation*}
-                  \dfrac{\partial f}{\partial z} = \lim\limits_{\rho\to 0}\dfrac{\rho^2\cos{\theta}^2-2\rho\cos{\theta}+2\rho\sin{\theta}+i\rho^2-2i\rho\cos{\theta}-2i\rho\sin{\theta}}{\rho\cos{\theta}+i\sin{\theta}}
+                  \dfrac{\partial f}{\partial z} = \lim\limits_{\rho\to 0}\dfrac{\rho^2\cos{\theta}^2-2\rho\cos{\theta}+2\rho\sin{\theta}+i\rho^2-2i\rho\cos{\theta}-2i\rho\sin{\theta}}{\rho\cos{\theta}+i\sin{\theta}} 
               \end{equation*}
               \begin{equation*}
                   = \lim\limits_{\rho\to 0}\dfrac{-2\cos{\theta}+2\sin{\theta}-2i\cos{\theta}-2i\sin{\theta}}{\cos{\theta}+i\sin{\theta}}
@@ -259,22 +260,22 @@
 \end{solution}
 
 \begin{problem}
-设\ $z=x+iy$，已知解析函数\ $f(z)=u(x,y)+iv(x,y)$\ 的实部或虚部如下，试求\
-$f'(z)$\ :
-\begin{enumerate}[(1)]
-    \item $u=x+y$\ ;
-    \item $u=\sin{x}\cosh{y}$\ .
-\end{enumerate}
+    设\ $z=x+iy$，已知解析函数\ $f(z)=u(x,y)+iv(x,y)$\ 的实部或虚部如下，试求\ 
+    $f'(z)$\ :
+    \begin{enumerate}[(1)]
+        \item $u=x+y$\ ;
+        \item $u=\sin{x}\cosh{y}$\ .
+    \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{enumerate}[(1)]
         \item 由函数解析可知C-R方程成立，而$\dfrac{\partial u}{\partial x} = \dfrac{\partial u}{\partial y} = 1$，故$\dfrac{\partial v}{\partial x} = -1$，$\dfrac{\partial v}{\partial y} = 1$. \\[15pt]
-              于是可以求出 $\displaystyle v(x,y) = \int_{(0,0)}^{(x,0)}-\text{d}x + \int_{(x,0)}^{(x,t)}\text{d}y = -x + y + C$. \\[15pt]
-              即 $\displaystyle f(z) = x + y + i(y - x) + iC = z - iz + iC$, $\displaystyle f'(z) = 1 - i$。
+        于是可以求出 $\displaystyle v(x,y) = \int_{(0,0)}^{(x,0)}-\text{d}x + \int_{(x,0)}^{(x,t)}\text{d}y = -x + y + C$. \\[15pt]
+        即 $\displaystyle f(z) = x + y + i(y - x) + iC = z - iz + iC$, $\displaystyle f'(z) = 1 - i$。
         \item 由函数解析可知C-R方程成立，而$\dfrac{\partial u}{\partial x} = \cos{x}\cosh{y}$\ ,\ $\dfrac{\partial u}{\partial y} = \sin{x}\sinh{y}$，\\[15pt]
-              故$\dfrac{\partial v}{\partial x} = -\sin{x}\sinh{y}$\ ,$\dfrac{\partial v}{\partial y} = \cos{x}\cosh{y}$\ 。 \\[15pt]
-              于是可以求出$\displaystyle v(x,y) = \int_{(0,0)}^{(x,0)}-\sin{x}\sinh{0}\text{d}x + \int_{(x,0)}^{(x,t)}\cos{x}\cosh{y}\text{d}y = \cos{x}\sinh{y} + C$. \\[15pt]
-              即 $\displaystyle f(z) = \sin{x}\cosh{y} + i\cos{x}\sinh{y} + iC$, $\displaystyle f'(z) = \dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial x} = \cos{x}\cosh{y} - \sin{x}\sinh{y}\textcolor{red}{=\cos{z}}$。
+        故$\dfrac{\partial v}{\partial x} = -\sin{x}\sinh{y}$\ ,$\dfrac{\partial v}{\partial y} = \cos{x}\cosh{y}$\ 。 \\[15pt]
+        于是可以求出$\displaystyle v(x,y) = \int_{(0,0)}^{(x,0)}-\sin{x}\sinh{0}\text{d}x + \int_{(x,0)}^{(x,t)}\cos{x}\cosh{y}\text{d}y = \cos{x}\sinh{y} + C$. \\[15pt]
+        即 $\displaystyle f(z) = \sin{x}\cosh{y} + i\cos{x}\sinh{y} + iC$, $\displaystyle f'(z) = \dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial x} = \cos{x}\cosh{y} - \sin{x}\sinh{y}\textcolor{red}{=\cos{z}}$。
     \end{enumerate}
 \end{solution}
 \begin{note}
@@ -289,7 +290,7 @@ $f'(z)$\ :
 \end{note}
 
 \begin{problem}
-若\ $f(z)=u(x,y)+iv(x,y)$\ 解析，且\ $u-v=(x-y)(x^2+4xy+y^2)$，试\ $f(z)$\ .
+    若\ $f(z)=u(x,y)+iv(x,y)$\ 解析，且\ $u-v=(x-y)(x^2+4xy+y^2)$，试\ $f(z)$\ .
 \end{problem}
 \begin{solution}
     由题，
@@ -308,17 +309,17 @@ $f'(z)$\ :
 \end{solution}
 
 \begin{problem}
-判断下列哪些是函数，哪些是多值函数：
-\begin{enumerate}[(1)]
-    \item $\sqrt{z^2-1}$\ ;
-    \item $z+\sqrt{z-1}$\ ;
-    \item $\sin{\sqrt{z}}$\ ;
-    \item $\cos{\sqrt{z}}$\ ;
-    \item $\dfrac{\sin{\sqrt{z}}}{\sqrt{z}}$\ ;
-    \item $\dfrac{\cos{\sqrt{z}}}{\sqrt{z}}$\ ;
-    \item $\ln{\sin{z}}$\ ;
-    \item $\sin{(i\ln{z})}$\ ;
-\end{enumerate}
+    判断下列哪些是函数，哪些是多值函数：
+    \begin{enumerate}[(1)]
+        \item $\sqrt{z^2-1}$\ ;
+        \item $z+\sqrt{z-1}$\ ;
+        \item $\sin{\sqrt{z}}$\ ;
+        \item $\cos{\sqrt{z}}$\ ;
+        \item $\dfrac{\sin{\sqrt{z}}}{\sqrt{z}}$\ ;
+        \item $\dfrac{\cos{\sqrt{z}}}{\sqrt{z}}$\ ;
+        \item $\ln{\sin{z}}$\ ;
+        \item $\sin{(i\ln{z})}$\ ;
+    \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{enumerate}[(1)]
@@ -334,69 +335,336 @@ $f'(z)$\ :
 \end{solution}
 
 \begin{problem}
-找出下列多值函数的分支点，并讨论$z$绕一个分支点移动一周回到原点处后多值函数值的变化。如果同时绕两个、三个乃至更多个分支点一周，多值函数的值又如何变化？
-\begin{enumerate}[(1)]
-    \item $\sqrt{(z-a)(z-b)}$\ ,\ $a\neq b$\ ;
-    \item $\sqrt[3]{(z-a)(z-b)}$\ ,\ $a\neq b$\ ;
-    \item $\sqrt{1-z^3}$\ ;
-    \item $\sqrt[3]{1-z^3}$\ ;
-    \item $\ln{(z^2+1)}$\ ;
-    \item $\ln{\cos{z}}$\ ;
-\end{enumerate}
+    找出下列多值函数的分支点，并讨论$z$绕一个分支点移动一周回到原点处后多值函数值的变化。如果同时绕两个、三个乃至更多个分支点一周，多值函数的值又如何变化？
+    \begin{enumerate}[(1)]
+        \item $\sqrt{(z-a)(z-b)}$\ ,\ $a\neq b$\ ;
+        \item $\sqrt[3]{(z-a)(z-b)}$\ ,\ $a\neq b$\ ;
+        \item $\sqrt{1-z^3}$\ ;
+        \item $\sqrt[3]{1-z^3}$\ ;
+        \item $\ln{(z^2+1)}$\ ;
+        \item $\ln{\cos{z}}$\ ;
+    \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{enumerate}[(1)]
         \item 枝点可能为 $a$,\ $b$,\ $\infty$\ ,逐一验证：
-              \begin{itemize}
-                  \item 令$z = a + \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(z) = \text{e}^{\frac{1}{2}i\varphi}\sqrt{(a - b)\epsilon}$. \\
-                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $a$ 为枝点。
-                  \item 同理，$b$也为枝点。
-                  \item 现考虑 $\infty$，做变换 $t = \dfrac{1}{z}$，令 $t = \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(\infty) = \text{e}^{-i\varphi}\sqrt{\dfrac{1}{\epsilon^2}}$. \\
-                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值相等，故 $\infty$ 不是枝点。
-              \end{itemize}
-              故枝点为 $a$,\ $b$。
+        \begin{itemize}
+            \item 令$z = a + \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(z) = \text{e}^{\frac{1}{2}i\varphi}\sqrt{(a - b)\epsilon}$. \\
+            显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $a$ 为枝点。
+            \item 同理，$b$也为枝点。
+            \item 现考虑 $\infty$，做变换 $t = \dfrac{1}{z}$，令 $t = \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(\infty) = \text{e}^{-i\varphi}\sqrt{\dfrac{1}{\epsilon^2}}$. \\
+            显然 $\varphi = 0$和$\varphi = 2\pi$时函数值相等，故 $\infty$ 不是枝点。
+        \end{itemize}
+        故枝点为 $a$,\ $b$。
         \item 枝点可能为 $a$,\ $b$,\ $\infty$\ ,逐一验证：
-              \begin{itemize}
-                  \item 令$z = a + \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(z) = \text{e}^{\frac{1}{3}i\varphi}\sqrt[3]{(a - b)\epsilon}$. \\
-                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $a$ 为枝点。
-                  \item 同理，$b$也为枝点。
-                  \item 现考虑 $\infty$，做变换 $t = \dfrac{1}{z}$，令 $t = \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(\infty) = \text{e}^{-\frac{2}{3}i\varphi}\sqrt[3]{\dfrac{1}{\epsilon^2}}$. \\
-                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $\infty$ 为枝点。
-              \end{itemize}
-              故枝点为 $a$,\ $b$,\ $\infty$。
+        \begin{itemize}
+            \item 令$z = a + \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(z) = \text{e}^{\frac{1}{3}i\varphi}\sqrt[3]{(a - b)\epsilon}$. \\
+            显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $a$ 为枝点。
+            \item 同理，$b$也为枝点。
+            \item 现考虑 $\infty$，做变换 $t = \dfrac{1}{z}$，令 $t = \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(\infty) = \text{e}^{-\frac{2}{3}i\varphi}\sqrt[3]{\dfrac{1}{\epsilon^2}}$. \\
+            显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $\infty$ 为枝点。
+        \end{itemize}
+        故枝点为 $a$,\ $b$,\ $\infty$。
         \item 因式分解得 $\sqrt{(1-z)(z-\text{e}^{i\frac{2\pi}{3}})(z-\text{e}^{-i\frac{2\pi}{3}})}$，故猜测枝点为 $1$,\ $\text{e}^{i\frac{2\pi}{3}}$,\ $\text{e}^{-i\frac{2\pi}{3}}$,\ $\infty$，逐一验证：
-              \begin{itemize}
-                  \item 令$z = 1 + \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(z) = \text{e}^{\frac{1}{2}i\varphi}\sqrt{(1-\text{e}^{i\frac{2\pi}{3}})(1-\text{e}^{-i\frac{2\pi}{3}})\epsilon}$. \\
-                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $1$ 为枝点。
-                  \item 同理，$\text{e}^{i\frac{2\pi}{3}}$也为枝点。
-                  \item 同理，$\text{e}^{-i\frac{2\pi}{3}}$也为枝点。
-                  \item 现考虑 $\infty$，做变换 $t = \dfrac{1}{z}$，令 $t = \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(\infty) = \text{e}^{-\frac{3}{2}i\varphi}\sqrt{\dfrac{1}{\epsilon^3}}$. \\
-                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $\infty$ 为枝点。
-              \end{itemize}
-              故枝点为  $1$,\ $\text{e}^{i\frac{2\pi}{3}}$,\ $\text{e}^{-i\frac{2\pi}{3}}$,\ $\infty$。
+        \begin{itemize}
+            \item 令$z = 1 + \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(z) = \text{e}^{\frac{1}{2}i\varphi}\sqrt{(1-\text{e}^{i\frac{2\pi}{3}})(1-\text{e}^{-i\frac{2\pi}{3}})\epsilon}$. \\
+            显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $1$ 为枝点。
+            \item 同理，$\text{e}^{i\frac{2\pi}{3}}$也为枝点。
+            \item 同理，$\text{e}^{-i\frac{2\pi}{3}}$也为枝点。
+            \item 现考虑 $\infty$，做变换 $t = \dfrac{1}{z}$，令 $t = \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(\infty) = \text{e}^{-\frac{3}{2}i\varphi}\sqrt{\dfrac{1}{\epsilon^3}}$. \\
+            显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $\infty$ 为枝点。
+        \end{itemize}
+        故枝点为  $1$,\ $\text{e}^{i\frac{2\pi}{3}}$,\ $\text{e}^{-i\frac{2\pi}{3}}$,\ $\infty$。
         \item 因式分解得 $\sqrt[3]{(1-z)(z-\text{e}^{i\frac{2\pi}{3}})(z-\text{e}^{-i\frac{2\pi}{3}})}$，故猜测枝点为 $1$,\ $\text{e}^{i\frac{2\pi}{3}}$,\ $\text{e}^{-i\frac{2\pi}{3}}$,\ $\infty$，逐一验证：
-              \begin{itemize}
-                  \item 令$z = 1 + \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(z) = \text{e}^{\frac{1}{3}i\varphi}\sqrt[3]{(1-\text{e}^{i\frac{2\pi}{3}})(1-\text{e}^{-i\frac{2\pi}{3}})\epsilon}$. \\
-                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $1$ 为枝点。
-                  \item 同理，$\text{e}^{i\frac{2\pi}{3}}$也为枝点。
-                  \item 同理，$\text{e}^{-i\frac{2\pi}{3}}$也为枝点。
-                  \item 现考虑 $\infty$，做变换 $t = \dfrac{1}{z}$，令 $t = \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(\infty) = \text{e}^{-i\varphi}\sqrt[3]{\dfrac{1}{\epsilon^3}}$. \\
-                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值相等，故 $\infty$ 不是枝点。
-              \end{itemize}
-              故枝点为  $1$,\ $\text{e}^{i\frac{2\pi}{3}}$,\ $\text{e}^{-i\frac{2\pi}{3}}$。
+        \begin{itemize}
+            \item 令$z = 1 + \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(z) = \text{e}^{\frac{1}{3}i\varphi}\sqrt[3]{(1-\text{e}^{i\frac{2\pi}{3}})(1-\text{e}^{-i\frac{2\pi}{3}})\epsilon}$. \\
+            显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $1$ 为枝点。
+            \item 同理，$\text{e}^{i\frac{2\pi}{3}}$也为枝点。
+            \item 同理，$\text{e}^{-i\frac{2\pi}{3}}$也为枝点。
+            \item 现考虑 $\infty$，做变换 $t = \dfrac{1}{z}$，令 $t = \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(\infty) = \text{e}^{-i\varphi}\sqrt[3]{\dfrac{1}{\epsilon^3}}$. \\
+            显然 $\varphi = 0$和$\varphi = 2\pi$时函数值相等，故 $\infty$ 不是枝点。
+        \end{itemize}
+        故枝点为  $1$,\ $\text{e}^{i\frac{2\pi}{3}}$,\ $\text{e}^{-i\frac{2\pi}{3}}$。
         \item 枝点可能为 $i$,\ $-i$,\ $\infty$，逐一验证：
-              \begin{itemize}
-                  \item 令$z = i + \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(z) = \ln{2i\epsilon\text{e}^{i\varphi}} = i\varphi + \ln{2i\epsilon}$. \\
-                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $i$ 为枝点。
-                  \item 同理，$-i$也为枝点。
-                  \item 现考虑 $\infty$，做变换 $t = \dfrac{1}{z}$，令 $t = \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(\infty) = -i\varphi + \ln{\dfrac{1}{\epsilon}}$. \\
-                        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $\infty$ 为枝点。
-                        故枝点为 $i$,\ $-i$,\ $\infty$ 。
-              \end{itemize}
-        \item 由 $\cos{z} = 0$可以解出 $z = \pm \dfrac{2n+1}{2}\pi, \quad n\in\mathbb{N}$，猜测这些根都是枝点。不妨以 $\dfrac{\pi}{2}$为例，令$z = \dfrac{\pi}{2} + \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $\displaystyle f(z) = \ln{\dfrac{\text{e}^{i(\frac{\pi}{2}+ \epsilon\text{e}^{i\varphi})}+\text{e}^{-i(\frac{\pi}{2}+ \epsilon\text{e}^{i\varphi})}}{2}} = \ln{\epsilon} + i\varphi$. \\
-              显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $\infty$ 为枝点。\\[15pt]
-              故枝点为 $z = \pm \dfrac{2n+1}{2}\pi, \quad n\in\mathbb{N}$ 。
+    \begin{itemize}
+        \item 令$z = i + \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(z) = \ln{2i\epsilon\text{e}^{i\varphi}} = i\varphi + \ln{2i\epsilon}$. \\
+        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $i$ 为枝点。
+        \item 同理，$-i$也为枝点。
+        \item 现考虑 $\infty$，做变换 $t = \dfrac{1}{z}$，令 $t = \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $f(\infty) = -i\varphi + \ln{\dfrac{1}{\epsilon}}$. \\
+        显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $\infty$ 为枝点。
+        故枝点为 $i$,\ $-i$,\ $\infty$ 。
+    \end{itemize}
+    \item 由 $\cos{z} = 0$可以解出 $z = \pm \dfrac{2n+1}{2}\pi, \quad n\in\mathbb{N}$，猜测这些根都是枝点。不妨以 $\dfrac{\pi}{2}$为例，令$z = \dfrac{\pi}{2} + \epsilon\text{e}^{i\varphi},\quad \epsilon\to 0,\ \varphi\in(0,2\pi)$，此时 $\displaystyle f(z) = \ln{\dfrac{\text{e}^{i(\frac{\pi}{2}+ \epsilon\text{e}^{i\varphi})}+\text{e}^{-i(\frac{\pi}{2}+ \epsilon\text{e}^{i\varphi})}}{2}} = \ln{\epsilon} + i\varphi$. \\
+    显然 $\varphi = 0$和$\varphi = 2\pi$时函数值不等，故 $\infty$ 为枝点。\\
+    故枝点为 $z = \pm \dfrac{2n+1}{2}\pi, \quad n\in\mathbb{N}$ 。
     \end{enumerate}
 \end{solution}
 
+\newpage
+\section{第三章习题}
+
+\begin{problem}
+    试按给定的路径计算下列积分：
+    \begin{enumerate}[(1)]
+        \item $\displaystyle\int_0^{2+i}\text{Re}\ z\text{d}z$，积分路径为：
+        \begin{enumerate}[(i)]
+            \item 线段 $[0,2]$ 和 $[2,2+2i]$ 组成的折线.
+            \item 线段 $z=(2+i)t,\quad 0<t\leq 1$.
+        \end{enumerate}
+        \item $\displaystyle\int_C \dfrac{\text{d}z}{\sqrt{z}}$, 规定 $\sqrt{z}|_{z=1}=1$，积分路径为由 $z=1$ 出发的：
+        \begin{enumerate}[(i)]
+            \item 单位圆的上半周.
+            \item 单位圆的下半周.
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}[(1)]
+        \item \begin{enumerate}[(i)]
+                  \item 由于 $z=x+iy$，$\text{d}z=\text{d}x+i\text{d}y$，故有\\
+                        $\displaystyle\int_{0}^{2+i}\text{Re}\ z\text{d}z = \int_{0}^{2}x\text{d}x 
+                        + \int_{0}^{1}2i\text{d}y = 2 + 2i$.
+                  \item 此时 $x=2t$ , $y=t$ , $\text{d}z=(2+i)\text{d}t$，故有\\
+                        $\displaystyle\int_{0}^{2+i}\text{Re}\ z\text{d}z = \int_{0}^{2+i}2t(2+i)\text{d}t 
+                        = \int_{0}^{1}(4t+2it)\text{d}t = 2+i$.   
+               \end{enumerate}
+        \item 已知$z=\text{e}^{i\theta}$ , $\text{d}z=i\text{e}^{i\theta}\text{d}\theta$ , $\sqrt{z}=\text{e}^{\frac{i\theta}{2}}$
+              \begin{enumerate}[(i)]
+                   \item  $\displaystyle\int_C \dfrac{\text{d}z}{\sqrt{z}} = \int_{0}^{\pi}\text{e}^{-\frac{i\theta}{2}}i\text{e}^{i\theta}\text{d}\theta
+                          = 2\int_{0}^{\pi}\text{e}^{\frac{i\theta}{2}\text{d}(\frac{i\theta}{2})}
+                          = 2\text{e}^{\frac{i\theta}{2}}|_0^{\pi}
+                          = 2i-2$.
+                    \item $\displaystyle\int_C \dfrac{\text{d}z}{\sqrt{z}} = \int_{0}^{\pi}\text{e}^{-\frac{i\theta}{2}}i\text{e}^{i\theta}\text{d}\theta
+                          = 2\int_{0}^{-\pi}\text{e}^{\frac{i\theta}{2}\text{d}(\frac{i\theta}{2})}
+                          = 2\text{e}^{\frac{i\theta}{2}}|_0^{-\pi}
+                          = -2i-2$.              
+              \end{enumerate}
+    \end{enumerate}
+\end{solution}
+
+\begin{problem}
+    计算下列积分：
+    \begin{enumerate}[(1)]
+        \item $\displaystyle\oint_{\left| z \right| = 1}\dfrac{\text{d}z}{z}$;
+        \item $\displaystyle\oint_{\left| z \right| = 1}\dfrac{\left|\text{d}z\right|}{z}$;
+        \item $\displaystyle\oint_{\left| z \right| = 1}\dfrac{\text{d}z}{\left|z\right|}$;
+        \item $\displaystyle\oint_{\left| z \right| = 1}\left|\dfrac{\text{d}z}{z}\right|$;
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    在单位圆上，有$z=\text{e}^{i\theta}$ ，$\text{d}z=i\text{e}^{i\theta}\text{d}\theta$.
+    \begin{enumerate}[(1)]
+        \item $\displaystyle\oint_{\left| z \right| = 1}\dfrac{\text{d}z}{z} = 
+              \int_{0}^{2\pi}\text{e}^{-i\theta}i\text{e}^{i\theta}\text{d}\theta =
+              2\pi i$;
+        \item 此时$\left|\text{d}z\right|=\text{d}\theta$，故$\displaystyle\oint_{\left| z \right| = 1}\dfrac{\left|\text{d}z\right|}{z} =
+              \int_{0}^{2\pi}\text{e}^{-i\theta}\text{d}\theta = 
+              -\frac{1}{i}\int_{0}^{2\pi}\text{e}^{-i\theta}\text{d}(-i\theta) = 
+              -\frac{1}{i}\text{e}^{i\theta}|_0^{2\pi} = 
+              0$;
+        \item 此时$\left|z\right|=1$，故$\displaystyle\oint_{\left| z \right| = 1}\dfrac{\text{d}z}{\left|z\right|} = 
+              \int_{0}^{2\pi}i\text{e}^{i\theta}\text{d}\theta = 
+              \text{e}^{i\theta}|_0^{2\pi} = 
+              0$;
+        \item $\displaystyle\oint_{\left| z \right| = 1}\left|\dfrac{\text{d}z}{z}\right| = 
+              \int_{0}^{2\pi}\left|\text{e}^{-i\theta}i\text{e}^{i\theta}\text{d}\theta\right| = 
+              2\pi$.
+    \end{enumerate}
+\end{solution}
+
+\begin{problem}
+    计算下列积分：
+    \begin{enumerate}[(1)]
+        \item $\displaystyle\oint_C \frac{1}{z^2-1}\sin{\frac{\pi z}{4}}\text{d}z$, $C$分别为：
+        \begin{enumerate}[(i)]
+            \item $\left|z\right|=\dfrac{1}{2}$.
+            \item $\left|z\right|=3$.
+        \end{enumerate}
+        \item $\displaystyle\oint_C \frac{1}{z^2+1} \text{e}^{iz}\text{d}z$, $C$分别为：
+        \begin{enumerate}[(i)]
+            \item $\left|z-i\right|=1$.
+            \item $\left|z+i\right|+\left|z-i\right|=2\sqrt{2}$.
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}[(1)]
+        \item 对被积函数分析，$\displaystyle f(z)=\frac{1}{(z+1)(z-1)}\sin{\frac{\pi z}{4}}$，故奇点为 $1$ 和 $-1$.
+        \begin{enumerate}[(i)]
+            \item 显然此时的围道不包含奇点，由Cauchy定理，积分结果为0。
+            \item 此时积分积分围道包含奇点 $1$ 和 $-1$，由Cauchy积分公式，有\\
+            $\displaystyle\oint_C\frac{1}{(z+1)(z-1)}\sin{\frac{\pi z}{4}}\text{d}z = 
+            2\pi i(\frac{1}{z+1}\sin{\frac{\pi z}{4}})|_{z=1} + 2\pi i(\frac{1}{z-1}\sin{\frac{\pi z}{4}})|_{z=-1} = 
+            \sqrt{2}\pi i$.
+        \end{enumerate}
+        \item 对被积函数分析，$\displaystyle f(z)=\frac{1}{(z+i)(z-i)}\text{e}^{iz}$，故奇点为 $i$ 和 $-i$.
+        \begin{enumerate}[(i)]
+            \item 此时包含奇点 $i$，由Cauchy积分公式，有\\
+                  $\displaystyle\oint_C\frac{1}{(z+i)(z-i)}\text{e}^{iz}\text{d}z = 
+                  2\pi i(\frac{1}{z+i}\text{e}^{iz})|_{z=i} = 
+                  \frac{\pi}{\text{e}}$.
+            \item 此时包含奇点 $i$ 和 $-i$，由Cauchy积分公式，有\\
+                  $\displaystyle\oint_C\frac{1}{(z+i)(z-i)}\text{e}^{iz}\text{d}z =
+                  2\pi i(\frac{1}{z+i}\text{e}^{iz})|_{z=i} + 2\pi i(\frac{1}{z-i}\text{e}^{iz})|_{z=-i} = 
+                  \frac{\pi}{\text{e}} - \pi\text{e}\textcolor{red}{= -2\pi\sinh{1}}$.
+        \end{enumerate} 
+    \end{enumerate}
+\end{solution}
+
+\begin{problem}
+    计算下列积分：
+    \begin{enumerate}
+        \item $\displaystyle\oint_{\left|z\right|=2} \frac{\cos{z}}{z}\text{d}z$;
+        \item $\displaystyle\oint_{\left|z\right|=2} \frac{z^2-1}{z^2+1}\text{d}z$;
+        \item $\displaystyle\oint_{\left|z\right|=2} \frac{\sin{\text{e}^z}}{z}\text{d}z$;
+        \item $\displaystyle\oint_{\left|z\right|=2} \frac{\text{e}^z}{\cosh{z}}\text{d}z$;
+        \item $\displaystyle\oint_{\left|z\right|=2} \frac{\sin{z}}{z^2}\text{d}z$;
+        \item $\displaystyle\oint_{\left|z\right|=2} \frac{\left|z\right|\text{e}^z}{z^2}\text{d}z$;
+        \item $\displaystyle\oint_{\left|z\right|=2} \frac{\sin{z}}{z^4}\text{d}z$;
+        \item $\displaystyle\oint_{\left|z\right|=2}\frac{\text{d}z}{z^2(z^2+16)}$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}[(1)]
+        \item 奇点为原点，在围道内，由Cauchy积分公式，有\\
+              $\displaystyle\oint_{\left|z\right|=2} \frac{\cos{z}}{z}\text{d}z = 
+              2\pi i(\cos{z})|_{z=0} = 
+              2\pi i$;
+        \item 对被积函数分析，$\displaystyle f(z)=\frac{z^2-1}{(z+i)(z-i)}$，故奇点为 $i$ 和 $-i$，均在围道内，由Cauchy积分公式，有\\
+              $\displaystyle\oint_{\left|z\right|=2} \frac{z^2-1}{z^2+1}\text{d}z = 
+              2\pi i(\frac{z^2-1}{z+i})|_{z=i} + 2\pi i(\frac{z^2-1}{z-i})|_{z=-i} = 
+              -2\pi + 2\pi = 
+              0$;
+        \item 奇点为原点，在围道内，由Cauchy积分公式，有\\
+              $\displaystyle\oint_{\left|z\right|=2} \frac{\sin{\text{e}^z}}{z}\text{d}z = 
+              2\pi i(\sin{\text{e}^z})|_{z=0} = 
+              2\pi \sin{1} $;
+        \item 对被积函数分析，$\displaystyle f(z)=\frac{\text{e}^{z}}{\cos{iz}}$，奇点为$\displaystyle\frac{\pi}{2}i+2k\pi i\ ,\ k\in\mathbb{Z}$，
+              其中$\pm\dfrac{\pi i}{2}$在围道内，但此时不满足Cauchy积分公式所需表达形式，故应根据Cauchy定理，将原积分围道转化为两个围绕奇点的围道再求和，
+              在 $\dfrac{\pi i}{2}$ 点附近选取一半径为 $\rho$ 的圆为围道 $C_1$，
+              在 $-\dfrac{\pi i}{2}$ 点附近选取一半径为 $\rho$ 的圆为围道 $C_2$，
+              先考虑$\displaystyle\oint_{C_1} \frac{\text{e}^z}{\cosh{z}}\text{d}z$，
+              不妨取 $z=\dfrac{\pi i}{2}+\rho\text{e}^{i\theta}$，此时 $\text{d}z=i\rho\text{e}^{i\theta}\text{d}\theta$，则有
+              \begin{equation*}
+                \oint_{C_1} \frac{\text{e}^z}{\cosh{z}}\text{d}z = 
+                \int_{0}^{2\pi}\frac{\text{e}^{\frac{\pi i}{2}+\rho\text{e}^{i\theta}}}{\cosh{(\frac{\pi i}{2}+\rho\text{e}^{i\theta})}}i\rho\text{e}^{i\theta}\text{d}\theta
+              \end{equation*}
+              当 $\rho\to0$ 时，且 $\cosh{z}=\cos{iz}$，可以化简得到
+              \begin{equation*}
+                \oint_{C_1} \frac{\text{e}^z}{\cosh{z}}\text{d}z = 
+                \int_{0}^{2\pi}\frac{\text{e}^{\frac{\pi i}{2}}}{\cos{(-\frac{\pi}{2}+i\rho\text{e}^{i\theta})}}i\rho\text{e}^{i\theta}\text{d}\theta = 
+                \int_{0}^{2\pi}\frac{\text{e}^{\frac{\pi i}{2}}}{i\rho\text{e}^{i\theta}}i\rho\text{e}^{i\theta}\text{d}\theta =
+                2\pi i
+              \end{equation*}
+              再考虑$\displaystyle\oint_{C_2} \frac{\text{e}^z}{\cosh{z}}\text{d}z$，
+              不妨取 $z=-\dfrac{\pi i}{2}+\rho\text{e}^{i\theta}$，此时 $\text{d}z=i\rho\text{e}^{i\theta}\text{d}\theta$，则有
+              \begin{equation*}
+                \oint_{C_2} \frac{\text{e}^z}{\cosh{z}}\text{d}z = 
+                \int_{0}^{2\pi}\frac{\text{e}^{-\frac{\pi i}{2}+\rho\text{e}^{i\theta}}}{\cosh{(-\frac{\pi i}{2}+\rho\text{e}^{i\theta})}}i\rho\text{e}^{i\theta}\text{d}\theta
+              \end{equation*}
+              当 $\rho\to0$ 时，且 $\cosh{z}=\cos{iz}$，可以化简得到
+              \begin{equation*}
+                \oint_{C_2} \frac{\text{e}^z}{\cosh{z}}\text{d}z = 
+                \int_{0}^{2\pi}\frac{\text{e}^{-\frac{\pi i}{2}}}{\cos{(\frac{\pi}{2}+i\rho\text{e}^{i\theta})}}i\rho\text{e}^{i\theta}\text{d}\theta = 
+                \int_{0}^{2\pi}\frac{\text{e}^{-\frac{\pi i}{2}}}{-i\rho\text{e}^{i\theta}}i\rho\text{e}^{i\theta}\text{d}\theta =
+                2\pi i
+              \end{equation*}
+              综上，最终得到
+              \begin{equation*}
+                \oint_{\left|z\right|=2} \frac{\text{e}^z}{\cosh{z}}\text{d}z =
+                \oint_{C_1} \frac{\text{e}^z}{\cosh{z}}\text{d}z + 
+                \oint_{C_2} \frac{\text{e}^z}{\cosh{z}}\text{d}z = 
+                4\pi i.
+              \end{equation*}
+        \item 奇点为原点，在围道内，但不可以直接使用Cauchy积分公式，应根据Cauchy定理，将原积分围道转化为围绕原点的围道再求，
+              在原点附近选取一半径为 $\rho$ 的圆为围道，
+              不妨取 $z=\rho\text{e}^{i\theta}$，此时 $\text{d}z=i\rho\text{e}^{i\theta}\text{d}\theta$，则有
+              \begin{equation*}
+                \oint_{\left|z\right|=2} \frac{\sin{z}}{z^2}\text{d}z = 
+                \int_{0}^{2\pi}\frac{\sin{(\rho\text{e}^{i\theta})}}{\rho^2\text{e}^{2i\theta}}i\rho\text{e}^{i\theta}\text{d}\theta = 
+                \int_{0}^{2\pi}\frac{\sin{(\rho\text{e}^{i\theta})}}{\rho\text{e}^{i\theta}}i\text{d}\theta
+              \end{equation*}
+              当 $\rho\to0$ 时，可以化简得到
+              \begin{equation*} 
+                \oint_{\left|z\right|=2} \frac{\sin{z}}{z^2}\text{d}z = 
+                \int_{0}^{2\pi}\frac{\rho\text{e}^{i\theta}}{\rho\text{e}^{i\theta}}i\text{d}\theta = 
+                2\pi i.
+              \end{equation*}
+        \item 奇点为原点，在围道内，但不可以直接使用Cauchy积分公式，应根据Cauchy定理，将原积分围道转化为围绕原点的围道再求，
+              在原点附近选取一半径为 $\rho$ 的圆为围道，
+              不妨取 $z=\rho\text{e}^{i\theta}$，此时 $\text{d}z=i\rho\text{e}^{i\theta}\text{d}\theta$，则有
+              \begin{equation*}
+                \oint_{\left|z\right|=2} \frac{\left|z\right|\text{e}^z}{z^2}\text{d}z =
+                \int_{0}^{2\pi}\frac{2\text{e}^{\rho\text{e}^{i\theta}}}{\rho^2\text{e}^{2i\theta}}i\rho\text{e}^{i\theta}\text{d}\theta =
+                \int_{0}^{2\pi}\frac{2\text{e}^{\rho\text{e}^{i\theta}}}{\rho\text{e}^{i\theta}}i\text{d}\theta
+              \end{equation*}
+              当 $\rho\to0$ 时，可以化简得到
+              \begin{equation*}
+                \oint_{\left|z\right|=2} \frac{\left|z\right|\text{e}^z}{z^2}\text{d}z =
+                \int_{0}^{2\pi} 2i\text{d}\theta = 
+                4\pi i.
+              \end{equation*}
+        \item 由解析函数高阶导数公式 $\displaystyle f^{(n)}(z)=\frac{n!}{2\pi i}
+              \oint_C\frac{f(\zeta)}{(\zeta - z)^{(n+1)}}\text{d}\zeta$，
+              \begin{equation*}
+                \oint_{\left|z\right|=2} \frac{\sin{z}}{z^4}\text{d}z = 
+                \dfrac{2\pi i}{3!}\frac{\text{d}^3}{\text{d}z^3}(\sin{z})|_{z=0} =
+                -\frac{\pi i}{3}.
+              \end{equation*}
+        \item 对被积函数分析，奇点为原点，对原式子进行拆分，得到
+            \begin{equation*}
+                f(z)=\frac{1}{z^2(z^2+16)}=\frac{1}{z^2}-\frac{15}{z^2+16}
+            \end{equation*}
+              显然拆分后后面分式无奇点，积分结果为0，前面分式积分结果也为0，故原积分结果为0.
+    \end{enumerate}
+\end{solution}
+\begin{note}
+    \begin{itemize}
+        \item (4)需要注意，也可以用留数定理做，但不可以使用Cauchy积分公式。
+        \item (5)也可以用解析函数高阶导数公式做，$\displaystyle 2\pi i\frac{\text{d}}{\text{d}z}(\sin{z})|_{z=0} = 2\pi i$。
+        \item (6)也可以用解析函数高阶导数公式做，$\displaystyle 2\pi i\frac{\text{d}}{\text{d}z}(2\text{e}^z)|_(z=0) = 4\pi i$。
+        \item \textcolor{red}{疑问：(7)如果按照缩小围道方法做，似乎无法得到正确答案？}
+    \end{itemize}
+\end{note}
+
+\newpage
+\section{第四章习题}
+
+\begin{problem}
+    判断下列级数的收敛性与绝对收敛性：
+    \begin{enumerate}[(1)]
+        \item $\displaystyle\sum_{n=2}^\infty\frac{i^n}{\ln{n}}$;
+        \item $\displaystyle\sum_{n=1}^\infty\frac{i^n}{n}$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    试确定下列级数的收敛区域：
+    \begin{enumerate}
+        \item $\displaystyle\sum_{n=1}^\infty z^{n!}$;
+        \item $\displaystyle\sum_{n=1}^\infty (\frac{z}{1+z})^n$;
+        \item $\displaystyle\sum_{n=1}^\infty (-)^n(z^2+2z+2)^n$;
+        \item $\displaystyle\sum_{n=1}^\infty 2^n\sin{\frac{z}{3^n}}$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    试求下列幂级数的收敛半径：
+    \begin{enumerate}[(1)]
+        \item $\displaystyle\sum_{n=1}^\infty \frac{1}{n^n}z^n$;
+        \item $\displaystyle\sum_{n=1}^\infty \frac{1}{2^n n^n}z^n$;
+        \item $\displaystyle\sum_{n=1}^\infty \frac{n!}{n^n}z^n$;
+        \item $\displaystyle\sum_{n=1}^\infty \frac{(-)^n}{2^{2n}(n!)^2}z^n$;
+        \item $\displaystyle\sum_{n=1}^\infty n^{\ln{n}}z^n$;
+        \item $\displaystyle\sum_{n=1}^\infty \frac{1}{2^{2n}}z^{2n}$;
+        \item $\displaystyle\sum_{n=1}^\infty \frac{\ln{n^n}}{n!}z^n$;
+        \item $\displaystyle\sum_{n=1}^\infty (1-\frac{1}{n})^n z^n$.
+    \end{enumerate}
+\end{problem}
 \end{document}
