@@ -622,8 +622,9 @@
     \begin{itemize}
         \item (4)需要注意，也可以用留数定理做，但不可以使用Cauchy积分公式。
         \item (5)也可以用解析函数高阶导数公式做，$\displaystyle 2\pi i\frac{\text{d}}{\text{d}z}(\sin{z})|_{z=0} = 2\pi i$。
-        \item (6)也可以用解析函数高阶导数公式做，$\displaystyle 2\pi i\frac{\text{d}}{\text{d}z}(2\text{e}^z)|_(z=0) = 4\pi i$。
+        \item (6)也可以用解析函数高阶导数公式做，$\displaystyle 2\pi i\frac{\text{d}}{\text{d}z}(2\text{e}^z)|_{z=0} = 4\pi i$。
         \item \textcolor{red}{疑问：(7)如果按照缩小围道方法做，似乎无法得到正确答案？}
+        \item (8)也可以用解析函数高阶导数公式做，$\displaystyle 2\pi i\frac{\text{d}}{\text{d}z}(\frac{1}{z^2+16})|_{z=0} = 0$。
     \end{itemize}
 \end{note}
 
@@ -665,6 +666,178 @@
         \item $\displaystyle\sum_{n=1}^\infty \frac{1}{2^{2n}}z^{2n}$;
         \item $\displaystyle\sum_{n=1}^\infty \frac{\ln{n^n}}{n!}z^n$;
         \item $\displaystyle\sum_{n=1}^\infty (1-\frac{1}{n})^n z^n$.
+    \end{enumerate}
+\end{problem}
+
+\newpage
+\section{第五章习题}
+
+\begin{problem}
+    将下列函数在指定点展开为Taylor级数，并给出其收敛半径：
+    \begin{enumerate}[(1)]
+        \item $1-z^2$，在 $z=1$ 展开;
+        \item $\sin{z}$，在 $z=n\pi$ 展开;
+        \item $\displaystyle\frac{1}{1+z+z^2}$，在 $z=0$ 展开;
+        \item $\displaystyle\frac{\sin{z}}{1-z}$，在 $z=0$ 展开;
+        \item $\displaystyle\text{e}^{\frac{1}{1-z}}$，在 $z=0$ 展开(可只求前四项).
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    将下列函数在指定点展开为Taylor级数，并给出其收敛半径：
+    \begin{enumerate}[(1)]
+        \item $\ln{z}$，在 $z=i$ 展开，规定 $0\leq\text{arg}\ z<2\pi$;
+        \item $\ln{z}$，在 $z=i$ 展开，规定 $\ln{z}|_{z=i}=-\dfrac{3}{2}\pi i$;
+        \item $\arctan{z}$ 的主值，在 $z=0$ 展开;
+        \item $\ln{\dfrac{1+z}{1-z}}$，在 $z=\infty$ 展开，规定 $\displaystyle\ln{\frac{1+z}{1-z}}|_{z=\infty}=(2k+1)\pi i$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    求下列无穷级数之和，注意给出相应的收敛区域：
+    \begin{enumerate}[(1)]
+        \item $\displaystyle\sum_{n=0}^{\infty}\frac{1}{2n+1}z^{2n+1}$;
+        \item $\displaystyle\sum_{n=0}^{\infty}\frac{1}{(2n)!}z^{2n}$;
+        \item $\displaystyle\sum_{n=0}^{\infty}\sum_{m=0}^{\infty}\frac{(n+m)!}{n!\ m!}(\frac{z}{2})^{n+m}$;
+        \item $\displaystyle\sum_{n=0}^{\infty}\sum_{m=0}^{\infty}\sum_{p=0}^{\infty}\frac{(n+m+p)!}{n!\ m!\ p!}(\frac{z}{3})^{n+m+p}$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    求下列函数的Laurent展开：
+    \begin{enumerate}[(1)]
+    \item $\displaystyle\frac{1}{z^2(z-1)}$，在 $z=1$ 附近展开;
+    \item $\displaystyle\frac{1}{z^2(z-1)}$，展开区域为 $1<\left|z\right|<\infty$;
+    \item $\displaystyle\frac{1}{z^2-3z+2}$，展开区域为 $1<\left|z\right|<2$;
+    \item $\displaystyle\frac{1}{z^2-3z+2}$，展开区域为 $2<\left|z\right|<\infty$;
+    \item $\displaystyle\frac{(z-1)(z-2)}{(z-3)(z-4)}$，展开区域为 $3<\left|z\right|<4$;
+    \item $\displaystyle\frac{(z-1)(z-2)}{(z-3)(z-4)}$，展开区域为 $4<\left|z\right|<\infty$;
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    判断下列函数孤立奇点的性质，如果是极点，确定其阶数：
+    \begin{enumerate}[(1)]
+        \item $\dfrac{1}{z^2+a^2}$, $a\neq 0$;
+        \item $\dfrac{\cos{az}}{z^2}$;
+        \item $\displaystyle\frac{\cos{az}-\cos{bz}}{z^2}$, $a^2\neq b^2$;
+        \item $\displaystyle\frac{\sin{z}}{z^2}-\frac{1}{z}$;
+        \item $\displaystyle\cos{\frac{1}{\sqrt{z}}}$;
+        \item $\displaystyle\frac{\sqrt{z}}{\sin{\sqrt{z}}}$;
+        \item $\displaystyle\frac{1}{(z-1)\ln{z}}$;
+        \item $\displaystyle\int_{0}^{z}\frac{\sinh{\sqrt{\zeta}}}{\sqrt{\zeta}}\text{d}\zeta$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\newpage
+\section{第六章习题}
+
+\begin{problem}
+    求下列函数在指定点 $z_0$ 处的留数：
+    \begin{enumerate}[(1)]
+        \item $\displaystyle\frac{1}{z-1}\text{e}^{z^2}$,\ $z_0=1$;
+        \item $\displaystyle(\frac{z}{1-\cos{z}})^2$,\ $z_0=0$;
+        \item $\displaystyle\frac{\text{e}^{z}}{(z^2-1)^2}$,\ $z_0=1$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    求下列函数在复平面 $\mathbb{C}$ 内每一个孤立奇点处的留数：
+    \begin{enumerate}[(1)]
+        \item $\dfrac{1}{z^3-z^5}$;
+        \item $\dfrac{z}{1-\cos{z}}$;
+        \item $\displaystyle\text{e}^{\frac{1}{2}(z-\frac{1}{z})}$;
+        \item $\displaystyle\frac{1}{(z-1)\ln{z}}$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    计算下列积分值：
+    \begin{enumerate}[(1)]
+        \item $\displaystyle\oint_{\left|z-1\right|=1}\frac{1}{1+z^4}\ \text{d}z$;
+        \item $\displaystyle\oint_{\left|z-1\right|=1}\frac{1}{z^2-1}\sin{\frac{\pi z}{4}}\ \text{d}z$;
+        \item $\displaystyle\oint_{\left|z\right|=n}\tan{\pi z}\ \text{d}z$,$n$为正整数;
+        \item $\displaystyle\oint_{\left|z\right|=1}\frac{\text{e}^z}{z^3}\ \text{d}z$;
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    计算下列积分：
+    \begin{enumerate}[(1)]
+        \item $\displaystyle\int_{0}^{2\pi}\cos^{2n}{\theta}\ \text{d}\theta$,$n$为正整数;
+        \item $\displaystyle\int_{0}^{\pi}\frac{\text{d}\theta}{1+\sin^2{\theta}}$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    计算下列积分：
+    \begin{enumerate}[(1)]
+        \item $\displaystyle\int_{-\infty}^{\infty}\frac{x^2}{1+x^4}\text{d}x$;
+        \item $\displaystyle\int_{-\infty}^{\infty}\frac{\text{d}x}{(1+x^2)\cosh{\frac{\pi x}{2}}}$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    计算下列积分：
+    \begin{enumerate}[(1)]
+        \item $\displaystyle\int_{0}^{\infty}\frac{\cos{x}}{1+x^4}\text{d}x$;
+        \item $\displaystyle\int_{0}^{\infty}\frac{\cos{x}}{(1+x^2)^3}\text{d}x$;
+        \item $\displaystyle\int_{-\infty}^{\infty}\frac{x\sin{x}}{x^2-2x+2}\text{d}z$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    计算下列积分：
+    \begin{enumerate}[(1)]
+        \item v.p.$\displaystyle\int_{-\infty}^{\infty}\frac{\text{d}x}{x(x-1)(x-2)}$;
+        \item $\displaystyle\int_{0}^{\infty}\frac{x-\sin{x}}{x^3(1+x^2)}\text{d}x$;
+        \item $\displaystyle\int_{-\infty}^{\infty}\frac{\text{e}^{px}-\text{e}^{qx}}{1-\text{e}^x}\text{d}x$,\ $0<p<1,0<q<1$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    计算下列积分：
+    \begin{enumerate}[(1)]
+        \item v.p.$\displaystyle\int_{0}^{\infty}\frac{x^{s-1}}{1-x}\text{d}x$,\ $0<s<1$;
+        \item $\displaystyle\int_{0}^{\infty}\frac{x^{s}}{(1+x^2)^2}\text{d}x$,\ $-1<s<3$;
+        \item $\displaystyle\int_{0}^{\infty}\frac{x^{\alpha-1}\ln{x}}{1+x}\text{d}x$,\ $0<\alpha<1$;
+        \item $\displaystyle\int_{0}^{\infty}\frac{\ln{x}}{(x+a)(x+b)}\text{d}x$,\ $b>a>0$.
     \end{enumerate}
 \end{problem}
 \end{document}
