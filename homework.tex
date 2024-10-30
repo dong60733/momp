@@ -639,7 +639,31 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item 对原级数进行拆分，
+              \begin{equation*}
+                \sum_{n=2}^\infty\frac{i^n}{\ln{n}} = 
+                \sum_{k=1}^\infty\frac{(-1)^k}{\ln{2k}} + i\sum_{k=1}^\infty\frac{(-1)^k}{\ln{2k+1}}
+              \end{equation*}
+              由Leibnitz判别法可知，拆分后的两个交错级数都收敛，故原级数收敛，
+              现判断是否绝对收敛：
+              \begin{equation*}
+                \left|\sum_{n=2}^\infty\frac{i^n}{\ln{n}}\right| = \sum_{n=2}^\infty\frac{1}{\ln{n}}
+                > \sum_{n=2}^\infty\frac{1}{n}
+              \end{equation*}
+              调和级数发散，故 $\displaystyle\sum_{n=2}^\infty\frac{i^n}{\ln{n}}$ 收敛但不绝对收敛。
+        \item 同(1)对原级数进行拆分
+              \begin{equation*}
+                \sum_{n=1}^\infty\frac{i^n}{n} = 
+                \sum_{k=1}^\infty\frac{(-1)^k}{2k} + i\sum_{k=0}^\infty\frac{(-1)^k}{2k+1}
+              \end{equation*}
+              由Leibnitz判别法可知，拆分后的两个交错级数都收敛，故原级数收敛，
+              现判断是否绝对收敛：
+              \begin{equation*}
+                \left|\sum_{n=1}^\infty\frac{i^n}{n}\right| = \sum_{n=1}^\infty\frac{1}{n}
+              \end{equation*}
+              调和级数发散，故 $\displaystyle\sum_{n=1}^\infty\frac{i^n}{n}$ 收敛但不绝对收敛。
+    \end{enumerate}
 \end{solution}
 
 \begin{problem}
@@ -652,7 +676,22 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item 对幂级数分析，有
+              \begin{equation*}
+                c_n = \left\{
+                \begin{aligned}
+                    &1 \quad n=k!,k=1,2,3,\cdots\\
+                    &0 \quad others\\
+                \end{aligned}
+                \right
+                .
+              \end{equation*}
+              根据Cauchy-Hadamard公式，收敛半径为
+              \begin{equation*}
+                R = 
+              \end{equation*}
+    \end{enumerate}
 \end{solution}
 
 \begin{problem}
