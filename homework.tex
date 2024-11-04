@@ -689,10 +689,21 @@
               \end{equation*}
               根据Cauchy-Hadamard公式，收敛半径为
               \begin{equation*}
-                R = 
+                R = \frac{1}{\varlimsup\limits_{n\to\infty}\left|c_n\right|^{\frac{1}{n}}}
+                  = 1
               \end{equation*}
+              收敛区域为 $\left|z\right|<1$;
+        \item 进行换元，$\displaystyle t = \frac{z}{1+z}$，这时$c_n=1$，
+              由Cauchy-Hadamard公式，收敛半径为1，故 $\left|\dfrac{z}{1+z}\right| < 1$，
+              解出收敛区域为 $\text{Re}z > -\dfrac{1}{z}$;
+        \item 进行换元，$t = z^2 + 2z + 2$，这时$c_n=(-)^n$，
+              由Cauchy—Hadamard公式，收敛半径为1，故收敛区域为$\left|z^2 + 2z + 2\right| < 1$，
+        \item 当 $n\to\infty$ 时，$\dfrac{z}{3^n}\to 0$在全平面成立，故该级数在全平面收敛。
     \end{enumerate}
 \end{solution}
+\begin{note}
+    (3)收敛区域的数值求解没解出来。
+\end{note}
 
 \begin{problem}
     试求下列幂级数的收敛半径：
@@ -707,7 +718,77 @@
         \item $\displaystyle\sum_{n=1}^\infty (1-\frac{1}{n})^n z^n$.
     \end{enumerate}
 \end{problem}
-
+\begin{solution}
+    \begin{enumerate}[(1)]
+        \item $c_n = \dfrac{1}{n^n}$，根据Cauchy-Hadamard公式，收敛半径为
+            \begin{equation*}
+            R = \frac{1}{\varlimsup\limits_{n\to\infty}\left|c_n\right|^{\frac{1}{n}}}
+              = \varliminf\limits_{n\to\infty}\left|\frac{1}{c_n}\right|^{\frac{1}{n}}
+              = \varliminf\limits_{n\to\infty}\left|n^n\right|^{\frac{1}{n}}
+              = \lim_{n\to\infty} n
+              = \infty;
+            \end{equation*}
+        \item $c_n = \dfrac{1}{2^nn^n}$，根据Cauchy-Hadamard公式，收敛半径为
+            \begin{equation*}
+            R = \frac{1}{\varlimsup\limits_{n\to\infty}\left|c_n\right|^{\frac{1}{n}}}
+              = \varliminf\limits_{n\to\infty}\left|\frac{1}{c_n}\right|^{\frac{1}{n}}
+              = \varliminf\limits_{n\to\infty}\left|2^nn^n\right|^{\frac{1}{n}}
+              = \lim_{n\to\infty} 2n
+              = \infty;
+            \end{equation*}
+        \item $c_n = \dfrac{n!}{n^n}$，根据d'Alembert公式，收敛半径为
+            \begin{equation*}
+            R = \lim_{n\to\infty}\left|\frac{c_n}{c_{n+1}}\right|
+              = \lim_{n\to\infty}\left|\frac{n!n^n}{(n+1)!(n+1)^{n+1}}\right|
+              = \lim_{n\to\infty}(1+\frac{1}{n})^n
+              = e;
+            \end{equation*}
+        \item $c_n = \frac{(-)^n}{2^{2n}(n!)^2}$,根据d'Alembert公式，收敛半径为
+            \begin{equation*}
+            R = \lim_{n\to\infty}\left|\frac{c_n}{c_{n+1}}\right|
+              = \lim_{n\to\infty}\left|-\frac{2^{2(n+1)}[(n+1)!]^2}{2^{2n}(n!)^2}\right|
+              = \lim_{n\to\infty}4(n+1)^2
+              = \infty;
+            \end{equation*}
+        \item $c_n = n^{\ln{n}}$，根据Cauchy-Hadamard公式，收敛半径为
+            \begin{equation*}
+            R = \frac{1}{\varlimsup\limits_{n\to\infty}\left|c_n\right|^{\frac{1}{n}}}
+              = \frac{1}{\varlimsup\limits_{n\to\infty}\left|n^{\ln{n}}\right|^{\frac{1}{n}}}
+              = \lim_{n\to\infty}n^{\frac{\ln{n}}{n}}
+              = 1;
+            \end{equation*}
+        \item 换元 $t = z^2$，此时
+            \begin{equation*}
+            c_n = \left\{
+            \begin{aligned}
+                &0 \ \qquad n=2k+1,k\in\mathbb{N}\\
+                &\frac{1}{2^{2n}} \,\quad n=2k,k\in\mathbb{N}\\
+            \end{aligned}
+            \right
+            .
+            \end{equation*}
+              根据Cauchy-Hadamard公式，对于$t$收敛半径为
+              \begin{equation*}
+                R = \frac{1}{\varlimsup\limits_{n\to\infty}\left|c_n\right|^{\frac{1}{n}}}
+                  = \frac{1}{\varlimsup\limits_{n\to\infty}\left|2^{-2}\right|}
+                  = 4
+              \end{equation*}
+               故$z$的收敛半径为2; 
+        \item $c_n = \frac{n\ln{n}}{n!}$,根据d'Alembert公式，收敛半径为
+            \begin{equation*}
+            R = \lim_{n\to\infty}\left|\frac{c_n}{c_{n+1}}\right|
+              = \lim_{n\to\infty}\left|-\frac{n\ln{n}}{\ln{(n+1)}}\right|
+              = \infty;
+            \end{equation*}
+        \item $c_n = (1-\dfrac{1}{n})^n$，根据Cauchy-Hadamard公式，收敛半径为
+        \begin{equation*}
+        R = \frac{1}{\varlimsup\limits_{n\to\infty}\left|c_n\right|^{\frac{1}{n}}}
+          = \frac{1}{\varlimsup\limits_{n\to\infty}\left|(1-\frac{1}{n})^n\right|^{\frac{1}{n}}}
+          = \lim_{t\to\infty}1-\frac{1}{n}
+          = 1.
+        \end{equation*}
+    \end{enumerate}
+\end{solution}
 \newpage
 \section{第五章习题}
 
