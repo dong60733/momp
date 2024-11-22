@@ -804,8 +804,31 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item $1 - z^2 = (1+z)(1-z) = (z-1)[-(z-1)-2] = -(z-1)^2 -2(z-1)$，在全平面收敛。
+        \item 不妨取 $t = z - n\pi$，有 $\sin{z} = \sin{(t + n\pi)}$，\\[12pt]
+              已知 $\displaystyle\sin{t} = \sum_{n = 0}^{\infty}\frac{(-)^n}{(2n+1)!}t^{2n+1}$，
+              故 $\displaystyle\sin{(t + n\pi)} = \sum_{k = 0}^{\infty}\frac{(-)^{n+k}}{(2k+1)!}t^{2k+1}$，\\[12pt]
+              即展开结果为 $\displaystyle\sin{z} = \sum_{k = 0}^{\infty}\frac{(-)^{n+k}}{(2k+1)!}(z-n\pi)^{2k+1}$，在全平面收敛。
+        \item 因式分解得$\displaystyle\dfrac{1}{1+z+z^2} = \dfrac{1}{(z-\text{e}^{\frac{2\pi}{3}i})(z-\text{e}^{-\frac{2\pi}{3}i})} =
+              \dfrac{1}{\sqrt{3}i}(\frac{\text{e}^{\frac{2\pi}{3}i}}{1-\text{e}^{\frac{2\pi}{3}i}}z - \frac{\text{e}^{-\frac{2\pi}{3}i}}{1-\text{e}^{-\frac{2\pi}{3}i}}z)$，\\[12pt]
+              即展开结果为 $\displaystyle\dfrac{1}{\sqrt{3}i}\sum_{n=0}^{\infty}[\text{e}^{\frac{2(n+1)\pi}{3}}-\text{e}^{-\frac{2(n+1)\pi}{3}}]z^n =
+              \frac{2}{\sqrt{3}}\sum_{n=0}^{\infty}\sin{[\frac{2}{3}(n+1)\pi]}·z^n$，
+              收敛半径为1。
+        \item $\displaystyle\frac{\sin{z}}{1-z} = \sin{z}·\frac{1}{1-z} = \sum_{k=0}^{\infty}\frac{(-)^k}{(2k+1)!}z^{2k+1}·\sum_{l=0}^{\infty}z^l =
+              \sum_{k=0}^{\infty}\sum_{l=0}^{\infty}\frac{(-)^k}{(2k+1)!}z^{2k+l+1}$，\\[12pt]
+              即展开结果为 $\displaystyle\sum_{n=1}^{\infty}(\sum_{k=0}^{\frac{n-1}{2}}\frac{(-)^k}{(2k+1)!})z^n$，收敛半径为1（公共区域）。
+        \item 根据Taylor级数的定义，分别求出函数$\displaystyle f(x)=\text{e}^{\frac{1}{1-z}}$在$z=0$处的各阶导数，
+              $f(0)=e,\ f'(0)=e,\ f^{(2)}(0)=3e,\ f^{(3)}(0)=13e,\ f^{(4)}(0)=73e$，故Taylor展开为$e+ez+\frac{3e}{2}z^2+\frac{13e}{6}z^3+\frac{73e}{24}z^4+\cdots$，
+              收敛半径为1（最近的奇点为1）。
+    \end{enumerate}
 \end{solution}
+\begin{note}
+    \begin{itemize}
+        \item (3)$\displaystyle\sum_{n=0}^{\infty}\frac{\sin{\frac{2(n+1)\pi}{3}}}{\sin{\frac{2\pi}{3}}}z^n$.
+        \item (5)$\displaystyle\sum_{n=0}^{\infty}\frac{1}{n!}\frac{\text{d}^{n}(z^{n-1}\text{e}^{z})}{\text{d}z^n}\bigg|_{z=1}z^n$.
+    \end{itemize}
+\end{note}
 
 \begin{problem}
     将下列函数在指定点展开为Taylor级数，并给出其收敛半径：
@@ -1023,7 +1046,7 @@
 \end{solution}
 
 \begin{problem}
-    利用Lapla变换计算积分：
+    利用Laplace变换计算积分：
     $\displaystyle\int_{0}^{\infty}\frac{\text{e}^{-ax}-\text{e}^{-bx}}{x}\cos{cx}\text{d}x$,
     $a>0,\ b>0,\ c>0$.
 \end{problem}
@@ -1040,4 +1063,74 @@
     
 \end{solution}
 
+\newpage
+\section{第九章习题}
+
+\begin{problem}
+   求方程 $w'' - z^2w = 0$ 在 $z = 0$ 领域内的两个幂级数解。 
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    求方程 $z^2(1-z)w'' + z(1-3z)w' - (1+z)w = 0$ 在 $z = 0$ 领域内的两个幂级数解。
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\newpage
+\section{第十章习题}
+
+\begin{problem}
+    证明 $\delta$ 函数的下列性质：
+    \begin{enumerate}[(1)]
+        \item $\delta(x) = \delta(-x)$;
+        \item $x\delta(x) = 0$;
+        \item $g(x)\delta(x) = g(0)\delta(x)$;
+        \item $x\delta'(x) = -\delta(x)$;
+        \item $\delta(ax) = \dfrac{1}{a}\delta(x)$, $a > 0$;
+        \item $g(x)\delta'(x) = g(0)\delta'(x) - g'(x)\delta(x)$;
+        \item $\delta(x^2 - a^2) = \dfrac{1}{2a}[\delta(x-a)+\delta(x+a)]$, $a>0$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\newpage
+\section{第十一章习题}
+
+\begin{problem}
+    在弦的横振动问题中，若弦受到一与速度成正比（比例系数为 $-\alpha$）的阻尼，试导出弦的有阻尼振动方程。
+    又若除了阻尼力之外，弦还受到与弦的位移成正比（比例系数为 $-k$）的回复力，则此时弦的振动满足的方程是什么？
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    一长为 $l$、横截面积为 $S$ 的均匀弹性杆，已知一端（$x=0$）固定，另一端（$x=l$)在杆轴方向上受拉力 $F$ 的作用而达到平衡。
+    在 $t=0$ 时，撤去外力 $F$。试列出杆的纵振动所满足的方程、边界条件和初始条件。
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    一长为 $l$ 的金属细杆（可近似地看成是一维的），通有稳定电流 $I$。如果杆的两端（$x=0$ 和 $x=l$）均按Newton冷却定律与外界交换热量。
+    外界温度为 $u_0$，初始时杆的温度为 $u_0(1-\dfrac{2x}{l})^2$。试写出杆上温度场所满足的方程、边界条件和初始条件，设金属的电阻为 $R$。
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    在铀块中，除了中子的扩散运动外，还存在中子的吸收和增值过程。设在单位时间内、单位体积中吸收和增值的中子数均正比于该时刻、该处的中子浓度 $u(\boldsymbol{r},t)$，
+    因而净增中子数可表为 $\alpha u(\boldsymbol{r},t)$， $\alpha$ 为比例常数。试导出 $u(\boldsymbol{r},t)$ 所满足的偏微分方程。
+\end{problem}
+\begin{solution}
+    
+\end{solution}
 \end{document}
