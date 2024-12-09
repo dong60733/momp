@@ -840,7 +840,32 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item 在 $z=i$ 处展开，则展开式形式应为 $\displaystyle\sum_{n=0}^{\infty}a_n(z-i)^n$，有\\[12pt]
+                $\displaystyle\ln{z} = \int_{i}^{z}\frac{1}{t}\text{d}t + \ln{i} 
+                = i\int_{i}^{z}\frac{1}{1-(1-it)}\text{d}(1-it) + \ln{i}$ \\[12pt]
+                $= \displaystyle i\int_{i}^{z}\sum_{n=0}^{\infty}(1-it)^n\text{d}(1-it) + \frac{\pi i}{2}  
+                =i\sum_{n=0}^{\infty}\int_{i}^{z}(1-it)^n\text{d}(1-it) + \frac{\pi i}{2}$ \\[12pt]
+                $= \displaystyle i\sum_{n=0}^{\infty}\frac{i^n}{n+1}(t-i)^{n+1}\bigg|_{i}^{z} + \frac{\pi i}{2} 
+                = \frac{\pi i}{2} - \sum_{n=0}^{\infty}\frac{i^{n+1}}{n+1}(z-i)^{n+1}$.\\[12pt]
+              收敛区域为 $\left|z-i\right|<1$.
+        \item 同上，结果为$\displaystyle -\frac{3\pi i}{2} - \sum_{n=0}^{\infty}\frac{i^{n+1}}{n+1}(z-i)^{n+1}$.\\[12pt]
+              收敛区域为 $\left|z-i\right|<1$.
+        \item $\displaystyle\arctan{z} = \int_{0}^{z}\frac{1}{1+t^2}\text{d}t 
+              = \int_{0}^{z}\sum_{n=0}^{\infty}(-)^nt^{2n}\text{d}t 
+              = (-)^n\sum_{n=0}^{\infty}\int_{0}^{z}t^{2n}\text{d}t
+              = \sum_{n=0}^{\infty}\frac{(-)^n}{2n+1}t^{2n+1}$.\\[12pt]
+              收敛区域为 $\left|z\right|<1$.
+        \item 做代换 $t = \dfrac{1}{z}$，则所求为 $t=0$ 处 $\displaystyle\ln{\frac{t+1}{t-1}} = \ln{(t+1) - \ln{(t-1)}}$ 的Taylor展开，\\[12pt]
+              $\displaystyle\ln{(t+1)} = \ln{(t+1)}\big|_{t=0} + \int_0^t\frac{1}{u+1}\text{d}u = \ln{(t+1)}\big|_{t=0} + \int_0^t\sum_{n=0}^{\infty}(-u)^n\text{d}u \\[12pt]
+              = \ln{(t+1)}\big|_{t=0} + \sum_{n=0}^{\infty}\frac{(-)^n}{n+1}t^{n+1}$. \\[12pt]
+              同理，可得$\displaystyle\ln{(t-1)}= \ln{(t-1)}\big|_{t=0} - \sum_{n=0}^{\infty}\frac{1}{n+1}t^{n+1}$.\\[12pt]
+              故 $\displaystyle\ln{\frac{t+1}{t-1}} = \ln{\frac{t+1}{t-1}}\Big|_{t=0} + \sum_{n=0}^{\infty}\frac{2}{2n+1}t^{2n+1}$,$\left|t\right|<1$.
+              代换 $z=\dfrac{1}{t}$ 有 \\[12pt]
+              $\displaystyle\ln{\frac{1+z}{1-z}} = \ln{\frac{1+z}{1-z}}\Big|_{z=\infty} + \sum_{n=0}^{\infty}\frac{2}{2n+1}z^{-(2n+1)} 
+              = (2k+1)\pi i + \sum_{n=0}^{\infty}\frac{2}{2n+1}z^{-(2n+1)}$.\\[12pt]
+              收敛区域为 $\left|z\right|>1$.
+    \end{enumerate}
 \end{solution}
 
 \begin{problem}
@@ -853,8 +878,27 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item 记 $\displaystyle f(z) = \sum_{n=0}^{\infty}\frac{1}{2n+1}z^{2n+1}$，有 $\displaystyle f'(z) = \sum_{n=0}^{\infty}z^{2n} = \frac{1}{1-z^2}$,\ $\left|z\right|<1$.\\[12pt]
+              故 $\displaystyle f(z) = f(0) + \int_{0}^{z}\frac{1}{1-t^2}\text{d}t = \frac{1}{2}\ln{\frac{1+z}{1-z}}$.\ 由 $f(0) = 0$ 知 $\displaystyle\ln{\frac{1+z}{1-z}}\Big|_{z=0} = 0$.\\[12pt]
+              收敛区域为 $\left|z\right|<1$.
+        \item 由 $\displaystyle\text{e}^z = \sum_{z=0}^{\infty}\frac{z^n}{n!}$，可知 $\displaystyle\sum_{z=0}^{\infty}\frac{1}{(2n)!}z^{2n} = \frac{\text{e}^z+\text{e}^{-z}}{2}$（只剩下偶数项）. \\[12pt]
+              收敛区域为 $\left|z\right|<\infty$.
+        \item 令 $l=m+n$，则 $\displaystyle\sum_{n=0}^{\infty}\sum_{m=0}^{\infty}\frac{(n+m)!}{n!\ m!}(\frac{z}{2})^{n+m} 
+              = \sum_{l=0}^{\infty}(\frac{z}{2})^l\sum_{n=0}^{l}\frac{l!}{n!(l-n)!}$. \\[12pt]
+              \textcolor{red}{由二项式展开定理有}$\displaystyle\sum_{n=0}^{l}\frac{l!}{n!(l-n)!} = (1+1)^l = 2^l$.\\[12pt]
+              故原式等于 $\displaystyle\sum_{l=0}^{\infty}2^l(\frac{z}{2})^l = \sum_{l=0}^{\infty}z^l = \frac{1}{1-z}$.\\[12pt]
+              收敛区域为 $\left|z\right|<2$.
+        \item 同上，看成 $\displaystyle\sum_{k=0}^{\infty}[(1+1)+1]^kz^k$ 的两次二项式展开，故原式等于 $\displaystyle\frac{1}{1-z}$.\\[12pt]
+              收敛区域为 $\left|z\right|<3$.
+    \end{enumerate}
 \end{solution}
+\begin{note}
+    \begin{itemize}
+        \item (3)的收敛区域应为 $\left|z\right|<2$ 与 $\text{Re}\ z<1$ 的公共区域?
+        \item (4)的收敛区域应为 $\left|z\right|<3$ 与 $\text{Re}\ z<\dfrac{3}{2}$ 及 $\left|z-2\right|<1$ 的公共区域?
+    \end{itemize}
+\end{note}
 
 \begin{problem}
     求下列函数的Laurent展开：
@@ -868,7 +912,36 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item 在 $z=1$附近展开，故Laurent展开形式为 $\displaystyle\sum_{n=-\infty}^{\infty}a_n(z-1)^n$.\\[12pt]
+              $\displaystyle\frac{1}{z^2(z-1)} = \frac{1}{z-1}\frac{1}{[1+(z-1)]^2} 
+              = -\frac{1}{z-1}\frac{\text{d}}{\text{d}z}\left[\frac{1}{1+(z-1)}\right]
+              = -\frac{1}{z-1}\sum_{n=0}^{\infty}(-)^nn(z-1)^{n-1}$.\\[12pt]
+              整理得 $\displaystyle\sum_{n=-1}^{\infty}(-)^{n+1}(n+2)(z-1)^n$.\\[12pt]
+              收敛区域为 $0<\left|z\right|<1$.
+        \item 环形区域为 $1<\left|z\right|<\infty$，故Laurent展开形式为 $\displaystyle\sum_{n=-\infty}^{\infty}a_nz^n$. 做代换 $t=\dfrac{1}{z}$ 有\\[12pt]
+              $\displaystyle\frac{1}{z^2(z-1)} = t^3\frac{1}{1-t} = t^3\sum_{n=0}^{\infty}t^n 
+              = \sum_{n=0}^{\infty}t^{n+3}$.\\[12pt]
+              整理得 $\displaystyle\sum_{n=-\infty}^{-3}z^n = \textcolor{red}{\sum_{n=3}^{\infty}z^{-n}}$.
+        \item 环形区域为 $1<\left|z\right|<2$，故Laurent展开形式为 $\displaystyle\sum_{n=-\infty}^{\infty}a_nz^n$. 做代换 $t=\dfrac{1}{z}$ 有\\[12pt]
+              $\displaystyle\frac{1}{z^2-3z+2} = \frac{1}{(z-1)(z-2)}
+              = \frac{1}{z-2} - \frac{1}{z-1} = \sum_{n=0}^{\infty}\frac{z^n}{2^{n+1}} - \frac{t}{1-t}
+              = \sum_{n=0}^{\infty}\frac{z^n}{2^{n+1}} - \sum_{n=0}^{\infty}t^{n+1}$.\\[12pt]
+              整理得 $\displaystyle -\sum_{n=-1}^{\infty}z^n + \sum_{n=0}^{\infty}\frac{z^n}{2^{n+1}}$.
+        \item 环形区域为 $2<\left|z\right|<\infty$，故Laurent展开形式为 $\displaystyle\sum_{n=-\infty}^{\infty}a_nz^n$. 做代换 $t=\dfrac{1}{z}$ 有\\[12pt]
+              $\displaystyle\frac{1}{z^2-3z+2} = \frac{1}{(z-1)(z-2)}
+              = \frac{1}{z-2} - \frac{1}{z-1} = \frac{t}{1-2t} - \frac{t}{1-t}
+              = \sum_{n=0}^{\infty}2^{n}t^{n+1} - \sum_{n=0}^{\infty}t^{n+1}$.\\[12pt]
+              整理得 $\displaystyle\sum_{n=0}^{\infty}(2^{n}-1)t^{n+1} = \sum_{n=1}^{\infty}(2^{n-1}-1)z^{-n} = \textcolor{red}{\sum_{n=2}^{\infty}(2^{n-1}-1)z^{-n}}$.
+        \item 环形区域为 $3<\left|z\right|<4$，故Laurent展开形式为 $\displaystyle\sum_{n=-\infty}^{\infty}a_nz^n$. 做代换 $t=\dfrac{1}{z}$ 有\\[12pt]
+              $\displaystyle\frac{(z-1)(z-2)}{(z-3)(z-4)} = 1 - \frac{2}{z-3} + \frac{6}{z-4}
+              = 1 - \frac{2t}{1-3t} - \frac{3}{2}\frac{1}{1-\frac{z}{4}} = 1 - \sum_{n=0}^{\infty}2t\cdot(3t)^n - \frac{3}{2}\sum_{n=0}^{\infty}\frac{z^n}{4^n}$.\\[12pt]
+              整理得 $\displaystyle 1 - 2\sum_{n=-1}^{-\infty}\frac{z^n}{3^{n+1}} - \frac{3}{2}\sum_{n=0}^{\infty}\frac{z^n}{4^n}$.
+        \item 环形区域为 $4<\left|z\right|<\infty$，故Laurent展开形式为 $\displaystyle\sum_{n=-\infty}^{\infty}a_nz^n$. 做代换 $t=\dfrac{1}{z}$ 有\\[12pt]
+              $\displaystyle\frac{(z-1)(z-2)}{(z-3)(z-4)} = 1 - \frac{2}{z-3} + \frac{6}{z-4} 
+              = 1 - \frac{2t}{1-3t} + \frac{6t}{1-4t} = 1 - \sum_{n=0}^{\infty}2t\cdot(3t)^n + \sum_{n=0}^{\infty}6t\cdot(4t)^n$.\\[12pt]
+              整理得 $\displaystyle 1 - 2\sum_{n=-1}^{-\infty}\frac{z^n}{3^{n+1}} + 6\sum_{n=-\infty}^{-\infty}\frac{z^n}{4^{n+1}} = \textcolor{red}{1 + \sum_{n=1}^{\infty}(3\cdot2^{2n-1}-2\cdot3^{n-1})z^{-n}}$.
+    \end{enumerate}
 \end{solution}
 
 \begin{problem}
@@ -885,8 +958,26 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item 孤立奇点 $z = \pm ai$，$\displaystyle\lim_{z\to{\pm ai}}f(x)=\infty$，$\dfrac{1}{f(z)} = z^2 + a^2$，均为二阶极点。
+        \item 孤立奇点 $z = 0$，$\displaystyle\lim_{z\to 0}f(z)=\infty$，$\dfrac{1}{f(z)} = \dfrac{z^2}{\cos{az}}$，为一阶极点。
+        \item 孤立奇点 $z = 0$，$\displaystyle\lim_{z\to 0}f(z)=\frac{-2\sin{\frac{(a+b)z}{2}}\sin{\frac{(a-b)z}{2}}}{z^2} = -(a^2-b^2)$，故为可去奇点。
+        \item 孤立奇点 $z = 0$，$\displaystyle\lim_{z\to 0}f(z)=\lim_{z\to 0}\frac{\sin{z}-z}{z^2}=0$，故为可去奇点。
+        \item 孤立奇点 $z = 0$，令 $t=\sqrt{z}$，当 $z\to0$ 时，$t\to\infty$，$\cos{t}$取值不定，故为本性奇点。
+        \item 孤立奇点 $z = 0$，令 $t=\sqrt{z}$，当 $z\to0$ 时，$t\to\infty$，$\dfrac{\sin{t}}{t}=1$，故为可去奇点。\\
+              孤立奇点 $z = (n\pi)^2$，一阶奇点。
+        \item 孤立奇点 $z = 1$，在 $\ln{z}|_{z=1} = 0$单值分支内为二阶极点，其他分支内为一阶极点。
+        \item 令 $t=\sqrt{\zeta}$，有$\displaystyle f(z) = \int_{0}^{z^2}2\sinh{t}\text{d}t$，$z=\infty$ 为本性奇点。
+    \end{enumerate}
 \end{solution}
+\begin{note}
+    \begin{itemize}
+        \item (2) $z=\infty$ 为本性奇点。
+        \item (3) $z=\infty$ 为本性奇点。
+        \item (4) $z=\infty$ 为本性奇点。
+        \item (6) $z=\infty$ 为非孤立奇点。。
+    \end{itemize}
+\end{note}
 
 \newpage
 \section{第六章习题}
