@@ -991,7 +991,11 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item $z_0=1$ 是一阶极点，故 $\displaystyle\text{res}\ f(1) = \lim_{z\to1}(z-1)\frac{\text{e}^{z^2}}{z-1} = \text{e}$.
+        \item 函数是偶函数，展开不含 $z^{-1}$ 项，故 $\text{res}\ f(0) = 0$.
+        \item $\displaystyle f(z) = \frac{\frac{\text{e}^z}{(z+1)^2}}{(z-1)^2}$，故 $\displaystyle\text{res}\ f(1) = \frac{\text{d}}{\text{d}z}\frac{\text{e}^z}{(z+1)^2}\Big|_{z=1} = 0$.
+    \end{enumerate}
 \end{solution}
 
 \begin{problem}
@@ -1004,7 +1008,56 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item $\displaystyle f(z)=\frac{1}{z^3(1+z)(1-z)}$，孤立奇点 $z=0$（三阶极点），$z=\pm1$（一阶极点）。\\[12pt]
+              $\displaystyle\text{res}\ f(0) = \frac{1}{2!}\frac{\text{d}^2}{\text{d}z^2}\frac{1}{1-z^2}\Big|_{z=0} = 1$.\\[12pt]
+              $\displaystyle\text{res}\ f(1) = \lim_{z\to1}\dfrac{z-1}{z^3(1+z)(1-z)} = -\frac{1}{2}$.\\[12pt]
+              $\displaystyle\text{res}\ f(1) = \lim_{z\to-1}\dfrac{z+1}{z^3(1+z)(1-z)} = -\frac{1}{2}$.
+        \item 孤立奇点 $z=2n\pi,n\in\mathbb{Z}$， $z=0$ 为一阶奇点，其余为二阶奇点。\\[12pt]
+              $\displaystyle\text{res}\ f(0) = \lim_{z\to0}\frac{z^2}{1-\cos{z}} = 2$.\\[12pt]
+              $\displaystyle\frac{z}{1-\cos{z}} = (z-2n\pi)[1-\cos{(z-2n\pi)}]^{-1}+2n\pi[1-\cos{(z-2n\pi)}]^{-1}\\[12pt]
+              = 2(z-2n\pi)^{-1}[1+\frac{1}{12}(z-2n\pi)^2+\mathcal{O}(z-2n\pi)^4]+4n\pi(z-2n\pi)^{-2}[1+\frac{1}{12}(z-2n\pi)^2+\mathcal{O}(z-2n\pi)^4]\\[12pt]
+              = 4n\pi(z-2n\pi)^{-2}+2(z-2n\pi)^{-1}+\frac{n\pi}{3}+\frac{1}{6}(z-2n\pi)+\cdots$.\\[12pt]
+              故 $\text{res}\ f(2n\pi) = 2$.
+        \item $\displaystyle\text{e}^{\frac{1}{2}(z-\frac{1}{z})} = \text{e}^{\frac{z}{2}}\cdot\text{e}^{-\frac{1}{2z}}
+              = \sum_{n=0}^{\infty}\frac{z^n}{n!2^n}\cdot\sum_{m=0}^{\infty}\frac{(-)^m}{m!2^mz^m}
+              = \sum_{n=0}^{\infty}\sum_{m=0}^{\infty}\frac{(-)^m}{n!m!2^{m+n}}z^{n-m}$.\\[12pt]
+              \textcolor{red}{由书上P75例5.9知，$\text{res}\ f(0)=-\text{J}_1(1)$， $\text{res}\ f(\infty)=\text{J}_1(1)$}.
+        \item 孤立奇点 $z=1$。
+              \begin{itemize}
+                \item 若 $\displaystyle\ln{z}|_{z=1}=0$ 为二阶极点，\\[10pt]
+                      $\displaystyle\text{res}\ f(1) = \lim_{z\to 1}\frac{\text{d}}{\text{d}z}\frac{z-1}{\ln{z}} 
+                      = \lim_{z\to 1}\frac{z\ln{z}-z+1}{z(\ln{z})^2}
+                      = \lim_{z\to 1}\frac{1}{\ln{z}+2}\textcolor{red}{(L'Hospital)}
+                      =\frac{1}{2}$.
+                \item 其他情况为一阶极点，$\displaystyle\ln{z}|_{z=1}=2k\pi i$，\\[10pt]
+                      $\displaystyle\text{res}\ f(1) = \lim_{z\to 1}\frac{1}{\ln{z}} = \frac{1}{2k\pi i}$
+              \end{itemize}
+    \end{enumerate}
+\end{solution}
+
+\begin{problem}
+    求下列函数在 $\infty$ 点处的留数：
+    \begin{enumerate}[(1)]
+        \item $\dfrac{\cos{z}}{z}$;
+        \item $(z^2+1)\text{e}^z$;
+        \item $\sqrt{(z-1)(z-2)}$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}[(1)]
+        \item 令 $t=\dfrac{1}{z}$，而 $\cos{z} = 1 - \dfrac{1}{2}z^{2} + \mathcal{O}(z^2)$，\\[12pt]
+              故展开式为 $t(1 - \dfrac{1}{2}t^{-2} + \mathcal{O}(z^2)) = t - t^{-1} + \dfrac{1}{\mathcal{O}(t^1)}$, $\infty$ 为本性奇点,\\[12pt]
+              即$\text{res}\ f(\infty) = -a_1 = -1$.
+        \item 令 $t=\dfrac{1}{z}$，而 $\text{e}^{z} = 1 + z + \dfrac{1}{2}z^2 + \dfrac{1}{3!}z^3 + \mathcal{O}(z^3)$,\\[12pt]
+              故展开式为 $(\dfrac{1}{t^2}+1)(1+\dfrac{1}{t}+\dfrac{1}{2}\cdot\dfrac{1}{t^2}+\cdots)$, $\infty$ 为本性奇点,\\[12pt]
+              即$\text{res}\ f(\infty) = -a_1 = 0$.
+        \item 令 $t=\dfrac{1}{z}$，原式可化为 $\displaystyle\frac{\sqrt{(1-t)(1-2t)}}{t}$.\\[12pt]
+              不妨取 $\text{arg}\ (1-t)|_{t=0} = 2m\pi$，$\text{arg}\ (1-2t)|_{t=0} = 2n\pi$，\\[12pt]
+              故展开式为 $\displaystyle t^{-1}\cdot(-1)^m(1-\frac{1}{2}t-\frac{1}{8}t^2+\cdots)\cdot(-1)^n(1-t-\frac{1}{2}t^2+\cdots).$\\[12pt]
+              整理得到 $\displaystyle(-1)^{m+n}(t^{-1}-\frac{3}{2}-\frac{1}{8}t-\frac{7}{16}t^2+\cdots)$. $\infty$ 为一阶奇点,\\[12pt]
+              即$\text{res}\ f(\infty) = -a_1 = (-1)^{m+n}\dfrac{1}{8}$.
+    \end{enumerate}
 \end{solution}
 
 \begin{problem}
@@ -1224,4 +1277,119 @@
 \begin{solution}
     
 \end{solution}
+
+\newpage
+\section{第十三章习题}
+
+\begin{problem}
+    一长为 $l$、横截面积为 $S$ 的均匀弹性杆，已知一端（$x=0$）固定，另一端（$x=l$)在杆轴方向上受拉力 $F$ 的作用而达到平衡。
+    在 $t=0$ 时，撤去外力 $F$。试列出杆的纵振动所满足的方程、边界条件和初始条件。
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    求解细杆的导热问题:\\
+    杆长 $l$，两端 $(x=0,\ l)$ 均保持为零度，初始温度分布为 $\displaystyle u|_{t=0}=b\frac{x(l-x)}{l^2}$.
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    求解：
+    \begin{equation*}
+        \frac{\partial^2 u}{\partial t^2} - a^2\frac{\partial^2 u}{\partial x^2} = bx(l-x),
+    \end{equation*}
+    \begin{equation*}
+        u|_{x=0} = 0,\ u|_{x=l} = 0,
+    \end{equation*}
+    \begin{equation*}
+        u|_{t=0} = 0,\ \frac{\partial u}{\partial t}|_{t=0} = 0.
+    \end{equation*}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    一细长杆，$x=0$端固定，$x=l$ 端受周期力 $A\sin{\omega t}$ 作用。
+    设初位移和初速度均为零，求解此杆的纵振动问题。
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    求解下列定解问题：
+    \begin{equation*}
+        \frac{\partial u}{\partial t} - \kappa\frac{\partial^2 u}{\partial x^2} = 0,
+    \end{equation*}
+    \begin{equation*}
+        u|_{x=0} = A\text{e}^{i\omega t},\ u|_{x=l} = 0,
+    \end{equation*}
+    \begin{equation*}
+        u|_{t=0} = 0.
+    \end{equation*}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\newpage
+\section{第十五章习题}
+
+\begin{problem}
+    证明：
+    \begin{equation*}
+        \int_{x}^{1}\text{P}_k(x)\text{P}_l(x)\text{d}x = (1-x^2)\frac{\text{P}^{'}_k(x)\text{P}_l(x)-\text{P}^{'}_l(x)\text{P}_k(x)}{k(k+1)-l(l+1)},
+        \quad k\neq l.
+    \end{equation*}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    计算下列积分：
+    \begin{enumerate}[(1)]
+        \item $\displaystyle\int_{0}^{1}\text{P}_k(x)\text{P}_l(x)\text{d}x$;
+        \item $\displaystyle\int_{-1}^{1}x\text{P}_l(x)\text{P}_{l+1}(x)\text{d}x$;
+        \item $\displaystyle\int_{-1}^{1}x^2\text{P}_l(x)\text{P}_{l+2}(x)\text{d}x$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    将下列定义在 $[-1,1]$ 上的函数按Legendre多项式展开：
+    \begin{enumerate}[(1)]
+        \item $f(x) = x^2$;
+        \item $f(x) = \sqrt{1-2xt+t^2}$;
+        \item $f(x) = \left|x\right|$;
+        \item $f(x) = \dfrac{1}{2}(x+\left|x\right|)$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    求解空心球壳内的定解问题：
+    \begin{equation*}
+        \Delta^2 u =0,\ a < r < b,
+    \end{equation*}
+    \begin{equation*}
+        u|_{r=a} = u_0,
+    \end{equation*}
+    \begin{equation*}
+        u|_{r=b} = u_0\cos^2{\theta}.
+    \end{equation*}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
 \end{document}
