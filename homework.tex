@@ -12,6 +12,7 @@
 \usepackage{bm} % 数学字体加粗
 \usepackage{mathrsfs} % 提供特殊的数学花体
 \usepackage{amssymb, ,hyperref, framed, color, enumerate}
+\usepackage{bbding} % 打叉、打勾
 
 % Custom counter for problems
 \newcounter{problemname}
@@ -37,7 +38,7 @@
 \pagestyle{fancy} % 使用fancyhdr宏包定义页眉页脚
 \fancyhf{} % 清空默认的页眉和页脚设置
 \linespread{1.5}
-\chead{数学物理方法作业}
+\chead{《数学物理方法（吴崇试版）》习题解答}
 \cfoot{第 \thepage 页（共 \pageref{LastPage}页）}
 
 % 信息栏
@@ -1028,7 +1029,7 @@
                 \item 若 $\displaystyle\ln{z}|_{z=1}=0$ 为二阶极点，\\[10pt]
                       $\displaystyle\text{res}\ f(1) = \lim_{z\to 1}\frac{\text{d}}{\text{d}z}\frac{z-1}{\ln{z}} 
                       = \lim_{z\to 1}\frac{z\ln{z}-z+1}{z(\ln{z})^2}
-                      = \lim_{z\to 1}\frac{1}{\ln{z}+2}\textcolor{red}{(L'Hospital)}
+                      = \lim_{z\to 1}\frac{1}{\ln{z}+2}\textcolor{red}{\left[L'Hospital\right]}
                       =\frac{1}{2}$.
                 \item 其他情况为一阶极点，$\displaystyle\ln{z}|_{z=1}=2k\pi i$，\\[10pt]
                       $\displaystyle\text{res}\ f(1) = \lim_{z\to 1}\frac{1}{\ln{z}} = \frac{1}{2k\pi i}$
@@ -1047,16 +1048,16 @@
 \begin{solution}
     \begin{enumerate}[(1)]
         \item 令 $t=\dfrac{1}{z}$，而 $\cos{z} = 1 - \dfrac{1}{2}z^{2} + \mathcal{O}(z^2)$，\\[12pt]
-              故展开式为 $t(1 - \dfrac{1}{2}t^{-2} + \mathcal{O}(z^2)) = t - t^{-1} + \dfrac{1}{\mathcal{O}(t^1)}$, $\infty$ 为本性奇点,\\[12pt]
+              故展开式为 $t\cdot\left(1 - \dfrac{1}{2}t^{-2} + \mathcal{O}(z^2)\right) = t - t^{-1} + \dfrac{1}{\mathcal{O}(t^1)}$, $\infty$ 为本性奇点,\\[12pt]
               即$\text{res}\ f(\infty) = -a_1 = -1$.
         \item 令 $t=\dfrac{1}{z}$，而 $\text{e}^{z} = 1 + z + \dfrac{1}{2}z^2 + \dfrac{1}{3!}z^3 + \mathcal{O}(z^3)$,\\[12pt]
-              故展开式为 $(\dfrac{1}{t^2}+1)(1+\dfrac{1}{t}+\dfrac{1}{2}\cdot\dfrac{1}{t^2}+\cdots)$, $\infty$ 为本性奇点,\\[12pt]
+              故展开式为 $\left(\dfrac{1}{t^2}+1\right)\left(1+\dfrac{1}{t}+\dfrac{1}{2}\cdot\dfrac{1}{t^2}+\cdots\right)$, $\infty$ 为本性奇点,\\[12pt]
               即$\text{res}\ f(\infty) = -a_1 = 0$.
         \item 令 $t=\dfrac{1}{z}$，原式可化为 $\displaystyle\frac{\sqrt{(1-t)(1-2t)}}{t}$.\\[12pt]
               不妨取 $\text{arg}\ (1-t)|_{t=0} = 2m\pi$，$\text{arg}\ (1-2t)|_{t=0} = 2n\pi$，\\[12pt]
-              故展开式为 $\displaystyle t^{-1}\cdot(-1)^m(1-\frac{1}{2}t-\frac{1}{8}t^2+\cdots)\cdot(-1)^n(1-t-\frac{1}{2}t^2+\cdots).$\\[12pt]
-              整理得到 $\displaystyle(-1)^{m+n}(t^{-1}-\frac{3}{2}-\frac{1}{8}t-\frac{7}{16}t^2+\cdots)$. $\infty$ 为一阶奇点,\\[12pt]
-              即$\text{res}\ f(\infty) = -a_1 = (-1)^{m+n}\dfrac{1}{8}$.
+              故展开式为 $\displaystyle t^{-1}\cdot(-1)^m\left(1-\frac{1}{2}t-\frac{1}{8}t^2+\cdots\right)\cdot(-1)^n\left(1-t-\frac{1}{2}t^2+\cdots\right).$\\[12pt]
+              整理得到 $\displaystyle(-1)^{m+n}\left(t^{-1}-\frac{3}{2}-\frac{1}{8}t-\frac{7}{16}t^2+\cdots\right)$. $\infty$ 为一阶奇点,\\[12pt]
+              即$\text{res}\ f(\infty) = -a_1 = (-1)^{m+n}\cdot\dfrac{1}{8}$.
     \end{enumerate}
 \end{solution}
 
@@ -1066,22 +1067,65 @@
         \item $\displaystyle\oint_{\left|z-1\right|=1}\frac{1}{1+z^4}\ \text{d}z$;
         \item $\displaystyle\oint_{\left|z-1\right|=1}\frac{1}{z^2-1}\sin{\frac{\pi z}{4}}\ \text{d}z$;
         \item $\displaystyle\oint_{\left|z\right|=n}\tan{\pi z}\ \text{d}z$,$n$为正整数;
-        \item $\displaystyle\oint_{\left|z\right|=1}\frac{\text{e}^z}{z^3}\ \text{d}z$;
+        \item $\displaystyle\oint_{\left|z\right|=1}\frac{\text{e}^z}{z^3}\ \text{d}z$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item 在围道内的奇点有 $z = \text{e}^{\pm \frac{\pi}{4}}$，均为一阶奇点。\\[12pt]
+              $\displaystyle\oint_{\left|z-1\right|=1}\frac{1}{1+z^4}\ \text{d}z
+              = 2\pi i\left[\text{res} f(\text{e}^{\frac{\pi i}{4}}) + \text{res} f(\text{e}^{-\frac{\pi i}{4}})\right]
+              = 2\pi i\left[\lim\limits_{\scalebox{0.6}{$z\to\text{e}^{\frac{\pi i}{4}}$}}\frac{z-\text{e}^{\frac{\pi i}{4}}}{1+z^4} + \lim\limits_{\scalebox{0.6}{$z\to\text{e}^{-\frac{\pi i}{4}}$}}\frac{z-\text{e}^{-\frac{\pi i}{4}}}{1+z^4}\right]\\[12pt]
+              = 2\pi i\left[-\frac{1}{4\sqrt{2}}(1+i)+\frac{1}{4\sqrt{2}}(-1+i)\right]
+              = -\frac{\sqrt{2}}{2}\pi i$.
+        \item 在围道内的奇点只有 $z = 1$，为一阶奇点。\\[12pt]
+              $\displaystyle\oint_{\left|z-1\right|=1}\frac{1}{z^2-1}\sin{\frac{\pi z}{4}}\ \text{d}z
+              = 2\pi i\cdot\text{res}\ f(1)
+              = 2\pi i\lim_{z\to 1}\frac{\sin{\frac{\pi z}{4}}}{z+1}
+              =\frac{\sqrt{2}}{2}\pi i$.
+        \item 在围道内的奇点有 $2n$ 个，均为一阶极点，可表示为 $z=k+\dfrac{1}{2}\ \left(k=-n,\cdots,0,1,\cdots,n-1\right)$.\\[12pt]
+              $\displaystyle\text{res}\ f(k+\frac{1}{2}) = \lim_{\scalebox{0.5}{$z\to k+\frac{1}{2}$}}\frac{\left(z-k-\frac{1}{2}\right)\sin{\pi z}}{\cos{\pi z}}
+              = -\frac{1}{\pi}\textcolor{red}{\left[L'Hospital\right]}.$\\[12pt]
+              故 $\displaystyle\oint_{\left|z\right|=n}\tan{\pi z}\ \text{d}z
+              = 2\pi i\left[2n\cdot\left(-\frac{1}{\pi}\right)\right]
+              = -4ni$.
+        \item 在围道内的奇点只有 $z=0$，为三阶极点。\\[12pt]
+              $\text{res}\ f(0) = \dfrac{1}{2}\lim_{z\to 0}\dfrac{\text{d}^2}{\text{d}z^2}\text{e}^z = \dfrac{1}{2}$.\\[12pt]
+              $\displaystyle\oint_{\left|z\right|=1}\frac{\text{e}^z}{z^3}\ \text{d}z
+              = 2\pi i\cdot\text{res}\ f(0)
+              = 2\pi i\cdot\frac{1}{2}
+              = \pi i$.
+    \end{enumerate}
 \end{solution}
 
 \begin{problem}
     计算下列积分：
     \begin{enumerate}[(1)]
-        \item $\displaystyle\int_{0}^{2\pi}\cos^{2n}{\theta}\ \text{d}\theta$,$n$为正整数;
+        \item $\displaystyle\int_{0}^{2\pi}\cos^{2n}{\theta}\ \text{d}\theta$,\ \ $n$为正整数;
         \item $\displaystyle\int_{0}^{\pi}\frac{\text{d}\theta}{1+\sin^2{\theta}}$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item 作变换 $z = e^{i\theta}$，有 $\cos{\theta} = \dfrac{z^2+1}{2z}$，$\text{d}\theta = \dfrac{\text{d}z}{iz}$.\\[12pt]
+              $\displaystyle\int_{0}^{2\pi}\cos^{2n}{\theta}\ \text{d}\theta
+              = \oint_{\left|z\right|=1}\left(\dfrac{z^2+1}{2z}\right)^{2n}\dfrac{\text{d}z}{iz}$.\\[12pt]
+              $\displaystyle\text{res}\ \left\{\left(\frac{z^2+1}{2z}\right)^{2n}\cdot z^{-1}\right\}
+              = \left\{\left(\frac{z+1}{2}+\frac{1}{2z}\right)^{2n}\cdot z^{-1}\right\}
+              = \binom{n}{2n}\frac{1}{2^{2n}}
+              = \frac{(2n)!}{\left(n!\right)^2}\cdot\frac{1}{2^{2n}}$,\\[12pt]
+              故积分结果为 $\displaystyle2\pi i\cdot\frac{(2n)!}{\left(n!\right)^2}\cdot\frac{1}{2^{2n}}\cdot\frac{1}{i}
+              = \frac{(2n)!}{(n!)^2}\frac{\pi}{2^{2n-1}}$.
+        \item 对原积分进行化简得到 $\displaystyle\int_{0}^{2\pi}\frac{\text{d}\theta}{3-\cos{\theta}}$.\\[12pt]
+              作变换 $z = e^{i\theta}$，有 $\cos{\theta} = \dfrac{z^2+1}{2z}$，$\text{d}\theta = \dfrac{\text{d}z}{iz}$.\\[12pt]
+              $\displaystyle\int_{0}^{\pi}\frac{\text{d}\theta}{1+\sin^2{\theta}}
+              = \oint_{\left|z\right|=1}\frac{1}{3-\frac{z^2+1}{2z}}\frac{\text{d}z}{iz}$.\\[12pt]
+              由$\displaystyle f(z) = \frac{1}{z}\cdot\frac{1}{3-\frac{z^2+1}{2z}}
+              = \frac{-2}{(z-3-2\sqrt{2})(z-3+2\sqrt{2})}$,\\[12pt]
+              知在单位圆内只有一阶极点 $z = 3 - 2\sqrt{2}$.\\[12pt]
+              故原积分结果为 $\displaystyle2\pi i\cdot\text{res}\ \left\{f(3 - 2\sqrt{2})\right\}\cdot\frac{1}{i}
+              = \frac{\sqrt{2}\pi}{2}$.
+    \end{enumerate}
 \end{solution}
 
 \begin{problem}
@@ -1092,8 +1136,34 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item 考虑 $\displaystyle\oint_{-\infty}^{\infty}\frac{z^2}{1+z^4}\text{d}z$，积分围道为上半平面半径趋于无穷的半圆。根据留数定理，有\\[12pt]
+              $\displaystyle\oint_{-\infty}^{\infty}\frac{z^2}{1+z^4}\text{d}z = \int_{-\infty}^{\infty}\frac{x^2}{1+x^4}\text{d}x + \int_{C_R}\frac{z^2}{1+z^4}\text{d}z \\[12pt]
+              = 2\pi i\cdot\left[\text{res}\ \left\{\frac{z^2}{1+z^4}\right\}\bigg|_{z=\text{e}^{\frac{1}{4}\pi}} + \text{res}\ \left\{\frac{z^2}{1+z^4}\right\}\bigg|_{z=\text{e}^{\frac{3}{4}\pi}}\right] \footnote{均为一阶极点}\\[12pt]
+              = 2\pi i\cdot\left[\frac{1}{4\text{e}^{\frac{\pi}{4}i}}+\frac{1}{4\text{e}^{\frac{3\pi}{4}i}}\right] \\[12pt]
+              = 2\pi i\cdot\left(-\frac{\sqrt{2}}{4}\right) \\[12pt]
+              = \frac{\sqrt{2}}{2}\pi$. \\[12pt]
+              由于 $\displaystyle\lim_{z\to\infty}z\cdot\frac{z^2}{1+z^4} = 0$ 以及大圆弧引理，知 $\displaystyle\int_{C_R}\frac{z^2}{1+z^4}\text{d}z = 0$.\\[12pt]
+              故原积分结果为 $\displaystyle\frac{\sqrt{2}}{2}\pi$.
+        \item 考虑 $\displaystyle\oint_{-\infty}^{\infty}\frac{\text{d}z}{(1+z^2)\cosh{\frac{\pi z}{2}}}$，积分围道为上半平面半径趋于无穷的半圆。\\[12pt]
+              记 $\displaystyle f(z) = \frac{1}{(1+z^2)\cosh{\frac{\pi z}{2}}}$，分析分母 $(1+z^2)\cosh{\dfrac{\pi z}{2}}$. \\[12pt]
+              零点为 $z = (2k+1)i,\ k\in\mathbb{Z}$. 除了 $z = i$ 是二阶极点外，其他的都是一阶极点。\\[12pt]
+              $\displaystyle\text{res}\ f(i) = \lim_{z\to i}\frac{\text{d}}{\text{d}z}(z-i)^2f(z) = \frac{1}{2\pi i}$. \\[12pt]
+              $\displaystyle\text{res}\ f\left[(2k+1)i\right] = \lim\limits_{\scalebox{0.5}{$z\to(2k+1)\pi$}}\frac{\frac{1}{1+z^2}}{\frac{\pi}{2}\sinh{\frac{\pi z}{2}}} = \frac{(-1)^{k+1}}{2\pi i}\frac{1}{k(k+1)}$, $(k\neq0)$. \\[12pt]
+              $\displaystyle\oint_{-\infty}^{\infty}\frac{\text{d}z}{(1+z^2)\cosh{\frac{\pi z}{2}}} = \int_{-\infty}^{\infty}\frac{\text{d}x}{(1+x^2)\cosh{\frac{\pi x}{2}}} + \int_{C_R}\frac{\text{d}z}{(1+z^2)\cosh{\frac{\pi z}{2}}} \\[12pt]
+              = 2\pi i\left\{\text{res}\ f(i) + \sum_{k=1}^{\infty}\text{res}\ f\left[(2k+1)i\right]\right\} = 1 + \sum_{k=1}^{\infty}\frac{(-1)^{k+1}}{k(k+1)}$. \\[12pt]
+              由于 $\displaystyle\lim_{z\to\infty}\frac{1}{(1+z^2)\cosh{\frac{\pi z}{2}}} = 0$ 以及大圆弧引理，知 $\displaystyle\int_{C_R}\frac{\text{d}z}{(1+z^2)\cosh{\frac{\pi z}{2}}} = 0$. \\[12pt]
+              故原积分结果为 $\displaystyle 1 + \sum_{k=1}^{\infty}\frac{(-1)^{k+1}}{k(k+1)}$.
+    \end{enumerate}
 \end{solution}
+\begin{note}
+    (2)的结果可以化简。 \\[12pt]
+    $\displaystyle 1 + \sum_{k=1}^{\infty}\frac{(-1)^{k+1}}{k(k+1)} 
+    = 1 + \sum_{k=1}^{\infty}(-1)^{k+1}\left(\frac{1}{k} - \frac{1}{k+1}\right) 
+    = \sum_{k=1}^{\infty}\frac{(-1)^{k+1}}{k} + \sum_{k=0}^{\infty}\frac{(-1)^k}{k+1} 
+    = 2\sum_{k=1}^{\infty}\frac{(-1)^{k+1}}{k} \footnote[1]{$\displaystyle\ln{1+x} = \sum_{k=1}^{\infty}\frac{(-1)^{k+1}}{k}x^k$}\\[12pt]
+    = 2\ln2$.
+\end{note}
 
 \begin{problem}
     计算下列积分：
@@ -1104,8 +1174,37 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item 记 $f(z) = \dfrac{\text{e}^{iz}}{1+z^4}$，考虑 $\displaystyle\oint_{-\infty}^{\infty}f(z)\text{d}z$，积分围道为上半平面半径趋于无穷的半圆。 \\[12pt]
+              在积分区域内有一阶极点 $z = \text{e}^{\frac{\pi i}{4}}$ 和 $z = \text{e}^{\frac{3\pi i}{4}}$，计算其留数。 \\[12pt]
+              $\displaystyle\text{res}\ f(\text{e}^{\frac{\pi i}{4}}) = \text{res}\ f(\frac{\sqrt{2}}{2}(1+i)) 
+              = \frac{\text{e}^{-\frac{1}{\sqrt{2}}}}{4i}\text{e}^{i\left(\frac{1}{\sqrt{2}}-\frac{\pi}{4}\right)}$. \\[12pt]
+              $\displaystyle\text{res}\ f(\text{e}^{\frac{3\pi i}{4}}) = \text{res}\ f(\frac{\sqrt{2}}{2}(-1+i)) 
+              = \frac{\text{e}^{-\frac{1}{\sqrt{2}}}}{4i}\text{e}^{-i\left(\frac{1}{\sqrt{2}}-\frac{\pi}{4}\right)}$. \\[12pt]
+              故 $\displaystyle\oint_{-\infty}^{\infty}f(z)\text{d}z 
+              = 2\pi i\left[\text{res}\ f(\text{e}^{\frac{\pi i}{4}}) + \text{res}\ f(\text{e}^{\frac{3\pi i}{4}})\right] 
+              = 2\pi i\cdot\frac{\text{e}^{-\frac{1}{\sqrt{2}}}}{4i}\cdot2\cos{\left(\frac{1}{\sqrt{2}}-\frac{\pi}{4}\right)}$. \\[12pt]
+              其实部的一半（偶函数）即为$\displaystyle\int_{0}^{\infty}\frac{\cos{x}}{1+x^4}\text{d}x = \frac{\text{e}^{-\frac{1}{\sqrt{2}}}\pi}{2}\cos{\left(\frac{1}{\sqrt{2}}-\frac{\pi}{4}\right)}$.
+        \item 记 $f(z) = \dfrac{\text{e}^{iz}}{(1+z^2)^3}$，考虑 $\displaystyle\oint_{-\infty}^{\infty}f(z)\text{d}z$，积分围道为上半平面半径趋于无穷的半圆。 \\[12pt]
+              在积分区域内有三阶极点 $z = i$ , $\displaystyle\text{res}\ f(i) = \lim_{z\to i}\frac{1}{2!}\frac{\text{d}^2}{\text{d}z^2}(z-i)^2f(z) 
+              = \lim_{z\to i}\frac{1}{2!}\frac{\text{d}^2}{\text{d}z^2}\frac{(z-i)^2\text{e}^{iz}}{(z+i)^3}$. \\[12pt]
+              故 $\displaystyle\int_{0}^{\infty}\frac{\cos{x}}{(1+x^2)^3}\text{d}x = \frac{1}{2}\text{Re}\left[2\pi i\cdot\text{res}\ f(i)\right] 
+              \textcolor{red}{= \frac{7\pi}{16}}$.
+        \item 记 $f(z) = \dfrac{z\text{e}^{iz}}{z^2-2z+2}$，考虑 $\displaystyle\oint_{-\infty}^{\infty}f(z)\text{d}z$，积分围道为上半平面半径趋于无穷的半圆。 \\[12pt]
+              在积分区域内有一阶极点 $z = 1 + i$， $\displaystyle\text{res}\ f(1+i) = \lim_{z\to\scalebox{0.5}{$(1+i)$}}\frac{z\text{e}^{iz}}{z-1+i} 
+              = \frac{(1+i)\text{e}^i}{2i\text{e}}$. \\[12pt]
+              故$\displaystyle\int_{-\infty}^{\infty}\frac{x\sin{x}}{x^2-2x+2}\text{d}z
+              = \text{Im}\left[2\pi i\cdot\frac{(1+i)\text{e}^i}{2i\text{e}}\right]
+              =\pi\text{e}^{i-1}$.
+    \end{enumerate}
 \end{solution}
+\begin{note}
+    \begin{itemize}
+        \item (2)难算，直接写答案。
+        \item 根据Jordan引理，三题均有 $\left|z\right|\to\infty$ 时，
+              $Q(z)\to0$，故 $\displaystyle\lim_{R\to\infty}\int_{C_R}Q(z)\text{e}^{ipz}\text{d}z = 0$.
+    \end{itemize}
+\end{note}
 
 \begin{problem}
     计算下列积分：
@@ -1116,8 +1215,77 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item 记 $f(z) = \dfrac{1}{z(z-1)(z-2)}$，考虑 $\displaystyle\oint_{-\infty}^{\infty}\dfrac{\text{d}z}{z(z-1)(z-2)}$，积分围道绕开三个一阶极点 $z=0,1,2$。 \\[12pt]
+              积分区域内无奇点，故 $\displaystyle\oint_{-\infty}^{\infty}\dfrac{\text{d}z}{z(z-1)(z-2)} = 0$. \\[12pt]
+              $\displaystyle\oint_{-\infty}^{\infty}\dfrac{\text{d}z}{z(z-1)(z-2)}
+              = \left[\int_{-\infty}^{-\delta} + \int_{C_{\delta0}}
+              + \int_{\delta}^{1-\delta} + \int_{C_{\delta1}}
+              + \int_{1+\delta}^{2-\delta} + \int_{C_{\delta2}}
+              + \int_{2+\delta}^{\infty} + \int_{C_R}\right]f(z)\text{d}z$. \\[12pt]
+              由小圆弧引理，$\displaystyle\int_{C_{\delta0}}f(z)\text{d}z = i\cdot\left(0-\pi\right)\lim_{z\to0}zf(z) = -\frac{\pi}{2}$. \\[12pt]
+              $\displaystyle\int_{C_{\delta1}}f(z)\text{d}z = i\cdot\left(0-\pi\right)\lim_{z\to1}zf(z) = \pi$. \\[12pt]
+              $\displaystyle\int_{C_{\delta2}}f(z)\text{d}z = i\cdot\left(0-\pi\right)\lim_{z\to2}zf(z) = -\frac{\pi}{2}$. \\[12pt]
+              由大圆弧引理，$\displaystyle\int_{C_R}f(z)\text{d}z = i\cdot\left(\pi-0\right)\lim_{z\to\infty}zf(z) = 0$. \\[12pt]
+              故 v.p.$\displaystyle\int_{-\infty}^{\infty}\frac{\text{d}x}{x(x-1)(x-2)} 
+              = \left[\int_{-\infty}^{-\delta} + \int_{\delta}^{1-\delta} +\int_{1+\delta}^{2-\delta} + \int_{2+\delta}^{\infty}\right]f(z)\text{d}z
+              = 0$.
+        \item 记 $f(z) = \dfrac{z-\sin{z}}{z^3(1+z^2)}$，考虑 $\displaystyle\oint_{-\infty}^{\infty}\dfrac{z-\sin{z}}{z^3(1+z^2)}\text{d}z$，积分围道绕开一阶极点 $z=0$。 \\[12pt]
+              积分区域内有一阶极点 $z = i$，$\displaystyle\text{res}\ f(i) = \left[\frac{z-\sin{z}}{z^3(z+i)}\right]\Bigg|_{z=i} = \frac{i-\sin{i}}{2}$.\\[12pt]
+              故 $\displaystyle\oint_{-\infty}^{\infty}\dfrac{z-\sin{z}}{z^3(1+z^2)}\text{d}z = 2\pi i\cdot\text{res}\ f(i) = -\pi - \pi i\sin{i}$.\\[12pt]
+              又 $\displaystyle\oint_{-\infty}^{\infty}\dfrac{x-\sin{x}}{z^3(1+z^2)}\text{d}z
+              = \left[\int_{-\infty}^{-\delta} + \int_{C_{\delta0}}
+              + \int_{\delta}^{\infty} + \int_{C_R}\right]f(z)\text{d}z$. \\[12pt]
+              由小圆弧引理，$\displaystyle\int_{C_{\delta0}}f(z)\text{d}z = i\cdot\left(0-\pi\right)\lim_{z\to0}zf(z) = 0$. \\[12pt]
+              由大圆弧引理，$\displaystyle\int_{C_R}f(z)\text{d}z = i\cdot\left(\pi-0\right)\lim_{z\to\infty}zf(z) = 0$. \textcolor{red}{\XSolid}\\[12pt]
+              故$\displaystyle\int_{0}^{\infty}\frac{x-\sin{x}}{x^3(1+x^2)}\text{d}x
+              = \frac{1}{2}\left[\int_{-\infty}^{-\delta} + \int_{\delta}^{\infty}\right]f(x)\text{d}z
+              = -\pi - \pi i\sin{i}
+              = -\pi - \frac{\text{e}^{-1}-\text{e}}{2}\pi$. \\[12pt]
+              \textcolor{red}{错误，$\infty$ 是 $\sin{z}$ 的本性奇点，正确解答见注记。}
+        \item 记 $\displaystyle f(z) = \frac{\text{e}^{pz}}{1-\text{e}^z}$，考虑 $\displaystyle\oint_{-\infty}^{\infty}\frac{\text{e}^{pz}}{1-\text{e}^z}\text{d}z$，应取宽为 $2\pi$ 的矩形围道，绕开 $z=0$ 和 $z=2\pi i$。 \\[12pt]
+              积分区域内无奇点，积分结果为0。\\[12pt]
+              而 $\displaystyle\oint_{-\infty}^{\infty}f(z)\text{d}z = \left[\int_{-\infty}^{-\delta}
+              + \int_{C_{\delta1}} + \int_{\delta}^{\infty} + \int_{L_1}
+              + \int_{L_2} + \int_{C_{\delta2}} +\int_{L_3} + \int_{L_4}\right]$. \\[12pt]
+              由于 $\displaystyle\left[\int_{L_2} + \int_{L_3}\right]f(z)\text{d}z = -\text{e}^{2p\pi i}\left[\int_{-\infty}^{-\delta}+\int_{\delta}^{\infty}\right]f(z)\text{d}z$, \\[12pt]
+              $\displaystyle\int_{L_1}f(z)\text{d}z = \lim_{R\to\infty}\left[\int_{0}^{2\pi}\frac{\text{e}^{p(R+iy)}}{1-\text{e}^{R+iy}}i\text{d}y\right] = 0$,\quad
+              $\displaystyle\int_{L_4}f(z)\text{d}z = \lim_{R\to\infty}\left[\int_{2\pi}^{0}\frac{\text{e}^{p(-R+iy)}}{1-\text{e}^{-R+iy}}i\text{d}y\right] = 0$, \\[12pt]
+              由小圆弧引理， \\[12pt]
+              $\displaystyle\int_{C_{\delta1}}f(z) = -\pi i\left[\lim_{z\to0}\frac{z\text{e}^{pz}}{1-\text{e}^z}\right] = \pi i$,
+              $\displaystyle\int_{C_{\delta2}}f(z) = -\pi i\left[\lim_{z\to2\pi i}\frac{(z-2\pi i)\text{e}^{pz}}{1-\text{e}^z}\right] = \pi i\text{e}^{2p\pi i}$, \\[12pt]
+              故 $\displaystyle\int_{-\infty}^{\infty}\frac{\text{e}^{px}}{1-\text{e}^x}\text{d}x 
+              = \left[\int_{-\infty}^{-\delta} + \int_{\delta}^{\infty}\right]f(z)\text{d}z
+              = -\frac{\pi + \pi i\text{e}^{2p\pi i}}{1 -\text{e}^{2p\pi i}}\textcolor{red}{=\pi\cot{p\pi}}$. \\[12pt]
+              故 $\displaystyle\int_{-\infty}^{\infty}\frac{\text{e}^{px}-\text{e}^{qx}}{1-\text{e}^x}\text{d}x
+              = \pi\left[\cot{p\pi}-\cot{q\pi}\right]$.
+    \end{enumerate}
 \end{solution}
+\begin{note}
+    \begin{itemize}
+        \item (2)记 $f(z) = \dfrac{z-\sin{z}}{z^3(1+z^2)}$，考虑 $\displaystyle\oint_{-\infty}^{\infty}\dfrac{z-\sin{z}}{z^3(1+z^2)}\text{d}z$，积分围道绕开一阶极点 $z=0$。 \\[12pt]
+        积分区域内有一阶极点 $z = i$，$\displaystyle\text{res}\ f(i) = \left[\frac{z-\sin{z}}{z^3(z+i)}\right]\Bigg|_{z=i} = \frac{i-\sin{i}}{2}$.\\[12pt]
+        故 $\displaystyle\oint_{-\infty}^{\infty}\dfrac{z-\sin{z}}{z^3(1+z^2)}\text{d}z = 2\pi i\cdot\text{res}\ f(i) = -\pi - \pi i\sin{i}$.\\[12pt]
+              又 $\displaystyle\oint_{-\infty}^{\infty}\dfrac{x-\sin{x}}{z^3(1+z^2)}\text{d}z
+              = \left[\int_{-\infty}^{-\delta} + \int_{C_{\delta0}}
+              + \int_{\delta}^{\infty} + \int_{C_R}\right]f(z)\text{d}z$. \\[12pt]
+              由小圆弧引理，$\displaystyle\int_{C_{\delta0}}f(z)\text{d}z = i\cdot\left(0-\pi\right)\lim_{z\to0}zf(z) = 0$. \\
+              \textcolor{red}{此时不可以直接使用大圆弧引理，应在 $\infty$ 处利用 $\displaystyle\sin{z} = \frac{\text{e}^{iz}-\text{e}^{-iz}}{2i}$ 将 $f(x)$ 展开。} \\[12pt]
+              $\displaystyle\int_{C_R}f(z)\text{d}z = \displaystyle\int_{C_R}\left[\frac{1}{z^2(1+z^2)} - \frac{1}{2i}\frac{\text{e}^{iz}}{z^3(z+z^2)} + \frac{1}{2i}\frac{\text{e}^{-iz}}{z^3(z+z^2)}\right]\text{d}z$.\\[12pt]
+              由大圆弧引理和Jordan引理可以得到前两项结果为零。\\
+              根据Jordan引理的补充引理，$\displaystyle\lim_{R\to\infty}\int_{C_R}Q(z)\text{e}^{-ipz}\text{d}z = 2\pi i\cdot\sum_{\text{全平面}}\text{res}\left\{{Q(z)\text{e}^{-ipz}}\right\}$.\\[12pt]
+              奇点有 $z = 0,\ i,\ -i$，分别计算其留数为 $\displaystyle -\frac{3}{2},
+              \footnote[1]{\text{级数展开}，$\displaystyle\frac{1}{z^3}\left[\sum_{n=0}^{\infty}(-)^n z^{2n}\right]\left(1-iz+\frac{(iz)^2}{2!}+\cdots\right)$, $z^{-1}$ 项系数为 $-\dfrac{3}{2}$.}
+              \ \frac{\text{e}}{2},\ \frac{1}{2\text{e}}$. \\[12pt]
+              即$\displaystyle\int_{C_R}\frac{1}{2i}\frac{\text{e}^{-iz}}{z^3(z+z^2)}\text{d}z 
+              = \pi\left(-\frac{3}{2}+\frac{\text{e}}{2}+\frac{1}{2\text{e}}\right)$.\\[12pt]
+              故$\displaystyle\int_{0}^{\infty}\frac{x-\sin{x}}{x^3(1+x^2)}\text{d}x
+              = \frac{1}{2}\left[\int_{-\infty}^{-\delta}+\int_{\delta}^{\infty}\right]f(z)\text{d}z \\[12pt]
+              = \frac{1}{2}\left[-\pi - \frac{\text{e}^{-1}-\text{e}}{2}\pi - \pi\left(-\frac{3}{2}+\frac{\text{e}}{2}+\frac{1}{2\text{e}}\right)\right] 
+              = \frac{\pi}{2}\left(\frac{1}{2}-\frac{1}{e}\right)$.
+        \item \textcolor{red}{水平有限，等有时间学了TikZ再补充围道图。}
+    \end{itemize}
+\end{note}
 
 \begin{problem}
     计算下列积分：
@@ -1128,6 +1296,85 @@
         \item $\displaystyle\int_{0}^{\infty}\frac{\ln{x}}{(x+a)(x+b)}\text{d}x$,\ $b>a>0$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{enumerate}[(1)]
+        \item 考虑积分 $\displaystyle\oint_{0}^{\infty}\frac{z^{s-1}}{1-z}\text{d}z$，取玦型积分围道，绕开一阶极点 $z=1$， $0\leq\text{arg}\leq2\pi$。 \\[12pt]
+              积分围道内无奇点，故 \\[12pt]
+              $\displaystyle\left(1 - \text{e}^{2\pi is}\right)\left(\int_{\delta}^{1-\delta} + \int_{1+\delta}^{\infty}\right)f(x)\text{d}x 
+              + \left[\int_{C_R} + \int_{C_{\delta1}} + \int_{C_{\delta2}} + \int_{C_{\delta3}}\right]f(z)\text{d}z = 0$. \\[12pt]
+              由大圆弧引理，$\displaystyle\int_{C_R}f(z)\text{d}z = 0$，由小圆弧引理，$\displaystyle\int_{C_{\delta1}}f(z)\text{d}z = 0$，\\[12pt]
+              $\displaystyle\int_{C_{\delta2}}f(z)\text{d}z = i\cdot\left[\lim_{z\to1}\frac{(z-1)z^{s-1}}{1-z}\right](0-\pi) = \pi i$. \\[12pt]
+              $\displaystyle\int_{C_{\delta2}}f(z)\text{d}z = i\cdot\left[\lim_{z\to\text{e}^{2\pi i}}\frac{(z-1)z^{s-1}}{1-z}\right](2\pi-3\pi) = \pi i\text{e}^{2\pi is}$. \\[12pt]
+              故 v.p.$\displaystyle\int_{0}^{\infty}\frac{x^{s-1}}{1-x}\text{d}x = \pi i\frac{\text{e}^{2\pi is}+1}{\text{e}^{2\pi is}-1} = \textcolor{red}{\pi\cot{\pi s}}$.
+        \item 考虑积分 $\displaystyle\oint_{0}^{\infty}\frac{z^s}{(1+z^2)^2}\text{d}z$，取玦型积分围道， $0\leq\text{arg}\leq2\pi$。 \\[12pt]
+              积分围道内有奇点 $z = \pm i$，均为二阶极点， \\[12pt]
+              $\displaystyle\text{res}\ f(i) = \left[\frac{\text{d}}{\text{d}z}\frac{z^s}{(z+i)^2}\right]_{z=i} = -\frac{s-1}{4i}\text{e}^{\frac{\pi is}{2}}$.
+              $\displaystyle\text{res}\ f(-i) = \left[\frac{\text{d}}{\text{d}z}\frac{z^s}{(z-i)^2}\right]_{z=-i} = \frac{s-1}{4i}\text{e}^{\frac{3\pi is}{2}}$. \\[12pt]
+              故 $\displaystyle\oint_{0}^{\infty}\frac{z^s}{(1+z^2)^2}\text{d}z
+              = 2\pi i\left[\text{res}\ f(i) + \text{res}f(-i)\right]
+              = \pi i(s-1)\sin{\frac{\pi s}{2}}$. \\[12pt]
+              即 $\displaystyle\left(1 - \text{e}^{2\pi is}\right)\left(\int_{\delta}^{1-\delta} + \int_{1+\delta}^{\infty}\right)f(x)\text{d}x 
+              + \left[\int_{C_R} + \int_{C_{\delta}}\right]f(z)\text{d}z = \pi i(s-1)\sin{\frac{\pi s}{2}}$. \\[12pt]
+              由大圆弧引理有 $\displaystyle\int_{C_R}f(z)\text{d}z = 0$，由小圆弧引理有 $\displaystyle\int_{C_\delta}f(z)\text{d}z = 0$， \\[12pt]
+              故 $\displaystyle\int_{0}^{\infty}\frac{x^{s}}{(1+x^2)^2}\text{d}x
+              = \frac{\pi i(s-1)\sin{\frac{\pi s}{2}}}{1 - \text{e}^{2\pi is}} = \textcolor{red}{\frac{\pi}{4}\frac{1-s}{\cos{\frac{\pi s}{2}}}}$.
+        \item 考虑积分 $\displaystyle\oint_{0}^{\infty}\frac{z^{\alpha-1}\ln^2{z}}{1+z}\text{d}z$，\textcolor{red}{\XSolid}
+              \footnote[1]{这里不需要取 $\displaystyle\oint_{0}^{\infty}\frac{z^{\alpha-1}\ln^2{z}}{1+z}\text{d}z$，$z^\alpha$ 是多值函数，可以直接取 $\displaystyle\oint_{0}^{\infty}\frac{z^{\alpha-1}\ln{z}}{1+z}\text{d}z$ 分析，不用担心 $\ln{z}$ 抵消。} \ 
+              取玦型积分围道， $0\leq\text{arg}\leq2\pi$。 \\[12pt]
+              积分围道内有一阶极点 $z = -1$，$\text{res}\ f(-1) = \pi^2\text{e}^{\pi i\alpha}$. \\[12pt]
+              故 $\displaystyle\oint_{0}^{\infty}\frac{z^{\alpha-1}\ln^2{x}}{1+z}\text{d}z
+              = 2\pi^3 i\text{e}^{\pi i\alpha}$. \\[12pt]
+              即 $\displaystyle\left[\int_{C_\delta} + \int_{C_R}\right]f(z)\text{d}{z}
+              + \int_{\delta}^{\infty}\frac{x^{\alpha-1}\ln^2{x}}{1+x}\text{d}x 
+              - \int_{\delta}^{\infty}\frac{(x\cdot\text{e}^{2\pi i})^{\alpha-1}\ln^2{\left(x\cdot\text{e}^{2\pi i}\right)}}{1+x\cdot\text{e}^{2\pi i}}\text{d}x
+              = 2\pi^3 i\text{e}^{\pi i\alpha}$. \\[12pt]
+              由大圆弧引理有 $\displaystyle\int_{C_R}f(z)\text{d}z = 0$，由小圆弧引理有 $\displaystyle\int_{C_\delta}f(z)\text{d}z = 0$， \\[12pt]
+              \textcolor{red}{按照现在的取法，$\ln^2{z}$ 项无法抵消，正确解答见注记}
+        \item 考虑积分 $\displaystyle\oint_{0}^{\infty}\frac{\ln^2{z}}{(z+a)(z+b)}\text{d}z$，取玦型积分围道，$0\leq\text{arg}\leq2\pi$。 \\[12pt]
+              积分围道内有一阶极点 $z = -a$ 和 $z = -b$，$\displaystyle\text{res}\ f(-a) = \frac{\left(\ln{a}+\pi i\right)^2}{b-a}$,
+              $\displaystyle\text{res}\ f(-b) = \frac{\left(\ln{b}+\pi i\right)^2}{a-b}$. \\[12pt]
+              故 $\displaystyle\oint_{0}^{\infty}\frac{\ln^2{z}}{(z+a)(z+b)}\text{d}z 
+              = 2\pi i\cdot\frac{\ln^2{a}-\ln^2{b}+2\pi i\left(\ln{a}-\ln{b}\right)}{b-a}$. \\[12pt]
+              由大圆弧引理，$\displaystyle\int_{C_R}f(z)\text{d}z = 0$. \quad
+              由小圆弧引理，$\displaystyle\int_{C_{\delta}}f(z)\text{d}z = 0$. \\[12pt]
+              故 $\displaystyle\int_{\delta}^{\infty}f(z)\text{d}z - \int_{\delta}^{\infty}f(z\text{e}^{2\pi i})\text{d}z
+              = -4\pi i\int_{\delta}^{\infty}\frac{\ln{x}}{(x-a)(x-b)}\text{d}x 
+              + 4\pi^2\int_{\delta}^{\infty}\frac{\text{d}x}{(x-a)(x-b)} \\[12pt]
+              = 2\pi i\cdot\frac{\ln^2{a}-\ln^2{b}+2\pi i\left(\ln{a}-\ln{b}\right)}{b-a}
+              = -4\pi i\left(\frac{1}{2}\frac{\ln^2{b}-\ln^2{a}}{b-a}\right)
+              + 4\pi^2\left(\frac{\ln{b}-\ln{a}}{b-a}\right)$. \\[12pt]
+              可以得到 $\displaystyle\int_{0}^{\infty}\frac{\ln{x}}{(x+a)(x+b)}\text{d}x
+              = \frac{1}{2}\frac{\ln^2{b}-\ln^2{a}}{b-a}$.
+    \end{enumerate}
+\end{solution}
+\begin{note}
+    \begin{itemize}
+        \item (3)考虑积分 $\displaystyle\oint_{0}^{\infty}\frac{z^{\alpha-1}\ln{z}}{1+z}\text{d}z$，
+        取玦型积分围道， $0\leq\text{arg}\leq2\pi$。 \\[12pt]
+        积分围道内有一阶极点 $z = -1$，$\text{res}\ f(-1) = -\pi i\text{e}^{\pi i\alpha}$. \\[12pt]
+        故 $\displaystyle\oint_{0}^{\infty}\frac{z^{\alpha-1}\ln{x}}{1+z}\text{d}z
+        = 2\pi^2\text{e}^{\pi i\alpha}$. \\[12pt]
+        即 $\displaystyle\left[\int_{C_\delta} + \int_{C_R}\right]f(z)\text{d}{z}
+        + \int_{\delta}^{\infty}\frac{x^{\alpha-1}\ln{x}}{1+x}\text{d}x 
+        - \int_{\delta}^{\infty}\frac{(x\cdot\text{e}^{2\pi i})^{\alpha-1}\ln{\left(x\cdot\text{e}^{2\pi i}\right)}}{1+x\cdot\text{e}^{2\pi i}}\text{d}x
+        = 2\pi^2\text{e}^{\pi i\alpha}$. \\[12pt]
+        由大圆弧引理有 $\displaystyle\int_{C_R}f(z)\text{d}z = 0$，由小圆弧引理有 $\displaystyle\int_{C_\delta}f(z)\text{d}z = 0$， \\[12pt]
+        故 $\displaystyle\left(1-\text{e}^{2\pi i\alpha}\right)\int_{0}^{\infty}\frac{x^{\alpha-1}\ln{x}}{1+x}\text{d}x 
+        - \int_{0}^{\infty}\frac{\text{e}^{2\pi i\alpha}\cdot x^{\alpha-1}\cdot 2\pi i}{1+x}\text{d}x
+        = 2\pi^2\text{e}^{\pi i\alpha}$. \\[12pt]
+        现计算积分 $\displaystyle \text{e}^{2\pi i\alpha}\cdot2\pi i\cdot\int_{0}^{\infty}\frac{x^{\alpha-1}}{1+x}\text{d}x$， 
+        考虑 $\displaystyle \text{e}^{2\pi i\alpha}\cdot2\pi i\cdot\int_{0}^{\infty}\frac{z^{\alpha-1}}{1+z}\text{d}z$， \\[12pt]
+        仍然取玦型积分围道，围道内有一阶极点 $z = -1$，$\text{res}\ f(-1) = -\text{e}^{\pi i\alpha}$. \\[12pt]
+        故 $\displaystyle \text{e}^{2\pi i\alpha}\cdot2\pi i\cdot\left(1-\text{e}^{2\pi i\alpha}\right)\int_{0}^{\infty}\frac{x^{\alpha-1}}{1+x}\text{d}x
+        = 4\pi^2\text{e}^{3\pi i\alpha}$. 
+        即 $\displaystyle \text{e}^{2\pi i\alpha}\cdot2\pi i\cdot\int_{0}^{\infty}\frac{x^{\alpha-1}}{1+x}\text{d}x
+        = \frac{4\pi^2\text{e}^{3\pi i\alpha}}{1-\text{e}^{2\pi i\alpha}}$. \\[12pt]
+        也就是说，$\displaystyle\int_{0}^{\infty}\frac{x^{\alpha-1}\ln{x}}{1+x}\text{d}x
+        = \frac{2\pi^2\text{e}^{\pi i\alpha}}{1-\text{e}^{2\pi i\alpha}}
+        + \frac{4\pi^2\text{e}^{3\pi i\alpha}}{\left(1-\text{e}^{2\pi i\alpha}\right)^2}
+        = \textcolor{red}{-\pi^2\frac{\sin{\pi\alpha}}{\cos^2{\pi\alpha}}?}$
+    \end{itemize}
+\end{note}
 
 \newpage
 \section{第七章习题}
@@ -1379,7 +1626,7 @@
 \begin{problem}
     求解空心球壳内的定解问题：
     \begin{equation*}
-        \Delta^2 u =0,\ a < r < b,
+        \nabla^2 u =0,\ a < r < b,
     \end{equation*}
     \begin{equation*}
         u|_{r=a} = u_0,
