@@ -38,7 +38,7 @@
 \pagestyle{fancy} % 使用fancyhdr宏包定义页眉页脚
 \fancyhf{} % 清空默认的页眉和页脚设置
 \linespread{1.5}
-\chead{《数学物理方法（吴崇试版）》习题解答}
+\chead{《数学物理方法（吴崇试版）》作业}
 \cfoot{第 \thepage 页（共 \pageref{LastPage}页）}
 
 % 信息栏
@@ -1387,25 +1387,47 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item $(2n)!! = (2n)(2n-2)(2n-4)\cdots6\cdot4\cdot2 \ 
+              = 2^n\cdot n\cdot(n-1)(n-2)\cdots3\cdot2\cdot1 \ 
+              = 2^n\Gamma(n+1)$.
+        \item $(2n-1)!! = (2n-1)(2n-3)(2n-5)\cdots5\cdot3\cdot1\ 
+              = \dfrac{(2n)!}{(2n)!!}\ 
+              = \dfrac{\Gamma(2n+1)}{2^n\Gamma(n+1)}$.
+    \end{enumerate}
 \end{solution}
 
 \begin{problem}
-    计算下列积分：
-    \begin{enumerate}[(1)]
-        \item $\displaystyle\int_{0}^{\infty}x^{-\alpha}\sin{x}\text{d}x$, $0<\alpha<2$;
-        \item $\displaystyle\int_{0}^{\infty}x^{-\alpha}\cos{x}\text{d}x$, $0<\alpha<1$.
-    \end{enumerate}
+    计算下列积分：\\[12pt]
+    $\displaystyle\int_{0}^{\infty}x^{-\alpha}\sin{x}\text{d}x$, $0<\alpha<2$; \\[12pt]
+    $\displaystyle\int_{0}^{\infty}x^{-\alpha}\cos{x}\text{d}x$, $0<\alpha<1$.
 \end{problem}
 \begin{solution}
-
+    考虑积分 $\displaystyle\oint_{L}z^{-\alpha}\text{e}^{-z}\text{d}z$，积分围道为第一象限的扇形，绕开原点，围道内无奇点。 \\[12pt]
+    $\displaystyle\oint_{0}^{\infty}z^{-\alpha}\text{e}^{-z}\text{d}z
+    = \int_{\delta}^{\infty}x^{-\alpha}\text{e}^{-x}\text{d}x
+    + \int_{C_R}z^{-\alpha}\text{e}^{-z}\text{d}z 
+    + \int_{\infty}^{\delta}\left(y\text{e}^{\frac{\pi i}{2}}\right)^{-\alpha}\text{e}^{-yi}i\text{d}y
+    + \int_{C_\delta}z^{-\alpha}\text{e}^{-z}\text{d}z
+    = 0$. \\[12pt]
+    由小圆弧引理及Jordan引理有 $$\int_{C_\delta}z^{-\alpha}\text{e}^{-z}\text{d}z = 0, \quad
+    \int_{C_R}z^{-\alpha}\text{e}^{-z}\text{d}z = 0.$$
+    故 $$\displaystyle\text{e}^{\frac{\pi i(1-\alpha)}{2}}\int_{0}^{\infty}y^{-\alpha}\text{e}^{-yi}\text{d}y
+    = \int_{0}^{\infty}x^{-\alpha}\text{e}^{-x}\text{d}x
+    = \Gamma(1-\alpha).$$ 
+    于是可以得到，$$\int_{0}^{\infty}x^{-\alpha}(\cos{x}-i\sin{x})\text{d}x 
+    = \left[\cos{\frac{(1-\alpha)\pi}{2}}-i\sin{\frac{(1-\alpha)\pi}{2}}\right]\Gamma(1-\alpha).$$
+    即 $$\int_{0}^{\infty}x^{-\alpha}\sin{x}\text{d}x = \cos{\frac{\pi\alpha}{2}}\Gamma(1-\alpha),\quad
+    \int_{0}^{\infty}x^{-\alpha}\cos{x}\text{d}x = \sin{\frac{\pi\alpha}{2}}\Gamma(1-\alpha).$$
 \end{solution}
 
 \begin{problem}
     计算积分：$\displaystyle\int_{-1}^{1}(1-x)^p(1+x)^q\text{d}x$, $\text{Re}p>-1,\ \text{Re}q>-1$.
 \end{problem}
 \begin{solution}
-    
+    做代换 $2u = 1+x$，有 $1 - x = 2(1-u)$，故
+    $$\int_{-1}^{1}(1-x)^p(1+x)^q\text{d}x = 2^{p+q+1}\int_{0}^{1}(1-u)^p u^q\text{d}u
+    = 2^{p+q+1}B(p+1,q+1).$$
 \end{solution}
 
 \newpage
