@@ -1443,8 +1443,39 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item $\displaystyle F(p) = \int_{0}^{\infty}t^n\text{e}^{-pt}\text{d}t
+              = \frac{1}{p^{n+1}}\int_{0}^{\infty}(pt)^n\text{e}^{-pt}\text{d}(pt)
+              = \frac{\Gamma(n+1)}{p^{n+1}}
+              = \frac{n!}{p^{n+1}}$.
+        \item $\displaystyle F(p) = \int_{0}^{\infty}t^{\alpha}\text{e}^{-pt}\text{d}t
+              = \frac{1}{p^{n+1}}\int_{0}^{\infty}(pt)^{\alpha}\text{e}^{pt}\text{d}(pt)
+              = \frac{\Gamma(\alpha+1)}{p^{n+1}}$.
+        \item $\displaystyle \sin{\omega t} = \frac{\text{e}^{i\omega t}-\text{e}^{-i\omega t}}{2i}$，
+              故 $\displaystyle\text{e}^{\lambda t}\sin{\omega t}
+              = \frac{\text{e}^{\left(i\omega+\lambda\right)t}-\text{e}^{\left(-i\omega+\lambda\right)t}}{2i}
+              = \frac{1}{2i}\left(\frac{1}{p-i\omega-\lambda}-\frac{1}{p+i\omega-\lambda}\right)$，\\[12pt]
+              即 $\displaystyle\frac{\omega}{(p+\lambda)^2+\omega^2}$.
+        \item 由 $\displaystyle\int_{0}^{\infty}\frac{f(\tau)}{\tau}\text{d}\tau \fallingdotseq \frac{1}{p}\int_{0}^{p}F(q)\text{d}q$
+              \footnote[1]{证明见注记。}
+              及 $\displaystyle\cos{t} = \frac{p}{p^2+1}$ 知 \\[12pt]
+              $\displaystyle\int_{t}^{\infty}\frac{\cos{\tau}}{\tau}\text{d}\tau
+              \fallingdotseq  \frac{1}{p}\int_{0}^{p}F(q)\text{d}q 
+              = \frac{1}{p}\int_{0}^{p}\frac{q}{q^2+1}\text{d}q
+              = \frac{1}{2p}\ln{\left(p^2+1\right)}$.
+    \end{enumerate}
 \end{solution}
+\begin{note}
+    \begin{itemize}
+        \item $\displaystyle\int_{0}^{\infty}\frac{f(\tau)}{\tau}\text{d}\tau \fallingdotseq 
+              \int_{0}^{\infty}\text{e}^{-pt}\left[\int_{t}^{\infty}\frac{f(\tau)}{\tau}\text{d}\tau\right]\text{d}t \\[12pt]
+              = \int_{0}^{\infty}\frac{f(\tau)}{\tau}\left[\int_{0}^{\tau}\text{e}^{-pt}\text{d}t\right]\text{d}\tau
+              = \int_{0}^{\infty}\frac{f(\tau)}{\tau}\frac{1-\text{e}^{-pt}}{p}\text{d}\tau \\[12pt]
+              = \frac{1}{p}\int_{0}^{\infty}f(\tau)\int_{0}^{p}\text{e}^{-qt}\text{d}q\text{d}\tau
+              = \frac{1}{p}\int_{0}^{p}\int_{0}^{\infty}f(\tau)\text{e}^{-qt}\text{d}\tau\text{d}q 
+              = \frac{1}{p}\int_{0}^{p}F(q)\text{d}q$.
+    \end{itemize}
+\end{note}
 
 \begin{problem}
     求下列Laplace换式的原函数：
@@ -1455,7 +1486,16 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item 对分式进行拆分有 $\displaystyle\frac{1}{p}-\frac{a^2}{\left(p+a\right)^3}-\frac{a}{\left(p+a\right)^2}-\frac{1}{p+a}$，又
+              $\displaystyle1\fallingdotseq \frac{1}{p},\ \text{e}^{-at} \fallingdotseq \frac{1}{p+a}, \\[12pt] F^{(n)}(p) \risingdotseq  (-t)^nf(t)$.\ 
+              故原函数为 $\displaystyle 1 - \left(1+at+\frac{1}{2}a^2t^2\right)\text{e}^{-at}$.
+        \item $\displaystyle\frac{p^2+\omega^2}{(p^2-\omega^2)^2} = -\frac{\text{d}}{\text{d}p}\left(\frac{p}{p^2+\omega^2}\right)$，又
+              $\displaystyle\cos{\omega t} \fallingdotseq \frac{p}{p^2+\omega^2},\ F^{(n)}(p) \risingdotseq  (-t)^nf(t)$， \\[12pt]
+              故原函数为 $\displaystyle t\cos{\omega t}$.
+        \item 由延迟定理 $\displaystyle f(t-\tau) \fallingdotseq \text{e}^{-p\tau}F(p),\ t > \tau$ 及 $\displaystyle t \fallingdotseq \frac{1}{p}$，有
+              $\displaystyle\frac{\text{e}^{-p\tau}}{p^2} \risingdotseq t-\tau,\ \ t > \tau$.
+    \end{enumerate}
 \end{solution}
 
 \begin{problem}
@@ -1464,7 +1504,14 @@
     $a>0,\ b>0,\ c>0$.
 \end{problem}
 \begin{solution}
-    
+    由 $\displaystyle\cos{cx} = \frac{\text{e}^{icx}+\text{e}^{-icx}}{2}$，故原积分可化为 
+    $$\frac{1}{2}\int_{0}^{\infty}\frac{\text{e}^{\left(-a+ic\right)x}+\text{e}^{\left(-a-ic\right)x}-\text{e}^{\left(-b+ic\right)x}-\text{e}^{\left(-b-ic\right)x}}{x}\text{d}x.$$
+    根据 $\displaystyle\int_{0}^{\infty}F(p)\text{d}p = \int_{0}^{\infty}\frac{f(t)}{t}\text{d}t$，
+    而且 $\displaystyle\text{e}^{\alpha t} \fallingdotseq \frac{1}{p-a}$.
+    有 $$\int_{0}^{\infty}\frac{\text{e}^{-ax}-\text{e}^{-bx}}{x}\cos{cx}\text{d}x
+    = \frac{1}{2}\int_{0}^{\infty}\left[\frac{1}{p+a-ic}+\frac{1}{p+a+ic}-\frac{1}{p+b-ic}-\frac{1}{p+b+ic}\right]\text{d}p.$$
+    即 $$\frac{1}{2}\left[\ln{\frac{\left(p+a\right)^2+c^2}{\left(p+b\right)^2+c^2}}\right]\Bigg|_0^{\infty}
+    = \frac{1}{2}\ln{\frac{b^2+c^2}{a^2+c^2}}.$$
 \end{solution}
 
 \begin{problem}
@@ -1473,7 +1520,17 @@
     $\tau>0,\ \omega>0$.
 \end{problem}
 \begin{solution}
-    
+    \textcolor{red}{普遍反演公式 $\displaystyle f(t) = \frac{1}{2\pi i}\int_{s-i\infty}^{s+i\infty}F(p)\text{e}^{pt}\text{d}p$.} \\[12pt]
+    选取 $p = s$ 划分的左边大半个圆为积分路径，补上 $\displaystyle\int_{C_R}\frac{1}{p^4+4\omega^4}\text{d}p$. \\[12pt]
+    由补充的Jordan引理，$$\int_{C_R}\frac{\text{e}^{p(t-\tau)}}{p^4+4\omega^4}\text{d}p = 0.$$
+    故 $$ f(t) = \frac{1}{2\pi i}\int_{s-i\infty}^{s+i\infty}\frac{\text{e}^{p(t-\tau)}}{p^4+4\omega^4}\text{d}p
+    = \frac{1}{2\pi i}\oint_L\frac{\text{e}^{p(t-\tau)}}{p^4+4\omega^4}\text{d}p
+    = \sum\text{res}\ \left[\frac{\text{e}^{p(t-\tau)}}{p^4+4\omega^4}\right].$$
+    积分区域内有一阶极点 $\displaystyle p = -\sqrt{2}\omega\text{e}^{-\frac{\pi i}{4}}$,\;  
+    $\displaystyle p = \sqrt{2}\omega\text{e}^{-\frac{\pi i}{4}}$,\;
+    $\displaystyle p = -\sqrt{2}\omega\text{e}^{\frac{\pi i}{4}}$,\;
+    $\displaystyle p = \sqrt{2}\omega\text{e}^{\frac{\pi i}{4}}$. \\[12pt]
+    故原函数为 $$\frac{1}{4\omega^3}\left[\cosh{\omega(t-\tau)}\sin{\omega(t-\tau)} - \sinh{\omega(t-\tau)}\cos{\omega(t-\tau)}\right]\textcolor{red}{\eta(t-\tau)}.$$
 \end{solution}
 
 \newpage
