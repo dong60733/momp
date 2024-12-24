@@ -1540,15 +1540,35 @@
    求方程 $w'' - z^2w = 0$ 在 $z = 0$ 领域内的两个幂级数解。 
 \end{problem}
 \begin{solution}
-    
+    显然 $z = 0$ 是方程的常点，故解的形式为Taylor级数，设 $\displaystyle w = \sum_{k=0}^{\infty}c_kz^k,\ \left|z\right|<1.$ \\[12pt]
+    代入方程有 $$\sum_{n=0}^{\infty}(k+1)(k+2)c_{k+2}z^k - \sum_{n=0}^{\infty}c_kz^{k+2} = 0.$$
+    即 $$2c_2 + 6c_3z + \sum_{k=2}^{\infty}\left[(k+1)(k+2)c_{k+2} - c_{k-2}\right]z^k = 0.$$
+    故 $c_2 = c_3 = 0$,\ $(k+1)(k+2)c_{k+2} - c_{k-2} = 0$. 
+    $$c_{4n} = \frac{1}{4n(4n-1)}\frac{1}{[4(n-1)][4(n-1)-1]}\cdots\frac{1}{4*(4-1)}c_0 = \frac{1}{4^{2n}}\frac{1}{n!}\frac{1}{\left(n-\frac{1}{4}\right)\left[(n-1)-\frac{1}{4}\right]\cdots\left(1-\frac{1}{4}\right)}c_0.$$
+    类似地，得到 $\displaystyle c_{4n+1} = \frac{\Gamma(\frac{5}{4})}{n!\Gamma(n+\frac{5}{4})}c_1,\ c_{4n+2} = c_{4n+3} = 0$. \\[12pt]
+    故原方程的级数解为 $$w_1 = \sum_{k=0}^{\infty}\frac{\Gamma(\frac{3}{4})}{n!\Gamma(n+\frac{3}{4})}\left(\frac{z}{2}\right)^{4n},\quad
+    w_2 = \sum_{k=0}^{\infty}\frac{\Gamma(\frac{5}{4})}{n!\Gamma(n+\frac{5}{4})}\left(\frac{z}{2}\right)^{4n+1}.$$
 \end{solution}
 
 \begin{problem}
     求方程 $z^2(1-z)w'' + z(1-3z)w' - (1+z)w = 0$ 在 $z = 0$ 领域内的两个幂级数解。
 \end{problem}
 \begin{solution}
-    
+    $z = 0$ 是正则奇点，解的形式为 $$w_1(z) = z^{\rho_1}\sum_{k=0}^{\infty}c_kz^k,\quad w_2(z) = gw_1(z)\ln{z} + z^{\rho_2}\sum_{k=0}^{\infty}d_kz^k.$$
+    将 $w_1(z)$ 代入方程有 $$\left(z^2-z^3\right)\sum_{k=0}^{\infty}(k+\rho)(k+\rho-1)c_{k}z^{k+\rho-2} + \left(z-3z^2\right)\sum_{k=0}^{\infty}(k+\rho)c_{k}z^{k+\rho-1} - \left(1+z\right)\sum_{k=0}^{\infty}c_kz^{k+\rho} = 0.$$
+    $$\sum_{k=0}^{\infty}\left[(k+\rho)(k+\rho-1)+(k+\rho)-1\right]c_{k}z^{k+\rho} - \sum_{k=0}^{\infty}\left[(k+\rho)(k+\rho-1)+3(k+\rho)+1\right]c_{k}z^{k+\rho+1} = 0.$$
+    $$\sum_{k=0}^{\infty}\left[k^2+2k\rho+\rho^2-1\right]c_{k}z^{k+\rho} - \sum_{k=0}^{\infty}\left[k^2+2k\rho+\rho^2+2k+2\rho+1\right]c_{k}z^{k+\rho+1} = 0.$$
+    消去 $z^{\rho}$ 项有 $$\sum_{k=0}^{\infty}\left[k^2+2k\rho+\rho^2-1\right]c_{k}z^{k} - \sum_{k=0}^{\infty}\left[k^2+2k\rho+\rho^2+2k+2\rho+1\right]c_{k}z^{k+1} = 0.$$
+    令 $k = 0$，比较 $z^0$ 系数可得 $\displaystyle\rho = \pm1$. \\[12pt]
+    再比较 $z^m$ 项系数有 $$\left[m^2+2m\rho+\rho^2-1\right]c_{m} - \left[(m-1)^2+2(m-1)\rho+\rho^2+2(m-1)+2\rho+1\right]c_{m-1} = 0.$$
+    即 $$c_m = \frac{(m-1)^2+2(m-1)\rho+\rho^2+2(m-1)+2\rho+1}{m^2+2m\rho+\rho^2-1}c_{m-1}$$
+    当 $\rho = 1$ 时，$\displaystyle c_m = \frac{(m+1)^2}{m(m+2)}c_{m-1}$，故 $c_k = \dfrac{2\left[(k+1)!\right]^2}{k!(k+2)!}c_0 = \dfrac{2k+2}{k+2}c_0$. \\[12pt]
+    当 $\rho = -1$ 时，$\displaystyle c_m = \frac{(m-1)^2}{m(m-2)}c_{m-1}$，故 $c_k = 0,\ k\neq0$. \\[12pt]
+    故 $$w_1(z) = \frac{1}{z},\quad w_2(z) = \frac{1}{z}\ln{(1-z)} + \frac{1}{1-z}.$$
 \end{solution}
+\begin{note}
+    \textcolor{red}{其实不是很懂为什么只取 $\rho = -1$。}
+\end{note}
 
 \newpage
 \section{第十章习题}
@@ -1566,7 +1586,9 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item 
+    \end{enumerate}
 \end{solution}
 
 \newpage
