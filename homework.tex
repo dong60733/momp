@@ -1631,7 +1631,9 @@
     又若除了阻尼力之外，弦还受到与弦的位移成正比（比例系数为 $-k$）的回复力，则此时弦的振动满足的方程是什么？
 \end{problem}
 \begin{solution}
-    
+    自由弦振动方程为 $$\rho\frac{\partial^2u}{\partial t^2} - T\frac{\partial^2u}{\partial x^2} = 0.$$
+    存在阻尼时，方程应为 $$\rho\frac{\partial^2u}{\partial t^2} - T\frac{\partial^2u}{\partial x^2} = -\alpha\frac{\partial u}{\partial t}.$$
+    在考虑弹性回复力，方程变为 $$\rho\frac{\partial^2u}{\partial t^2} - T\frac{\partial^2u}{\partial x^2} = -\alpha\frac{\partial u}{\partial t} + ku.$$
 \end{solution}
 
 \begin{problem}
@@ -1639,7 +1641,35 @@
     在 $t=0$ 时，撤去外力 $F$。试列出杆的纵振动所满足的方程、边界条件和初始条件。
 \end{problem}
 \begin{solution}
-    
+    假设在垂直杆长方向的任一截面上各点的振动情况相同 $u(x, t)$ 表示杆上 $x$ 处在 $t$ 时刻相对于平衡位置的位移。取杆上长为 $dx$ 的一小段，用 $P(x, t)$ 表示应力，由牛顿第二定律，
+    \[
+        \left[P(x+dx, t)-P(x, t)\right] S = dm \frac{\partial^2 u}{\partial t^2}, \quad \text{代入} \quad dm = \rho S dx \quad \text{得} \quad \frac{\partial P}{\partial x} = \rho \frac{\partial^2 u}{\partial t^2}.
+    \]
+    由 Hooke 定律 $P = E \frac{\partial u}{\partial x}$ 可得
+    \[
+        \frac{\partial^2 u}{\partial x^2} - \frac{1}{a^2} \frac{\partial^2 u}{\partial t^2} = 0, \quad \text{其中} \quad a = \sqrt{\frac{E}{\rho}}.
+    \]
+    取右端长为 $\varepsilon$ 的一小段，由牛顿第二定律有
+    \[
+        F(t) - E S \left. \frac{\partial u}{\partial x} \right|_{x=l-\varepsilon} = \left. \rho \varepsilon S \frac{\partial^2 u}{\partial t^2} \right|_{x=l-\alpha\varepsilon} \quad (0 < \alpha < 1),
+    \]
+    令 $\varepsilon \rightarrow 0$ 有 $F(t) - E S \left. \frac{\partial u}{\partial x} \right|_{x=l} = 0$。
+    当 $t > 0$ 时 $F(t) = 0$，所以 $\left. \frac{\partial u}{\partial x} \right|_{x=l} = 0$。由于左端点固定，故有 $\left. u \right|_{x=0} = 0$。
+    令 (a) 式中 $t = 0$ 有 $F - E S \left. \dfrac{\partial u}{\partial x} \right|_{x=l \atop t=0} = 0$。因为平衡时应力处处相等，所以该式对于任意 $x \in [0, l]$ 都成立，即
+    \[
+        F - E S \left. \frac{\partial u}{\partial x} \right|_{t=0} = 0, \quad \text{对} \quad x \quad \text{积分可得} \quad \left. u \right|_{t=0} = \left. \frac{F}{E S} x \right. \quad (\text{注意到} \left. \frac{F}{E S} x \right. (\text{注意到} \left. u \right|_{x=0} = 0)。
+    \]
+    初始时处于平衡状态，各处速度为 0，即 $\left. \dfrac{\partial u}{\partial t} \right|_{t=0} = 0$。
+    综上该定解问题为
+    $$
+    \left\{
+        \begin{array}{l}
+        \dfrac{\partial^2 u}{\partial x^2} - \dfrac{1}{a^2} \dfrac{\partial^2 u}{\partial t^2} = 0 \\[12pt]
+        \left. u \right|_{x=0} = 0, \left. \dfrac{\partial u}{\partial x} \right|_{x=l} = 0 \\[12pt]
+        \left. u \right|_{t=0} =  \dfrac{F}{E S} x, \left. \dfrac{\partial u}{\partial t} \right|_{t=0} = 0
+        \end{array}
+    \right.
+    $$
 \end{solution}
 
 \begin{problem}
@@ -1647,7 +1677,24 @@
     外界温度为 $u_0$，初始时杆的温度为 $u_0(1-\dfrac{2x}{l})^2$。试写出杆上温度场所满足的方程、边界条件和初始条件，设金属的电阻为 $R$。
 \end{problem}
 \begin{solution}
-    
+    由于热功率为 $I^2 R$，所以单位时间单位体积产生热量 $\dfrac{I^2 R}{l S}$。所以热传导方程为
+    \[
+        \rho c \dfrac{\partial u}{\partial t} - \kappa \frac{\partial^2 u}{\partial x^2} = \frac{I^2 R}{l S},
+    \]
+    其中 $\rho$ 为体密度，$c$ 为比热。若用 $\lambda$ 表示线密度，则有 $\rho = \dfrac{\lambda}{S}$，
+    所以方程为
+    \[
+        \frac{\partial u}{\partial t} - \frac{\kappa S}{\lambda c} \nabla^2 u = \frac{I^2 R}{\lambda c l}.
+    \]
+    该定解问题为
+    $$
+        \left\{
+        \begin{array}{l}
+            \dfrac{\partial u}{\partial t} - \dfrac{\kappa S}{\lambda c} \dfrac{\partial^2 u}{\partial x^2} = \dfrac{I^2 R}{\lambda c l} \\[12pt]
+            u|_{x=0} = 0, \quad u|_{x=l} = u_0, \quad u|_{t=0} = u_0(1-\dfrac{2x}{l})^2
+        \end{array}
+        \right.
+    $$
 \end{solution}
 
 \begin{problem}
@@ -1655,7 +1702,21 @@
     因而净增中子数可表为 $\alpha u(\boldsymbol{r},t)$， $\alpha$ 为比例常数。试导出 $u(\boldsymbol{r},t)$ 所满足的偏微分方程。
 \end{problem}
 \begin{solution}
-    
+    用 $q$ 表示单位时间流过某单位面积的中子数，有 $q = -D \nabla u$。\\[12pt]
+    取一个六面体 $[x, x+\Delta x] \times [y, y+\Delta y] \times [z, z+\Delta z], \\[12pt]
+    \Delta t \text{时间内沿} x \text{方向流入该六面体的中子数为}$
+    \[
+        \left( q_x \bigg|_x - q_x \bigg|_{x+\Delta x} \right) \Delta y \Delta z \Delta t = D \left( \frac{\partial u}{\partial x} \bigg|_{x+\Delta x} - \frac{\partial u}{\partial x} \bigg|_x \right) \Delta y \Delta z \Delta t = D \frac{\partial^2 u}{\partial x^2} \Delta x \Delta y \Delta z \Delta t,
+    \]
+    同样可得沿 $y, z$ 方向流入该六面体的中子数分别为 $D \dfrac{\partial^2 u}{\partial y^2} \Delta x \Delta y \Delta z \Delta t$ 和 $D \dfrac{\partial^2 u}{\partial z^2} \Delta x \Delta y \Delta z \Delta t$。\\[12pt]
+    六面体内中子数一共增加 $\Delta u \Delta x \Delta y \Delta z \Delta t$，增加数应等于流入中子数加上净增中子数，即
+    \[
+        \Delta u \Delta x \Delta y \Delta z = D \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} \right) \Delta x \Delta y \Delta z \Delta t + \alpha u \Delta x \Delta y \Delta z \Delta t.
+    \]
+    两边同除 $\Delta x \Delta y \Delta z \Delta t$，令 $\Delta t \rightarrow 0$ 得
+    \[
+        \frac{\partial u}{\partial t} = D \nabla^2 u + \alpha u.
+    \]
 \end{solution}
 
 \newpage
