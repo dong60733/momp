@@ -1350,29 +1350,38 @@
 \begin{note}
     \begin{itemize}
         \item (3)考虑积分 $\displaystyle\oint_{0}^{\infty}\frac{z^{\alpha-1}\ln{z}}{1+z}\text{d}z$，
-        取玦型积分围道， $0\leq\text{arg}\leq2\pi$。 \\[12pt]
-        积分围道内有一阶极点 $z = -1$，$\text{res}\ f(-1) = -\pi i\text{e}^{\pi i\alpha}$. \\[12pt]
-        故 $\displaystyle\oint_{0}^{\infty}\frac{z^{\alpha-1}\ln{x}}{1+z}\text{d}z
-        = 2\pi^2\text{e}^{\pi i\alpha}$. \\[12pt]
-        即 $\displaystyle\left[\int_{C_\delta} + \int_{C_R}\right]f(z)\text{d}{z}
-        + \int_{\delta}^{\infty}\frac{x^{\alpha-1}\ln{x}}{1+x}\text{d}x 
-        - \int_{\delta}^{\infty}\frac{(x\cdot\text{e}^{2\pi i})^{\alpha-1}\ln{\left(x\cdot\text{e}^{2\pi i}\right)}}{1+x\cdot\text{e}^{2\pi i}}\text{d}x
-        = 2\pi^2\text{e}^{\pi i\alpha}$. \\[12pt]
-        由大圆弧引理有 $\displaystyle\int_{C_R}f(z)\text{d}z = 0$，由小圆弧引理有 $\displaystyle\int_{C_\delta}f(z)\text{d}z = 0$， \\[12pt]
-        故 $\displaystyle\left(1-\text{e}^{2\pi i\alpha}\right)\int_{0}^{\infty}\frac{x^{\alpha-1}\ln{x}}{1+x}\text{d}x 
-        - \int_{0}^{\infty}\frac{\text{e}^{2\pi i\alpha}\cdot x^{\alpha-1}\cdot 2\pi i}{1+x}\text{d}x
-        = 2\pi^2\text{e}^{\pi i\alpha}$. \\[12pt]
-        现计算积分 $\displaystyle \text{e}^{2\pi i\alpha}\cdot2\pi i\cdot\int_{0}^{\infty}\frac{x^{\alpha-1}}{1+x}\text{d}x$， 
-        考虑 $\displaystyle \text{e}^{2\pi i\alpha}\cdot2\pi i\cdot\int_{0}^{\infty}\frac{z^{\alpha-1}}{1+z}\text{d}z$， \\[12pt]
-        仍然取玦型积分围道，围道内有一阶极点 $z = -1$，$\text{res}\ f(-1) = -\text{e}^{\pi i\alpha}$. \\[12pt]
-        故 $\displaystyle \text{e}^{2\pi i\alpha}\cdot2\pi i\cdot\left(1-\text{e}^{2\pi i\alpha}\right)\int_{0}^{\infty}\frac{x^{\alpha-1}}{1+x}\text{d}x
-        = 4\pi^2\text{e}^{3\pi i\alpha}$. 
-        即 $\displaystyle \text{e}^{2\pi i\alpha}\cdot2\pi i\cdot\int_{0}^{\infty}\frac{x^{\alpha-1}}{1+x}\text{d}x
-        = \frac{4\pi^2\text{e}^{3\pi i\alpha}}{1-\text{e}^{2\pi i\alpha}}$. \\[12pt]
-        也就是说，$\displaystyle\int_{0}^{\infty}\frac{x^{\alpha-1}\ln{x}}{1+x}\text{d}x
-        = \frac{2\pi^2\text{e}^{\pi i\alpha}}{1-\text{e}^{2\pi i\alpha}}
-        + \frac{4\pi^2\text{e}^{3\pi i\alpha}}{\left(1-\text{e}^{2\pi i\alpha}\right)^2}
-        = \textcolor{red}{-\pi^2\frac{\sin{\pi\alpha}}{\cos^2{\pi\alpha}}?}$
+              取玦型积分围道， $0\leq\text{arg}\leq2\pi$。 \\[12pt]
+              积分围道内有一阶极点 $z = -1$，$\text{res}\ f(-1) = -\pi i\text{e}^{\pi i\alpha}$. \\[12pt]
+              故 $\displaystyle\oint_{0}^{\infty}\frac{z^{\alpha-1}\ln{x}}{1+z}\text{d}z
+              = 2\pi^2\text{e}^{\pi i\alpha}$. \\[12pt]
+              即 $\displaystyle\left[\int_{C_\delta} + \int_{C_R}\right]f(z)\text{d}{z}
+              + \int_{\delta}^{\infty}\frac{x^{\alpha-1}\ln{x}}{1+x}\text{d}x 
+              - \int_{\delta}^{\infty}\frac{(x\cdot\text{e}^{2\pi i})^{\alpha-1}\ln{\left(x\cdot\text{e}^{2\pi i}\right)}}{1+x\cdot\text{e}^{2\pi i}}\text{d}x
+              = 2\pi^2\text{e}^{\pi i\alpha}$. \\[12pt]
+              由大圆弧引理有 $\displaystyle\int_{C_R}f(z)\text{d}z = 0$，由小圆弧引理有 $\displaystyle\int_{C_\delta}f(z)\text{d}z = 0$， \\[12pt]
+              故 $\displaystyle\left(1-\text{e}^{2\pi i\alpha}\right)\int_{0}^{\infty}\frac{x^{\alpha-1}\ln{x}}{1+x}\text{d}x 
+              - \int_{0}^{\infty}\frac{\text{e}^{2\pi i\alpha}\cdot x^{\alpha-1}\cdot 2\pi i}{1+x}\text{d}x
+              = 2\pi^2\text{e}^{\pi i\alpha}$. \\[12pt]
+              现计算积分 $\displaystyle \text{e}^{2\pi i\alpha}\cdot2\pi i\cdot\int_{0}^{\infty}\frac{x^{\alpha-1}}{1+x}\text{d}x$， 
+              考虑 $\displaystyle \text{e}^{2\pi i\alpha}\cdot2\pi i\cdot\int_{0}^{\infty}\frac{z^{\alpha-1}}{1+z}\text{d}z$， \\[12pt]
+              仍然取玦型积分围道，围道内有一阶极点 $z = -1$，$\text{res}\ f(-1) = -\text{e}^{\pi i\alpha}$. \\[12pt]
+              故 $\displaystyle \text{e}^{2\pi i\alpha}\cdot2\pi i\cdot\left(1-\text{e}^{2\pi i\alpha}\right)\int_{0}^{\infty}\frac{x^{\alpha-1}}{1+x}\text{d}x
+              = 4\pi^2\text{e}^{3\pi i\alpha}$. 
+              即 $\displaystyle \text{e}^{2\pi i\alpha}\cdot2\pi i\cdot\int_{0}^{\infty}\frac{x^{\alpha-1}}{1+x}\text{d}x
+              = \frac{4\pi^2\text{e}^{3\pi i\alpha}}{1-\text{e}^{2\pi i\alpha}}$. \\[12pt]
+              也就是说，$\displaystyle\int_{0}^{\infty}\frac{x^{\alpha-1}\ln{x}}{1+x}\text{d}x
+              = \frac{2\pi^2\text{e}^{\pi i\alpha}}{1-\text{e}^{2\pi i\alpha}}
+              + \frac{4\pi^2\text{e}^{3\pi i\alpha}}{\left(1-\text{e}^{2\pi i\alpha}\right)^2}
+              = \textcolor{red}{-\pi^2\frac{\sin{\pi\alpha}}{\cos^2{\pi\alpha}}?}$
+        \item 其他解法：\footnote[1]{该解法来源于陈靖元同学。}\\[12pt]
+              \textcolor{blue}{注意到 $\displaystyle\frac{\partial}{\partial\alpha}\left(\frac{x^{\alpha-1}}{1+x}\right) = \frac{x^{\alpha-1}\ln{x}}{1+x} = \frac{\partial}{\partial \alpha}f(x)$. \\[12pt]
+              故 $\displaystyle I = \int_{0}^{\infty}\frac{\partial}{\partial \alpha}f(x)\text{d}x 
+              = \frac{\partial}{\partial \alpha}\int_{0}^{\infty}f(x)\text{d}x$. \\[12pt]
+              现分析 $\displaystyle\int_{0}^{\infty}\frac{x^{\alpha-1}}{1+x}\text{d}x$，
+              容易得到其结果为 $\dfrac{\pi}{\sin{\pi\alpha}}$. \\[12pt]
+              故原积分结果为 $\displaystyle\frac{\partial}{\partial\alpha}\left(\dfrac{\pi}{\sin{\pi\alpha}}\right)
+              = \frac{\sin{\pi\alpha}}{\cos^2{\pi\alpha}}$.}
+              
     \end{itemize}
 \end{note}
 
@@ -1586,8 +1595,31 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
+    $\delta$ 函数应该在积分意义下去理解。
     \begin{enumerate}[(1)]
-        \item 
+        \item $\displaystyle\int_{-\infty}^{\infty}f(x)\delta(x)\text{d}x 
+              = \int_{-\infty}^{\infty}f(x)\delta(-x)\text{d}x
+              = f(0)$，故 $\delta(x) = \delta(-x)$.
+        \item $\displaystyle\int_{-\infty}^{\infty}xf(x)\delta(x)\text{d}x
+              = xf(x)|_{x=0}
+              = 0$，故 $x\delta(x) = 0$.
+        \item $\displaystyle\int_{-\infty}^{\infty}g(x)f(x)\delta(x)\text{d}x
+              = g(x)f(x)|_{x=0}
+              = g(0)f(0)$，故 $g(x)\delta(x) = g(0)\delta(x)$.
+        \item $\displaystyle\int_{-\infty}^{\infty}x\delta'(x)\text{d}x
+              = x\delta(x)\bigg|_{-\infty}^{\infty} - \int_{-\infty}^{\infty}\delta(x)\text{d}x
+              = -f(0)$，故 $x\delta'(x) = -\delta(x)$.
+        \item 令 $t = ax$，有 $x = \dfrac{1}{a}t$，故 $\displaystyle\int_{-\infty}^{\infty}f(x)\delta(ax)\text{d}x
+              = \frac{1}{a}\int_{-\infty}^{\infty}f(x)\delta(t)\text{d}t
+              = \frac{1}{a}f(0)$，即$\delta(ax) = \dfrac{1}{a}\delta(x)$.
+        \item $\displaystyle\int_{-\infty}^{\infty}g(x)f(x)\delta'(x)\text{d}x
+              = \delta(x)g(x)f(x)\bigg|_{-\infty}^{\infty} - \int_{-\infty}^{\infty}g'(x)f(x)\delta(x)\text{d}x - \int_{-\infty}^{\infty}g(x)f'(x)\delta(x)\text{d}x$， \\[12pt]
+              故 $g(x)\delta'(x) = g(0)\delta'(x) - g'(x)\delta(x)$.
+        \item $\displaystyle\int_{-\infty}^{\infty}f(x)\delta(x^2-a^2)\text{d}x = \int_{-\infty}^{0}f(x)\delta(x^2-a^2)\text{d}x + \int_{0}^{\infty}f(x)\delta(x^2-a^2)\text{d}x \\[12pt]
+              = -\frac{1}{2}\int_{\infty}^{0}\delta(u-a^2)f(-\sqrt{u})\frac{\text{d}u}{\sqrt{u}} + \frac{1}{2}\int_{0}^{\infty}\delta(u-a^2)f(\sqrt{u})\frac{\text{d}u}{\sqrt{u}} \\[12pt]
+              = \frac{1}{2a}\left[f(-a)+f(a)\right] \\[12pt]
+              = \frac{1}{2a}\int_{-\infty}^{\infty}\left[\delta(x+a)+\delta(x-a)\right]f(x)\text{d}x$. \\[12pt]
+              故 $\delta(x^2 - a^2) = \dfrac{1}{2a}[\delta(x-a)+\delta(x+a)]$.
     \end{enumerate}
 \end{solution}
 
