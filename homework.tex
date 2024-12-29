@@ -1665,8 +1665,8 @@
     \left\{
         \begin{array}{l}
         \dfrac{\partial^2 u}{\partial x^2} - \dfrac{1}{a^2} \dfrac{\partial^2 u}{\partial t^2} = 0 \\[12pt]
-        \left. u \right|_{x=0} = 0, \left. \dfrac{\partial u}{\partial x} \right|_{x=l} = 0 \\[12pt]
-        \left. u \right|_{t=0} =  \dfrac{F}{E S} x, \left. \dfrac{\partial u}{\partial t} \right|_{t=0} = 0
+        \left. u \right|_{x=0} = 0, \left. \ \dfrac{\partial u}{\partial x} \right|_{x=l} = 0 \\[12pt]
+        \left. u \right|_{t=0} =  \dfrac{F}{E S} x, \left. \ \dfrac{\partial u}{\partial t} \right|_{t=0} = 0
         \end{array}
     \right.
     $$
@@ -1724,10 +1724,43 @@
 
 \begin{problem}
     一长为 $l$、横截面积为 $S$ 的均匀弹性杆，已知一端（$x=0$）固定，另一端（$x=l$)在杆轴方向上受拉力 $F$ 的作用而达到平衡。
-    在 $t=0$ 时，撤去外力 $F$。试列出杆的纵振动所满足的方程、边界条件和初始条件。
+    在 $t=0$ 时，撤去外力 $F$。试列出杆的纵振动所满足的方程、边界条件和初始条件并求解。
 \end{problem}
 \begin{solution}
-    
+    由习题41知
+    $$
+    \left\{
+        \begin{array}{l}
+        \dfrac{\partial^2 u}{\partial x^2} - \dfrac{1}{a^2} \dfrac{\partial^2 u}{\partial t^2} = 0 \\[12pt]
+        \left. u \right|_{x=0} = 0, \left. \ \dfrac{\partial u}{\partial x} \right|_{x=l} = 0 \\[12pt]
+        \left. u \right|_{t=0} =  \dfrac{F}{E S} x, \left. \ \dfrac{\partial u}{\partial t} \right|_{t=0} = 0
+        \end{array}
+    \right.
+    $$
+    分离变量法，设 $u(x,t) = X(x)T(t)$,代入方程有 $\displaystyle\frac{X^{''}(x)}{X(x)} = \frac{1}{a^2}\frac{T^{''}(t)}{T(t)} = -\lambda$. \\[12pt]
+    本征值问题为
+    \[
+        \left\{
+        \begin{array}{l}
+            X''(x) + \lambda X(x) = 0 \\
+            X(0) = 0, \, X'(l) = 0
+        \end{array}
+        \right.
+    \]
+    解出该本征值问题:
+    $$
+        \lambda_n = \left(\frac{2n+1}{2l}\pi\right)^2, \quad X_n(x) = \sin\left(\frac{2n+1}{2l}\pi x\right)
+    $$
+    解出 $\displaystyle T_n(t) = A_n \sin\left(\frac{2n+1}{2l} a\pi t\right) + B_n \cos\left(\frac{2n+1}{2l} a\pi t\right)$,
+    $$
+        u = \sum_{n=1}^{\infty} T_n(t) X_n(x) = \sum_{n=1}^{\infty} \left(A_n \sin\left(\frac{2n+1}{2l} a\pi t\right) + B_n \cos\left(\frac{2n+1}{2l} a\pi t\right)\right) \sin\left(\frac{2n+1}{2l}\pi x\right)
+    $$
+    由 $\displaystyle u|_{t=0} = \sum_{n=1}^{\infty} B_n \sin\left(\frac{2n+1}{2l}\pi x\right) = \frac{F}{ES} x$ 可定出
+    $$
+        B_n = \frac{2F}{lES} \int_0^l x \sin\left(\frac{2n+1}{l}\pi x\right) dx = \frac{8Fl}{ES\pi^2} \frac{(-1)^n}{(2n+1)^2}
+    $$
+    由 $\displaystyle\left.\frac{\partial u}{\partial t}\right|_{t=0} = \sum_{n=1}^{\infty} A_n \frac{2n+1}{2l} a\pi \sin\left(\frac{2n+1}{2l}\pi x\right) = 0$ 可定出 $A_n = 0$. \\[12pt]
+    所以 $\displaystyle u(x, t) = \frac{8Fl}{ES\pi^2} \sum_{n=1}^{\infty} \frac{(-1)^n}{(2n+1)^2} \cos\left(\frac{2n+1}{2l} a\pi t\right) \sin\left(\frac{2n+1}{2l}\pi x\right)$.
 \end{solution}
 
 \begin{problem}
@@ -1735,7 +1768,15 @@
     杆长 $l$，两端 $(x=0,\ l)$ 均保持为零度，初始温度分布为 $\displaystyle u|_{t=0}=b\frac{x(l-x)}{l^2}$.
 \end{problem}
 \begin{solution}
-    
+    可得本征函数 $\displaystyle X_n(x) = \sin\left(\frac{n\pi}{l}x\right)$， \\[12pt]
+    解出 $\displaystyle T_n(t) = A_n e^{-\kappa \left(\frac{n\pi}{l}\right)^2 t}$，$\displaystyle u = \sum_{n=1}^{\infty} A_n \sin\left(\frac{n\pi}{l}x\right) \text{e}^{-\kappa \left(\frac{n\pi}{l}\right)^2 t}$. \\[12pt]
+    代入初始条件，$\displaystyle\sum_{n=1}^{\infty} A_n \sin\left(\frac{n\pi}{l}x\right) = \frac{b}{l^2} x(l-x)$， \\[12pt]
+    所以 $$
+    A_n = \frac{2b}{l^3} \int_0^l x(l-x) \sin\left(\frac{n\pi}{l}x\right) \text{d}x
+        = \frac{4b}{\pi^3 n^3} \left[ 1 - (-1)^n \right].
+    $$
+    则 $\displaystyle A_{2k} = 0,\ A_{2k+1} = \frac{8b}{\pi^3 (2k+1)^3}$. \\[12pt]
+    所以 $\displaystyle u(x,t) = \frac{8b}{\pi^3} \sum_{k=0}^{\infty} \frac{1}{(2k+1)^3} \sin\left(\frac{(2k+1)\pi}{l}x\right) e^{-\kappa \frac{(2k+1)^2 \pi^2}{l^2} t}$.
 \end{solution}
 
 \begin{problem}
@@ -1751,7 +1792,25 @@
     \end{equation*}
 \end{problem}
 \begin{solution}
-    
+    设方程一个特解为 $v(x)$，则 $\displaystyle v'' = -\frac{b}{a^2} x(l-x)$，使之满足齐次边界条件，解之得
+    $$
+        v = \frac{b}{12a^2} x(x^3 - 2lx^2 + l^3).
+    $$
+    设 $u = v + w$，则 $w$ 满足
+    $$
+        \left\{
+        \begin{array}{l}
+            \dfrac{\partial^2 w}{\partial t^2} - a^2 \dfrac{\partial^2 w}{\partial x^2} = 0 \\
+            w|_{x=0} = 0, \quad w|_{x=l} = 0 \\
+            w|_{t=0} = -\dfrac{b}{12a^2} x(x^3 - 2lx^2 + l^3), \quad \dfrac{\partial w}{\partial t}\bigg|_{t=0} = 0 \\
+        \end{array}
+        \right.
+    $$
+    $$
+        \displaystyle w(x, t) = \sum_{n=1}^{\infty} \left( A_n \sin\left(\frac{n\pi}{l} at\right) + B_n \cos\left(\frac{n\pi}{l} at\right) \right) \sin\left(\frac{n\pi}{l} x\right)
+    $$
+    其中 $\displaystyle A_n = 0, \quad B_n = -\frac{b}{6a^2l} \int_0^l x(x^3 - 2lx^2 + l^3) \sin\left(\frac{n\pi}{l}x\right) \text{d}x = \frac{4l^4b}{n^5\pi^5a^2}[(-1)^n - 1]$, \\[12pt]
+    故 $$u(x,t) = \frac{b}{12a^2} x(x^3 - 2lx^2 + l^3) - \frac{8l^4b}{\pi^5a^2} \sum_{n=1}^{\infty} \frac{1}{(2k+1)^5} \cos\left(\frac{(2k+1)\pi}{l} at\right) \sin\left(\frac{(2k+1)\pi}{l} x\right).$$
 \end{solution}
 
 \begin{problem}
@@ -1759,7 +1818,52 @@
     设初位移和初速度均为零，求解此杆的纵振动问题。
 \end{problem}
 \begin{solution}
-    
+    据题，列出微分方程
+    $$\left\{
+        \begin{array}{l}
+            \dfrac{\partial^2 u}{\partial t^2} - a^2 \dfrac{\partial^2 u}{\partial x^2} = 0 \\[12pt]
+            u|_{x=0} = 0, \quad \dfrac{\partial u}{\partial x}\bigg|_{x=l} = \dfrac{A}{ES} \sin{\omega t} \\[12pt]
+            u|_{t=0} = 0, \quad \dfrac{\partial u}{\partial t}\bigg|_{t=0} = 0
+        \end{array}
+    \right.$$
+    设 $v(x,t) = f(x) \sin{\omega t}$ 满足方程和边界条件，则
+    $$\left\{
+        \begin{array}{l}
+            f''(x) + \dfrac{\omega^2}{a^2} f(x) = 0 \\[12pt]
+            f(0) = 0, \quad f'(l) = \dfrac{A}{ES}
+        \end{array}
+    \right.$$
+    解得
+    $$
+        v(x,t) = \dfrac{Aa}{ES\omega} \dfrac{\sin{\frac{\omega}{a} x}}{\cos{\frac{\omega}{a} l}} \sin \omega t.
+    $$
+    令 $u = v + w$，则 $w$ 满足
+    $$\left\{
+        \begin{array}{l}
+            \dfrac{\partial^2 w}{\partial t^2} - a^2 \dfrac{\partial^2 w}{\partial x^2} = 0 \\[12pt]
+            w|_{x=0} = 0, \quad \dfrac{\partial w}{\partial x}\bigg|_{x=l} = 0 \\[12pt]
+            w|_{t=0} = 0, \quad \dfrac{\partial w}{\partial t}\bigg|_{t=0} = -\dfrac{Aa}{ES\cos \frac{\omega}{a} l} \sin \frac{\omega}{a} x
+        \end{array}
+    \right.$$
+    可得 $\displaystyle w = \sum_{n=0}^{\infty} \left( \displaystyle A_n \sin\frac{(2n+1)}{2l} a\pi t + \displaystyle B_n \cos\frac{(2n+1)}{2l} a\pi t \right) \sin\frac{(2n+1)}{2l} \pi x$, \\[12pt]
+    其中 $\displaystyle B_n = 0$, \\[12pt]
+    $\displaystyle A_n = -\frac{4A}{\pi ES(2n+1)\cos\frac{\omega}{a} l} \int_0^l \sin\frac{\omega}{a} x \sin\frac{(2n+1)}{2l} \pi x \, \text{d}x$ \\[12pt]
+    $\displaystyle = \frac{2A}{\pi ES(2n+1)\cos\frac{\omega}{a} l} \int_0^l \left[ \cos\left(\frac{\omega}{a} + \frac{(2n+1)}{2l} \pi\right) x - \cos\left(\frac{\omega}{a} - \frac{(2n+1)}{2l} \pi\right) x \right] \text{d}x$ \\[12pt]
+    $\displaystyle = \frac{2A}{\pi ES(2n+1)\cos\frac{\omega}{a} l} \left[ \frac{(-1)^n}{\frac{\omega}{a} + \frac{(2n+1)}{2l} \pi} \cos\frac{\omega}{a} l - \int_0^l \cos\left(\frac{\omega}{a} - \frac{(2n+1)}{2l} \pi\right) x \, \text{d}x \right]$. \\[12pt]
+    若不存在正整数 $m$，使得 $\displaystyle \frac{\omega}{a} = \frac{2m+1}{2l} \pi$，则 \\[12pt]
+    $\displaystyle A_n = \frac{2A}{\pi ES(2n+1)\cos\frac{\omega}{a} l} \left[ \frac{(-1)^n}{\frac{\omega}{a} + \frac{2n+1}{2l} \pi} \cos\frac{\omega}{a} l + \frac{(-1)^n}{\frac{\omega}{a} - \frac{2n+1}{2l} \pi} \cos\frac{\omega}{a} l \right] \\[12pt]
+    = \frac{4A\omega}{\pi ES a (2n+1)} \frac{(-1)^n}{\left(\frac{\omega}{a}\right)^2 - \left(\frac{2n+1}{2l} \pi\right)^2}$. \\[12pt]
+    所以 $$u(x,t) = \frac{Aa}{ES\omega} \frac{\sin\frac{\omega}{a} x}{\cos\frac{\omega}{a} l} \sin\omega t + \frac{4A\omega}{\pi ES a} \sum_{n=0}^{\infty} \frac{(-1)^n}{2n+1} \frac{1}{\left(\frac{\omega}{a}\right)^2 - \left(\frac{2n+1}{2l} \pi\right)^2} \sin\frac{2n+1}{2l} a\pi t \sin\frac{2n+1}{2l} \pi x.$$
+    若存在正整数 $m$，使得 $\dfrac{\omega}{a} = \dfrac{2m+1}{2l} \pi$, \\[12pt]
+    则当 $n \neq m$ 时，仍有
+    $$A_n = \frac{4A\omega}{\pi ES a (2n+1)} \frac{(-1)^n}{\left(\frac{\omega}{a}\right)^2 - \left(\frac{2n+1}{2l} \pi\right)^2}.$$
+    当 $n = m$ 时，
+    $$A_m = \frac{Aa}{ES l \omega \cos\frac{\omega}{a} l} \left[ \frac{(-1)^m a}{2\omega} \cos\frac{\omega}{a} l - l \right].$$
+    故 \\[12pt]
+    $\displaystyle u(x,t) = \frac{Aa}{ES\omega} \frac{\sin\frac{\omega}{a} x}{\cos\frac{\omega}{a} l} \sin\omega t + A_m \sin\omega t \sin\frac{\omega}{a} x + \sum_{\substack{n=0 \\ n \neq m}}^{\infty} A_n \sin\frac{2n+1}{2l} a\pi t \sin\frac{2n+1}{2l} \pi x \\[12pt]
+    = \frac{Aa}{ES\omega} \frac{\sin\frac{\omega}{a} x}{\cos\frac{\omega}{a} l} \sin\omega t + \frac{Aa}{ES l \omega \cos\frac{\omega}{a} l} \left[ \frac{(-1)^m a}{2\omega} \cos\frac{\omega}{a} l - l \right] \sin\frac{\omega}{a} x \sin\omega t \\[12pt]
+    + \frac{4A\omega}{\pi ES a} \sum_{\substack{n=0 \\ n \neq m}}^{\infty} \frac{(-1)^n}{2n+1} \frac{1}{\left(\frac{\omega}{a}\right)^2 - \left(\frac{2n+1}{2l} \pi\right)^2} \sin\frac{2n+1}{2l} a\pi t \sin\frac{2n+1}{2l} \pi x \\[12pt]
+    = \frac{(-1)^m A a^2}{2ES l \omega^2} \sin\frac{\omega}{a} x \sin\omega t + \frac{4A\omega}{\pi ESa} \sum_{n=0}^{\infty} \frac{(-1)^n}{2n+1} \frac{1}{\left(\frac{\omega}{a}\right)^2 - \left(\frac{2n+1}{2l} \pi\right)^2} \sin \frac{2n+1}{2l} a \pi t \sin \frac{2n+1}{2l} \pi x.$
 \end{solution}
 
 \begin{problem}
@@ -1775,7 +1879,42 @@
     \end{equation*}
 \end{problem}
 \begin{solution}
-    
+    假设解的形式为 $u(x, t) = X(x) T(t)$,\ 代入偏微分方程得到
+    $$X(x) \frac{\text{d}T}{\text{d}t} = \kappa T(t) \frac{\text{d}^2X}{\text{d}x^2}.$$
+    两边同时除以 $\kappa X(x) T(t)$ 得到：
+    $$\frac{1}{\kappa T(t)} \frac{\text{d}T}{\text{d}t} = \frac{1}{X(x)} \frac{\text{d}^2X}{\text{d}x^2}.$$
+    左边只依赖于 $t$，右边只依赖于 $x$，两边必须等于一个常数，记为 $-\lambda$
+    $$\frac{1}{\kappa T(t)} \frac{\text{d}T}{\text{d}t} = -\lambda, \quad \frac{1}{X(x)} \frac{\text{d}^2X}{\text{d}x^2} = -\lambda.$$
+    得到两个常微分方程：
+    $$\frac{\text{d}^2X}{\text{d}x^2} + \lambda X = 0.$$
+    $$\frac{\text{d}T}{\text{d}t} + \kappa \lambda T = 0.$$
+    首先解 $X(x)$ ,边界条件 $\displaystyle u(0, t) = A \text{e}^{i \omega t}$ 和 $\displaystyle u(l, t) = 0$ 转化为 $X(0) = A$ 和 $X(l) = 0$. \\[12pt]
+    方程 $\displaystyle\frac{\text{d}^2X}{\text{d}x^2} + \lambda X = 0$ 的一般解为：
+    $$X(x) = C_1 \cos(\sqrt{\lambda} x) + C_2 \sin(\sqrt{\lambda} x).$$
+    应用边界条件 $X(l) = 0$，得到：
+    $\displaystyle C_1 \cos(\sqrt{\lambda} l) + C_2 \sin(\sqrt{\lambda} l) = 0.$ \\[12pt]
+    如果 $C_1 \neq 0$，则 $\cos(\sqrt{\lambda} l) = 0$，即 $\sqrt{\lambda} l = \dfrac{(2n-1)\pi}{2}$,\ $n = 1, 2, 3, \cdots$. 因此，$\lambda = \left( \dfrac{(2n-1)\pi}{2l} \right)^2$. \\[12pt]
+    如果 $C_1 = 0$，则 $C_2 \neq 0$ 并且 $\sin(\sqrt{\lambda} l) = 0$，即 $\sqrt{\lambda} l = n\pi$
+    对于 $ n = 1, 2, 3, \cdots $. 
+    因此,$\lambda = \left( \dfrac{n\pi}{l} \right)^2 $.\\[12pt]
+    然而，$C_1 \neq 0$ 的情况不满足 $ X(0) = A $，故排除。
+    故
+    $$X_n(x) = C_n \sin\left( \frac{n\pi x}{l} \right).$$  
+    接下来解 $T(t)$ 的方程。方程 $\displaystyle\frac{\text{d}T}{\text{d}t} + \kappa \lambda T = 0$ 的一般解为
+    $$T_n(t) = D_n e^{-\kappa \left( \frac{n\pi}{l} \right)^2 t}.$$
+    因此，热传导方程的一般解为
+    $$u(x, t) = \sum_{n=1}^{\infty} B_n \sin\left( \frac{n\pi x}{l} \right) e^{-\kappa \left( \frac{n\pi}{l} \right)^2 t}.$$
+    若满足C满足初始条件 $u(x, 0) = 0$，有：
+    $$0 = \sum_{n=1}^{\infty} B_n \sin\left( \frac{n\pi x}{l} \right).$$
+    即对于所有 $n$ 有 $B_n = 0$ 。需要满足边界条件 $\displaystyle u(0, t) = A\text{e}^{i \omega t}$.
+    使用非齐次边界条件的方法。假设解的形式为：
+    $$u(x, t) = A e^{i \omega t} \sin\left( \frac{\pi x}{l} \right) + \sum_{n=1}^{\infty} B_n \sin\left( \frac{n\pi x}{l} \right) e^{-\kappa \left( \frac{n\pi}{l} \right)^2 t}.$$
+    若满足初始条件 $u(x, 0) = 0$，得到：
+    $$0 = A \sin\left( \frac{\pi x}{l} \right) + \sum_{n=1}^{\infty} B_n \sin\left( \frac{n\pi x}{l} \right).$$
+    即 $B_1 = -A$ 并且 $B_n = 0$ 对于 $n \neq 1$。故解为：
+    $$u(x, t) = A e^{i \omega t} \sin\left( \frac{\pi x}{l} \right) - A \sin\left( \frac{\pi x}{l} \right) e^{-\kappa \left( \frac{\pi}{l} \right)^2 t}.$$
+    简化后得到：
+    $$u(x, t) = A \sin\left( \frac{\pi x}{l} \right) \left( e^{i \omega t} - e^{-\kappa \left( \frac{\pi}{l} \right)^2 t} \right).$$
 \end{solution}
 
 \newpage
@@ -1789,7 +1928,13 @@
     \end{equation*}
 \end{problem}
 \begin{solution}
-    
+    由于 \\[12pt]
+    $\displaystyle\frac{\text{d}}{\text{d}t}\frac{\left(1-t^2\right)\left[\text{P}'_k(t)\text{P}_l(t)-\text{P}'_l(t)\text{P}_k(t)\right]}{k(k+1)-l(l+1)} \\[12pt]
+    = \frac{1}{k(k+1)-l(l+1)}\left\{-2t\left[\text{P}'k(t)\text{P}_l(t)-\text{P}'_l(t)\text{P}_k(t)\right]+\left(1-t^2\right)\left[\text{P}^{''}_k(t)\text{P}_l(t)-\text{P}^{''}_l(t)\text{P}_l(t)\right]\right\} \\[12pt]
+    = \frac{1}{k(k+1)-l(l+2)}\left\{\text{P}_l(t)\frac{\text{d}}{\text{d}x}\left[\left(1-t^2\right)\text{P}'_k(t)\right]-\text{P}_k(t)\frac{\text{d}}{\text{d}x}\left[\left(1-t^2\right)\text{P}'_l(t)\right]\right\} \\[12pt]
+    = \frac{1}{k(k+1)-l(l+1)}\left[-\text{P}_l(t)k(k+1)\text{P}_k(t)+\text{P}_k(t)l(l+1)\text{P}_l(t)\right] \\[12pt]
+    = -\text{P}_l(t)\text{P}_k(t)$. \\[12pt]
+    积分可得到 $$\int_{x}^{1}\text{P}_k(x)\text{P}_l(x)\text{d}x = (1-x^2)\frac{\text{P}^{'}_k(x)\text{P}_l(x)-\text{P}^{'}_l(x)\text{P}_k(x)}{k(k+1)-l(l+1)}.$$
 \end{solution}
 
 \begin{problem}
@@ -1801,7 +1946,30 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item 当 $k+l$ 为偶数时， 
+              $$
+                \int_0^1 \text{P}_k(x) \text{P}_l(x) \text{d}x = \frac{1}{2} \int_{-1}^1 \text{P}_k(x) \text{P}_l(x)\text{d}x = \frac{1}{2l+1} \delta_{kl}.
+              $$
+              当 $k+l$ 为奇数时，设 $k=2n$, $l=2m+1$，令习题50中 $x=0$ 得 \\[12pt]
+              $
+                \displaystyle\int_0^1 \text{P}_k(t) \text{P}_l(t) \text{d}t 
+                = \frac{\text{P}_{2n}'(0) \text{P}_{2m+1}(0) - \text{P}_{2m+1}'(0) \text{P}_{2n}(0)}{2n(2n+1) - (2m+1)(2m+2)} \\[12pt]
+                = \frac{(-1)^{m+n}}{(2m+1)(2m+2) - 2n(2n+1)} \frac{(2n)!(2m+1)!}{2^{2(m+n)} (m!)^2 (n!)^2}.
+              $
+        \item 由递推关系， $\displaystyle x \text{P}_k(x) = \frac{k+1}{2k+1} \text{P}_{k+1}(x) + \frac{k}{2k+1} \text{P}_{k-1}(x)$，原积分
+              $$
+                \int_{-1}^{1}x\text{P}_l(x)\text{P}_{l+1}(x)\text{d}x
+                = \frac{k+1}{2k+1} \int_{-1}^1 \text{P}_{k+1}^2(x) \text{d}x + \frac{k}{2k+1} \int_{-1}^1 \text{P}_{k-1}(x) \text{P}_{k+1}(x) \text{d}x = \frac{2(k+1)}{(2k+1)(2k+3)}.
+              $$
+        \item $\displaystyle x \text{P}_{k+2}(x) = \frac{k+3}{2k+5} \text{P}_{k+3}(x) + \frac{k+2}{2k+5} \text{P}_{k+1}(x)$，原积分 \\[12pt]
+              $    
+                \displaystyle\int_{-1}^{1}x^2\text{P}_l(x)\text{P}_{l+2}(x)\text{d}x 
+                = \int_{-1}^1 \left[ \frac{k+1}{2k+1} \text{P}_{k+1}(x) + \frac{k}{2k+1} \text{P}_{k-1}(x) \right] \left[ \frac{k+3}{2k+5} \text{P}_{k+3}(x) + \frac{k+2}{2k+5} \text{P}_{k+1}(x) \right] \text{d}x \\[12pt]
+                = \frac{(k+1)(k+2)}{(2k+1)(2k+5)} \int_{-1}^1 \text{P}_{k+1}^2(x) \text{d}x \\[12pt]
+                = \frac{2(k+1)(k+2)}{(2k+1)(2k+3)(2k+5)}.
+              $
+    \end{enumerate}
 \end{solution}
 
 \begin{problem}
@@ -1814,7 +1982,26 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    \begin{enumerate}[(1)]
+        \item 设 $f(x) = a_2\text{P}_2(x) + a_0\text{P}_0(x)$,
+              有 $\displaystyle a_2 = \frac{5}{2}\int_{-1}^{1}x^2\text{P}_2(x)\text{d}x = \frac{2}{3}$,
+              $\displaystyle a_0 = \frac{1}{2}\int_{-1}^{1}x^2\text{d}x = \frac{1}{3}$, \\[12pt]
+              故 $\displaystyle f(x) = \frac{2}{3}\text{P}_2(x) + \frac{1}{3}\text{P}_0(x)$.
+        \item 记 $F(x,u) = \sqrt{1 - 2xu + u^2}$，则
+              $\displaystyle\frac{\partial F(x,u)}{\partial u} = \frac{u - x}{\sqrt{1 - 2xu + u^2}} = \sum_{l=0}^{\infty} \text{P}_l(x) u^{l+1} - \sum_{l=0}^{\infty} x \text{P}_l(x) u^l \\[12pt]
+                 = \sum_{l=0}^{\infty} \text{P}_l(x) u^{l+1} - \text{P}_1(x) - \sum_{l=1}^{\infty} \frac{l+1}{2l+1} \text{P}_{l+1}(x) u^l - \sum_{l=0}^{\infty} \frac{l}{2l+1} \text{P}_{l-1}(x) u^l \\[12pt]
+                 = \sum_{l=0}^{\infty} \text{P}_l(x) u^{l+1} - \text{P}_1(x) - \sum_{l=2}^{\infty} \frac{l}{2l-1} \text{P}_l(x) u^{l-1} - \sum_{l=0}^{\infty} \frac{l+1}{2l+3} \text{P}_l(x) u^{l+1} \\[12pt]
+                 = \frac{2}{3} u \text{P}_0(x) + \sum_{l=1}^{\infty} \left( \frac{l+2}{2l+3} u^{l+1} - \frac{l}{2l-1} u^{l-1} \right) \text{P}_l(x).$ \\[12pt]
+              两边对 $u$ 从 $0$ 积到 $t$ 得
+              $$
+                f(x) = \left( \frac{1}{3} t^2 + 1 \right) \text{P}_0(x) + \sum_{l=1}^{\infty} \left( \frac{t^{l+2}}{2l+3} - \frac{t^l}{2l-1} \right) \text{P}_l(x) = \sum_{l=0}^{\infty} \left( \frac{t^{l+2}}{2l+3} - \frac{t^l}{2l-1} \right) \text{P}_l(x).
+              $$
+        \item $\displaystyle f(x) = \sum_{k=0}^{\infty} a_{2k} \text{P}_{2k}(x)$. \\[12pt]
+              $\displaystyle a_{2k} = \frac{4k+1}{2} \int_{-1}^{1} |x| \text{P}_{2k}(x) \text{d}x = (4k+1) \int_{0}^{1} x \text{P}_{2k}(x) \text{d}x = (4k+1) \int_{0}^{1} \text{P}_1(x) \text{P}_{2k}(x) \text{d}x$, \\[12pt]
+              由题50得 $\displaystyle a_{2k} = \frac{(-1)^{k+1} (2k)! (4k+1)}{2^{2k+1} (k!)^2 (k+1)(2k-1)}$. \\[12pt]
+              即 $\displaystyle f(x) = \sum_{k=0}^{\infty} \frac{(-)^{k+1} (2k)! (4k+1)}{2^{2k+1} (k!)^2 (k+1)(2k-1)} \text{P}_{2k}(x)$.
+        \item $\displaystyle f(x) = \frac{1}{2} x + \frac{1}{2} |x| = \frac{1}{2} \text{P}_1(x) + \frac{1}{2} |x| = \frac{1}{2} \text{P}_1(x) + \sum_{k=0}^{\infty} \frac{(-1)^{k+1} (2k)! (4k+1)}{2^{2(k+1)} (k!)^2 (k+1)(2k-1)} \text{P}_{2k}(x)$.
+    \end{enumerate}
 \end{solution}
 
 \begin{problem}
@@ -1830,7 +2017,17 @@
     \end{equation*}
 \end{problem}
 \begin{solution}
-
+    球坐标下的通解形式有 \\[12pt]
+    $\displaystyle u(r,\theta) = \sum_{l=0}^{\infty} \left( A_l r^l + \frac{B_l}{r^{l+1}} \right) P_l(\cos\theta)$, \\[12pt]
+    $\displaystyle\left. u \right|_{r=a} = \sum_{l=0}^{\infty} \left( A_l a^l + \frac{B_l}{a^{l+1}} \right) P_l(\cos\theta) = u_0 P_0(\cos\theta)$, \\[12pt]
+    $\displaystyle\left. u \right|_{r=b} = \sum_{l=0}^{\infty} \left( A_l b^l + \frac{B_l}{b^{l+1}} \right) P_l(\cos\theta) = u_0 \cos^2\theta = \frac{1}{3} u_0 P_0(\cos\theta) + \frac{2}{3} u_0 P_2(\cos\theta)$. \\[12pt]
+    比较系数得 
+    $A_0 = \dfrac{b-3a}{3(b-a)} u_0$,\ $B_0 = \dfrac{2ab}{3(b-a)} u_0$,\ 
+    $A_2 = \dfrac{2b^3}{3(b^5-a^5)} u_0$,\ $B_2 = \dfrac{2a^5b^3}{3(a^5-b^5)} u_0$. \\[12pt] 
+    其他 $A_l = 0$,\ $B_l = 0$,\ 所以
+    $$
+        u(r,\theta) = \frac{b-3a}{3(b-a)} u_0 + \frac{2b^3a}{3(b-a)} \frac{u_0}{r} + \frac{2b^3a^2u_0}{3(b^5-a^5)} \left[ \left( \frac{r}{a} \right)^2 - \left( \frac{a}{r} \right)^3 \right] P_2(\cos\theta).
+    $$
 \end{solution}
 
 \end{document}
